@@ -6,6 +6,7 @@ import { MaquinaModule } from './maquina/maquina.module';
 import { ImplementoModule } from './implemento/implemento.module';
 import { DeportistaModule } from './deportista/deportista.module';
 import { ObjetivoModule } from './objetivo/objetivo.module';
+import { EspecialistaModule } from './especialista/especialista.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ObjetivoModule } from './objetivo/objetivo.module';
     MaquinaModule,
     ImplementoModule,
     DeportistaModule,
-    ObjetivoModule
+    ObjetivoModule,
+    EspecialistaModule
   ],
   providers: [],
   bootstrap: [AppComponent]
