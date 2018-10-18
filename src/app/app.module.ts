@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { MaquinaModule } from './maquina/maquina.module';
+import { ImplementoModule } from './implemento/implemento.module';
 
 @NgModule({
   declarations: [
@@ -10,7 +11,8 @@ import { MaquinaModule } from './maquina/maquina.module';
   ],
   imports: [
     BrowserModule,
-    MaquinaModule
+    MaquinaModule,
+    ImplementoModule
   ],
   providers: [],
   bootstrap: [AppComponent]
