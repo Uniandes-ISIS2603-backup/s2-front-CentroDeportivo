@@ -24,7 +24,9 @@ import { RutinaModule } from './rutina/rutina.module';
     DeportistaModule,
     ObjetivoModule,
     EspecialistaModule,
-    RutinaModule
+    RutinaModule,
+    EjercicioModule,
+    ZonacuerpoModule
     
   ],
   providers: [],

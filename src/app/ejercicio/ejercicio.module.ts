@@ -8,8 +8,7 @@ import { FormsModule } from '@angular/forms';
 @NgModule({
     imports: [       
         CommonModule,
-        FormsModule,
-        EjercicioListComponent
+        FormsModule
     ],
     declarations: [EjercicioListComponent],
     providers: [EjercicioService],

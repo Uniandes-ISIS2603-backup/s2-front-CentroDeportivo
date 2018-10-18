@@ -4,8 +4,8 @@ import { HttpClient } from '@angular/common/http';
 import { Ejercicio } from './ejercicio';
 import { Observable } from 'rxjs';
 
-const API_URL = "../../assets/";
-const ejercicios = 'ejercicios.json';
+const API_URL = "http://localhost:8080/s2_centrodeportivo-api/api/";
+const ejercicios = 'ejercicios';
 
 /**
 * The service provider for everything related to ejercicios
@@ -21,7 +21,9 @@ export class EjercicioService {
     
   
     getEjercicios() : Observable<Ejercicio[]> {
+        
         return this.http.get<Ejercicio[]>(API_URL + ejercicios);
+        
     }
     
 }
