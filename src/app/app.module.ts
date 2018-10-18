@@ -8,6 +8,9 @@ import { DeportistaModule } from './deportista/deportista.module';
 import { ObjetivoModule } from './objetivo/objetivo.module';
 import { EspecialistaModule } from './especialista/especialista.module';
 
+
+import { RutinaModule } from './rutina/rutina.module';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -18,7 +21,8 @@ import { EspecialistaModule } from './especialista/especialista.module';
     ImplementoModule,
     DeportistaModule,
     ObjetivoModule,
-    EspecialistaModule
+    EspecialistaModule,
+    RutinaModule
   ],
   providers: [],
   bootstrap: [AppComponent]
