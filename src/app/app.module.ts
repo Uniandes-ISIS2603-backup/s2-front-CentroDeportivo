@@ -7,6 +7,8 @@ import { ImplementoModule } from './implemento/implemento.module';
 import { DeportistaModule } from './deportista/deportista.module';
 import { ObjetivoModule } from './objetivo/objetivo.module';
 import { EspecialistaModule } from './especialista/especialista.module';
+import {EjercicioModule} from './ejercicio/ejercicio.module';
+import {ZonacuerpoModule} from './zonacuerpo/zonacuerpo.module';
 
 
 import { RutinaModule } from './rutina/rutina.module';
@@ -23,6 +25,7 @@ import { RutinaModule } from './rutina/rutina.module';
     ObjetivoModule,
     EspecialistaModule,
     RutinaModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
