@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Maquina } from '../maquina';
+import {MaquinaService} from '../maquina.service';
+
 
 @Component({
   selector: 'app-maquina-list',
@@ -7,9 +10,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MaquinaListComponent implements OnInit {
 
-  constructor() { }
+  /**
+   * Contructor del componente
+   */
+  constructor( private maquinaService: MaquinaService ) { }
 
+  /**
+   * La lista de maquinas del centro deportivo
+   */
+   maquinas: Maquina[];
+   
+  /**
+   * Obtiene el servicio para actualizar la lista de maquinas
+   */
+   getEditorials(): void {
+        this.maquinaService.getMaquinas().subscribe(maquinas => this.maquinas = maquinas);
+    }
+   
   ngOnInit() {
+      this.getEditorials();
   }
 
 }

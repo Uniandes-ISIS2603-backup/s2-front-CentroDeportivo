@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
+
 import { MaquinaModule } from './maquina/maquina.module';
 import { ImplementoModule } from './implemento/implemento.module';
 import { DeportistaModule } from './deportista/deportista.module';
@@ -19,6 +20,7 @@ import { RutinaModule } from './rutina/rutina.module';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     MaquinaModule,
     ImplementoModule,
     DeportistaModule,

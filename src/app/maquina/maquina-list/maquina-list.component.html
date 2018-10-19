@@ -1,3 +1,28 @@
-<div>
-  Aquí se despliega la lista de máquinas
+<div class="container-fluid">
+    <div class="col-md-2">
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Referencia</th>
+                    <th>Calorias</th>
+                    <th>Tiempo</th>
+                    <th>Velocidad</th>
+                    <th>Velocidad Promedio</th>                  
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor = "let maquina of maquinas">
+                    <td>{{maquina.id}}</td>
+                    <td>{{maquina.nombre}}</td>
+                    <td>{{maquina.referencia}}</td>
+                    <td>{{maquina.calorias}}</td>
+                    <td>{{maquina.tiempo}}</td>
+                    <td>{{maquina.velocidad}}</td>
+                    <td>{{maquina.velocidadPromedio}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>

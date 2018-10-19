@@ -1,0 +1,77 @@
+[{
+    "type": "maquinaDetailDTO",
+    "id": 71,
+    "nombre": "eliptica",
+    "referencia": "14723",
+    "calorias":20,
+    "tiempo": 60,
+    "velocidad": 50,
+    "velocidadPromedio": 40,
+    "ejercicios": []
+},
+{
+    "type": "maquinaDetailDTO",
+    "id": 72,
+    "nombre": "eliptica",
+    "referencia": "15857",
+    "calorias":20,
+    "tiempo": 60,
+    "velocidad": 50,
+    "velocidadPromedio": 40,
+    "ejercicios": []
+},
+{
+    "type": "maquinaDetailDTO",
+    "id": 73,
+    "nombre": "caminadora",
+    "referencia": "9685",
+    "calorias":20,
+    "tiempo": 60,
+    "velocidad": 50,
+    "velocidadPromedio": 40,
+    "ejercicios": []
+},
+{
+    "type": "maquinaDetailDTO",
+    "id": 74,
+    "nombre": "caminadora",
+    "referencia": "2587",
+    "calorias":20,
+    "tiempo": 60,
+    "velocidad": 50,
+    "velocidadPromedio": 40,
+    "ejercicios": []
+},
+{
+    "type": "maquinaDetailDTO",
+    "id": 75,
+    "nombre": "Multifuerza",
+    "referencia": "00258",
+    "calorias":20,
+    "tiempo": 60,
+    "velocidad": 50,
+    "velocidadPromedio": 40,
+    "ejercicios": []
+},
+{
+    "type": "maquinaDetailDTO",
+    "id": 76,
+    "nombre": "Multifuerza",
+    "referencia": "3698",
+    "calorias":20,
+    "tiempo": 60,
+    "velocidad": 50,
+    "velocidadPromedio": 40,
+    "ejercicios": []
+},
+{
+    "type": "maquinaDetailDTO",
+    "id": 77,
+    "nombre": "caminadora",
+    "referencia": "9685",
+    "calorias":20,
+    "tiempo": 60,
+    "velocidad": 50,
+    "velocidadPromedio": 40,
+    "ejercicios": []
+}]
