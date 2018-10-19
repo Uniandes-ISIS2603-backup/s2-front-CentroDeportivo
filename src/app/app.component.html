@@ -1,5 +1,5 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+<!--<div style="text-align:center">
   <h1>
     Welcome to {{ title }}!
   </h1>
@@ -13,6 +13,37 @@
   <app-ejercicio-list> </app-ejercicio-list>
   <app-zonacuerpo-list> </app-zonacuerpo-list>
   
+</div>-->
+
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+        <a id="deportistasTag" class="nav-link" routerLink="/deportistas/list">Deportistas</a>
+    </li>
+    <li class="nav-item">
+        <a id="ejerciciosTag" class="nav-link" routerLink="/ejercicios/list">Ejercicios</a>
+    </li>
+    <li class="nav-item">
+        <a id="especialistasTag" class="nav-link" routerLink="/especialistas/list">Especialistas</a>
+    </li>
+    <li class="nav-item">
+        <a id="implementosTag" class="nav-link" routerLink="/implementos/list">Implementos</a>
+    </li>
+    <li class="nav-item">
+        <a id="maquinasTag" class="nav-link" routerLink="/maquinas/list">Maquinas</a>
+    </li>
+    <li class="nav-item">
+        <a id="objetivosTag" class="nav-link" routerLink="/objetivos/list">Objetivos</a>
+    </li>
+    <li class="nav-item">
+        <a id="rutinasTag" class="nav-link" routerLink="/rutinas/list">Rutinas</a>
+    </li>
+    <li class="nav-item">
+        <a id="zonascuerpoTag" class="nav-link" routerLink="/zonascuerpo/list">Zonas Cuerpo</a>
+    </li>
+</ul>
+  
+<div class="list">
+    <router-outlet></router-outlet>
 </div>
 
 <!--<h2>Here are some links to help you start: </h2>

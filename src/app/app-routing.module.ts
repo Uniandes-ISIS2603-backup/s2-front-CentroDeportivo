@@ -90,7 +90,7 @@ const routes: Routes =
 @NgModule({
     imports: [
         CommonModule,
-        RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'})
+        RouterModule.forRoot(routes)
     ],
     exports: [RouterModule],
     declarations: []
