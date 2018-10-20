@@ -1,0 +1,13 @@
+[{
+  "cedula": 1,
+  "nombre": "Leidy Romero",
+  "sexo": 1,
+  "altura":1.62,
+  "presionSanguinea": 1.5,
+  "peso": 60,
+  "ritmoCardiaco": 70,
+  "medidaPiernas":1,
+  "medidaCintura":1.1,
+  "medidaBrazos":1.2,
+  "fechaNacimiento":"1999-04-02"
+}]

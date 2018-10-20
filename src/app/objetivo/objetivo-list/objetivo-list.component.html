@@ -1,3 +1,20 @@
-<p>
-  objetivo-list works!
-</p>
+<div class="cointainer-fluid">
+    <div class="col-md-2">
+        <table class="table table-striped">
+            <thead class ="thead-dark">
+                <tr>
+                    <th>Descripción</th>
+                    <th>Cumplio</th>
+                    <th>Fecha límite</th>
+                </tr>
+            </thead>
+            <tbody>
+                 <tr *ngFor = "let objetivo of objetivos">
+                    <td>{{objetivo.descripcion}}</td>
+                    <td>{{objetivo.cumplio}}</td>
+                    <td>{{objetivo.fechaLimite}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

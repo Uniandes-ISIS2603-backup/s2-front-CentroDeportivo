@@ -1,3 +1,36 @@
-<p>
-  deportista-list works!
-</p>
+<div class="cointainer-fluid">
+    <div class="col-md-2">
+        <table class="table table-striped">
+            <thead class ="thead-dark">
+                <tr>
+                    <th>Cédula</th>
+                    <th>Nombre</th>
+                    <th>Género</th>
+                    <th>Altura</th>
+                    <th>Presión Sanguínea</th>
+                    <th>Peso</th>
+                    <th>Ritmo cardíaco</th>
+                    <th>Medida de piernas</th>
+                    <th>Medida de cintura</th>
+                    <th>Medida de brazos</th>
+                    <th>Fecha de nacimiento</th>
+                </tr>
+            </thead>
+            <tbody>
+                 <tr *ngFor = "let deportista of deportistas">
+                    <td>{{deportista.cedula}}</td>
+                    <td>{{deportista.nombre}}</td>
+                    <td>{{deportista.sexo}}</td>
+                    <td>{{deportista.altura}}</td>
+                    <td>{{deportista.presionSanguinea}}</td>
+                    <td>{{deportista.peso}}</td>
+                    <td>{{deportista.ritmoCardiaco}}</td>
+                    <td>{{deportista.medidaPiernas}}</td>
+                    <td>{{deportista.medidaCintura}}</td>
+                    <td>{{deportista.medidaBrazos}}</td>
+                    <td>{{deportista.fechaNacimiento}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
