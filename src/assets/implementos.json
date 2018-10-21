@@ -1,0 +1,20 @@
+[{
+    "id": 1,
+    "nombre": "Pesas 5 kg"
+},
+{
+    "id": 2,
+    "nombre": "Pesas 10 kg"
+},
+{
+    "id": 3,
+    "nombre": "Pesas 20 kg"
+},
+{   
+    "id": 4,
+    "nombre": "Colchoneta"
+},
+{  
+    "id": 5,
+    "nombre": "Zapatillas"
+}]
