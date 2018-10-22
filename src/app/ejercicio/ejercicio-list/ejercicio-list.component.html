@@ -1,20 +1,28 @@
-<!--<div class="container-fluid">
+<div class="container-fluid">
     <div class="col-md-2">
         <table class="table table-striped">
             <thead class="thead-dark">
                 <tr>
-                    <th>Ejercicio Name</th>    
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Categoria</th>
+                    <th>Duracion</th>
+                    <th>NumeroDeSeries</th>
+                    <th>Descripcion</th>
+                    <th>Explicacion</th>                  
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor = "let e of ejercicios">
-                    <td>{{e.name}}</td>
-                  
+                <tr *ngFor = "let ejercicio of ejercicios">
+                    <td>{{ejercicio.id}}</td>
+                    <td>{{ejercicio.nombre}}</td>
+                    <td>{{ejercicio.categoria}}</td>
+                    <td>{{ejercicio.duracion}}</td>
+                    <td>{{ejercicio.numeroDeSeries}}</td>
+                    <td>{{ejercicio.descripcion}}</td>
+                    <td>{{ejercicio.explicacion}}</td>
                 </tr>
             </tbody>
         </table>
     </div>
-    </div>-->
-<div>
-  Aquí se despliega la lista de ejercicios
 </div>
