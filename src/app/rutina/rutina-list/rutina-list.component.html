@@ -1,3 +1,22 @@
-<p>
-  rutina-list works!
-</p>
+<div class="container-fluid">
+    <div class="col-md-2">
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Id</th>
+                    <th>identificadorRutina</th>
+                    <th>nombre</th>
+                    <th>estadoTerminado</th>     
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor = "let rutina of rutinas">
+                    <td>{{rutina.id}}</td>
+                    <td>{{rutina.identificadorRutina}}</td>
+                    <td>{{rutina.nombre}}</td>
+                    <td>{{rutina.estadoTerminado}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

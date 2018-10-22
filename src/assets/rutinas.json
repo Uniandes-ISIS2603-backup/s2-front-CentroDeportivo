@@ -1,0 +1,51 @@
+[{
+  "id": 1,
+  "estadoTerminado": false,
+  "nombre": "Goodburn",
+  "identificadorRutina": 1
+}, {
+  "id": 2,
+  "estadoTerminado": true,
+  "nombre": "Scones",
+  "identificadorRutina": 2
+}, {
+  "id": 3,
+  "estadoTerminado": true,
+  "nombre": "Thiese",
+  "identificadorRutina": 3
+}, {
+  "id": 4,
+  "estadoTerminado": true,
+  "nombre": "Luna",
+  "identificadorRutina": 4
+}, {
+  "id": 5,
+  "estadoTerminado": false,
+  "nombre": "Elliman",
+  "identificadorRutina": 5
+}, {
+  "id": 6,
+  "estadoTerminado": true,
+  "nombre": "Klagge",
+  "identificadorRutina": 6
+}, {
+  "id": 7,
+  "estadoTerminado": false,
+  "nombre": "Kenwyn",
+  "identificadorRutina": 7
+}, {
+  "id": 8,
+  "estadoTerminado": false,
+  "nombre": "Coggill",
+  "identificadorRutina": 8
+}, {
+  "id": 9,
+  "estadoTerminado": true,
+  "nombre": "Kennea",
+  "identificadorRutina": 9
+}, {
+  "id": 10,
+  "estadoTerminado": true,
+  "nombre": "Bolver",
+  "identificadorRutina": 10
+}]

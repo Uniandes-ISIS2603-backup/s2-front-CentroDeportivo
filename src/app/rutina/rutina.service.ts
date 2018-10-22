@@ -1,9 +1,21 @@
 import { Injectable } from '@angular/core';
+import { Observable} from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
-@Injectable({
-  providedIn: 'root'
-})
+import { Rutina } from './rutina';
+
+const API_URL = "../../assets/";
+const rutinas = 'especialitsas.json';
+
+@Injectable(
+ //{providedIn: 'root'}
+ )
 export class RutinaService {
 
-  constructor() { }
+  constructor( private http: HttpClient) { }
+  
+   getRutinas() : Observable<Rutina[]> {
+        return this.http.get<Rutina[]>(API_URL + rutinas);
+    }
+    
 }
