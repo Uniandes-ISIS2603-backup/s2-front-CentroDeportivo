@@ -16,7 +16,7 @@ export class EjercicioListComponent implements OnInit {
      * @param ejercicioService The author's services provider
      */
     constructor(
-//    private ejercicioService: EjercicioService
+    private ejercicioService: EjercicioService
     ) { }
     
     /**
@@ -27,10 +27,10 @@ export class EjercicioListComponent implements OnInit {
 //    /**
 //     * Asks the service to update the list of ejercicios
 //     */
-//    getEjercicios(): void {
-//        this.ejercicioService.getEjercicios().subscribe(ejercicios => this.ejercicios = ejercicios);
-//        console.log(this.ejercicios[0].id);
-//    }
+    getEjercicios(): void {
+        this.ejercicioService.getEjercicios().subscribe(ejercicios => this.ejercicios = ejercicios);
+        
+    }
 
     /**
      * This will initialize the component by retrieving the list of ejercicios from the service

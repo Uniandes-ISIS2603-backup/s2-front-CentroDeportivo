@@ -3,9 +3,12 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Ejercicio } from './ejercicio';
 import { Observable } from 'rxjs';
+//
+//const API_URL = "http://localhost:8080/s2_centrodeportivo-api/api/";
+//const ejercicios = 'ejercicios';
 
-const API_URL = "http://localhost:8080/s2_centrodeportivo-api/api/";
-const ejercicios = 'ejercicios';
+const API_URL = "../../assets/";
+const ejercicios = 'ejercicios.json';
 
 /**
 * The service provider for everything related to ejercicios

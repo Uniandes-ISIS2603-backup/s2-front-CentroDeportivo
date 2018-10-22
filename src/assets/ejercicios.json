@@ -1,0 +1,11 @@
+[{
+        "type": "ejercicioDetailDTO",
+        "id": 2,
+        "nombre": "peso Muerto",
+        "categoria": "relajacion",
+        "duracion": 2,
+        "numeroDeSeries": 3,
+        "descripcion": "Ejercicio de relajacion que relaja la espalda",
+        "explicacion": "Levantar el peso y luego soltarlo"
+}]
+    
