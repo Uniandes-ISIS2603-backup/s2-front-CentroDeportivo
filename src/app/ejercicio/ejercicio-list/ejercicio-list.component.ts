@@ -8,6 +8,7 @@ import { EjercicioService } from '../ejercicio.service';
 @Component({
     selector: 'app-ejercicio-list',
     templateUrl: './ejercicio-list.component.html', 
+    styleUrls: ['./ejercicio-list.component.css']
 })
 export class EjercicioListComponent implements OnInit {
 
@@ -15,9 +16,7 @@ export class EjercicioListComponent implements OnInit {
      * Constructor for the component
      * @param ejercicioService The author's services provider
      */
-    constructor(
-    private ejercicioService: EjercicioService
-    ) { }
+    constructor( private ejercicioService: EjercicioService) { }
     
     /**
      * The list of ejercicios which belong to the BookStore
@@ -37,6 +36,6 @@ export class EjercicioListComponent implements OnInit {
      * This method will be called when the component is created
      */
     ngOnInit() {
-//        this.getEjercicios();
+         this.getEjercicios();
     }
 }

@@ -5,7 +5,7 @@ import { Zonacuerpo } from './zonacuerpo';
 import { Observable } from 'rxjs';
 
 const API_URL = "../../assets/";
-const zonascuerpo = 'zonascuerpo.json';
+const zonascuerpo = 'zonacuerpos.json';
 
 /**
 * The service provider for everything related to zonascuerpo

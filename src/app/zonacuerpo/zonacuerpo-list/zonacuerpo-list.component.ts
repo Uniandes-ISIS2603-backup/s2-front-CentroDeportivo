@@ -8,6 +8,7 @@ import { ZonacuerpoService } from '../zonacuerpo.service';
 @Component({
     selector: 'app-zonacuerpo-list',
     templateUrl: './zonacuerpo-list.component.html', 
+    styleUrls: ['./zonacuerpo-list.component.css']
 })
 export class ZonacuerpoListComponent implements OnInit {
 
@@ -15,9 +16,7 @@ export class ZonacuerpoListComponent implements OnInit {
      * Constructor for the component
      * @param zonacuerpoService The author's services provider
      */
-    constructor(
-//    private zonacuerpoService: ZonacuerpoService
-    ) { }
+    constructor(private zonacuerpoService: ZonacuerpoService) { }
     
     /**
      * The list of zonacuerpos which belong to the BookStore
@@ -27,15 +26,15 @@ export class ZonacuerpoListComponent implements OnInit {
     /**
      * Asks the service to update the list of zonacuerpos
      */
-//    getZonacuerpos(): void {
-////        this.zonacuerpoService.getZonacuerpos().subscribe(zonacuerpos => this.zonacuerpos = zonacuerpos);
-//    }
+    getZonacuerpos(): void {
+       this.zonacuerpoService.getZonacuerpos().subscribe(zonacuerpos => this.zonacuerpos = zonacuerpos);
+    }
 
     /**
      * This will initialize the component by retrieving the list of zonacuerpos from the service
      * This method will be called when the component is created
      */
     ngOnInit() {
-//        this.getZonacuerpos();
+       this.getZonacuerpos();
     }
 }
