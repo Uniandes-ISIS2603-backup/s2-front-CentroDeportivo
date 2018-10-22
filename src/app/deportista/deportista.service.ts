@@ -14,6 +14,6 @@ export class DeportistaService {
   constructor(private http: HttpClient) { }
   
   getDeportistas() : Observable<Deportista[]>{
-      return this.http.get<Deportista[]>(API_URL + deportistas)
+      return this.http.get<Deportista[]>(API_URL + deportistas);
   }
 }
