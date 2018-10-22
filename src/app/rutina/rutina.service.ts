@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { Rutina } from './rutina';
 
 const API_URL = "../../assets/";
-const rutinas = 'especialitsas.json';
+const rutinas = 'rutinas.json';
 
 @Injectable(
  //{providedIn: 'root'}
