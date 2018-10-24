@@ -3,10 +3,12 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Zonacuerpo } from './zonacuerpo';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
+//const API_URL = "../../assets/";
+//const zonascuerpo = 'zonacuerpos.json';
 
-const API_URL = "../../assets/";
-const zonascuerpo = 'zonacuerpos.json';
-
+const API_URL = environment.apiURL;
+const zonascuerpo = '/zonasCuerpo';
 /**
 * The service provider for everything related to zonascuerpo
 */
