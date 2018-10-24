@@ -23,12 +23,12 @@ export class MaquinaListComponent implements OnInit {
   /**
    * Obtiene el servicio para actualizar la lista de maquinas
    */
-   getEditorials(): void {
+   getMaquinas(): void {
         this.maquinaService.getMaquinas().subscribe(maquinas => this.maquinas = maquinas);
     }
    
   ngOnInit() {
-      this.getEditorials();
+      this.getMaquinas();
   }
 
 }

@@ -4,8 +4,10 @@ import { HttpClient } from '@angular/common/http';
 
 import { Maquina } from './maquina';
 
-const API_URL = "../../assets/";
-const maquinas = 'maquinas.json';
+import {environment} from '../../environments/environment';
+const API_URL = environment.apiURL;
+const maquinas = '/maquinas';
+
 
 @Injectable(
 //{ providedIn: 'root'}
