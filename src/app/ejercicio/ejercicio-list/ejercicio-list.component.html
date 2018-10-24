@@ -13,12 +13,13 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor = "let ejercicio of ejercicios">                   
-                    <td >{{ejercicio.nombre}}</td>
-                    <td >{{ejercicio.categoria}}</td>
-                    <td >{{ejercicio.duracion}}</td>
-                    <td >{{ejercicio.numeroDeSeries}}</td>
-                    <td >{{ejercicio.descripcion}}</td>
+                <tr *ngFor = "let ejercicio of ejercicios">
+                    <td>{{ejercicio.id}}</td>
+                    <td>{{ejercicio.nombre}}</td>
+                    <td>{{ejercicio.categoria}}</td>
+                    <td>{{ejercicio.duracion}}</td>
+                    <td>{{ejercicio.numeroDeSeries}}</td>
+                    <td>{{ejercicio.descripcion}}</td>
                     <td>{{ejercicio.explicacion}}</td>
                 </tr>
             </tbody>
