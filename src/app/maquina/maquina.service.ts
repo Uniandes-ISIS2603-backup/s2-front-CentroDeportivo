@@ -3,6 +3,8 @@ import { Observable} from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 import { Maquina } from './maquina';
+import {MaquinaDetail} from './maquina-detail';
+
 
 import {environment} from '../../environments/environment';
 const API_URL = environment.apiURL;
@@ -18,5 +20,9 @@ export class MaquinaService {
   
   getMaquinas() : Observable<Maquina[]> {
         return this.http.get<Maquina[]>(API_URL + maquinas);
+    }
+    
+  getMaquinaDetail(maquinaId): Observable<MaquinaDetail> {
+        return this.http.get<MaquinaDetail>(API_URL + maquinas + '/' + maquinaId);
     }
 }

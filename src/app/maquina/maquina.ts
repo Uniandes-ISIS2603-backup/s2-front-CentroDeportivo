@@ -1,5 +1,5 @@
 
-export interface Maquina {
+export class Maquina {
 
     
     /**
