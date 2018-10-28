@@ -11,7 +11,9 @@
             </thead>
             <tbody>
                 <tr *ngFor = "let especialista of especialistas">
-                    <td>{{especialista.id}}</td>
+                    <td style="cursor: pointer;">
+                        <dd class="figure-caption" routerLink="/especialistas/{{especialista.id}}">{{especialista.id}}</dd>
+                    </td>
                     <td>{{especialista.nombre}}</td>
                     <td>{{especialista.Especialidad}}</td>
                     <td>{{especialista.Cedula}}</td>

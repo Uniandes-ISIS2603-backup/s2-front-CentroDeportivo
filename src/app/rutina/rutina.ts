@@ -1,4 +1,4 @@
-export interface Rutina {
+export class Rutina {
     id: number;
     identificadorRutina: number;
     nombre: string;

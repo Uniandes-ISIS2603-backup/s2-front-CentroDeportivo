@@ -3,19 +3,26 @@ import { Observable} from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 import { Especialista } from './especialista';
+import {EspecialistaDetail} from './especialista-detail';
 
-const API_URL = "../../assets/";
-const especialistas = 'especialistas.json';
+
+import {environment} from '../../environments/environment';
+const API_URL = environment.apiURL;
+const especialistas = '/especialistas';
+
 
 @Injectable(
- //{providedIn: 'root'}
- )
+//{ providedIn: 'root'}
+)
 export class EspecialistaService {
 
   constructor( private http: HttpClient) { }
   
-   getEspecialistas() : Observable<Especialista[]> {
+  getEspecialistas() : Observable<Especialista[]> {
         return this.http.get<Especialista[]>(API_URL + especialistas);
     }
     
+  getEspecialistaDetail(especialistaId): Observable<EspecialistaDetail> {
+        return this.http.get<EspecialistaDetail>(API_URL + especialistas + '/' + especialistaId);
+    }
 }

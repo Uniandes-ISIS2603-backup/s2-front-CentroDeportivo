@@ -1,4 +1,4 @@
-export interface Especialista {
+export class Especialista {
        /**
     * El id del especialista
     */

@@ -5,12 +5,14 @@ import { EspecialistaListComponent } from './especialista-list/especialista-list
 import { EspecialistaService } from './especialista.service';
 import { FormsModule } from '@angular/forms';
 
+import { EspecialistaDetailComponent } from './especialista-detail/especialista-detail.component';
+
 @NgModule({
   imports: [
     CommonModule,
       FormsModule
   ],
-  declarations: [EspecialistaListComponent],
+  declarations: [EspecialistaListComponent, EspecialistaDetailComponent],
   providers: [EspecialistaService],
   exports: [EspecialistaListComponent]
 })

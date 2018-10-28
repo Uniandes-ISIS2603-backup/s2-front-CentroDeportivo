@@ -11,7 +11,9 @@
             </thead>
             <tbody>
                 <tr *ngFor = "let rutina of rutinas">
-                    <td>{{rutina.id}}</td>
+                    <td style="cursor: pointer;">
+                        <dd class="figure-caption" routerLink="/rutinas/{{rutina.id}}">{{rutina.id}}</dd>
+                    </td>
                     <td>{{rutina.identificadorRutina}}</td>
                     <td>{{rutina.nombre}}</td>
                     <td>{{rutina.estadoTerminado}}</td>
