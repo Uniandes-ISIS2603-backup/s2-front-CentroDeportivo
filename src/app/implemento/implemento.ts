@@ -1,4 +1,4 @@
-export interface Implemento {
+export class Implemento {
     /**
     * El id del implemento
     */

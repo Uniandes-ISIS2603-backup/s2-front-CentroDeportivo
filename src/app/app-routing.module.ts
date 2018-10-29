@@ -6,6 +6,7 @@ import{DeportistaListComponent} from './deportista/deportista-list/deportista-li
 import{EjercicioListComponent} from './ejercicio/ejercicio-list/ejercicio-list.component';
 import{EspecialistaListComponent} from './especialista/especialista-list/especialista-list.component';
 import{ImplementoListComponent} from './implemento/implemento-list/implemento-list.component';
+import {ImplementoDetailComponent} from './implemento/implemento-detail/implemento-detail.component';
 import{MaquinaListComponent} from './maquina/maquina-list/maquina-list.component';
 import {MaquinaDetailComponent} from './maquina/maquina-detail//maquina-detail.component';
 import{ObjetivoListComponent} from './objetivo/objetivo-list/objetivo-list.component';
@@ -47,6 +48,10 @@ const routes: Routes =
             {
                 path: 'list',
                 component: ImplementoListComponent
+            },
+            {
+                path: 'id',
+                component: ImplementoDetailComponent
             }
         ]
     },

@@ -9,8 +9,12 @@
             </thead>
             <tbody>
                 <tr *ngFor = "let implemento of implementos">
-                    <td>{{implemento.id}}</td>
-                    <td>{{implemento.nombre}}</td>
+                    <td style="cursor: pointer;">
+                        <dd class="figure-caption" routerLink="/implementos/2">{{implemento.id}}</dd>
+                    </td>
+                    <td style="cursor: pointer;">
+                        <dd class="figure-caption" routerLink="/implementos/2">{{implemento.nombre}}</dd>
+                    </td>
                 </tr>
             </tbody>
         </table>
