@@ -50,7 +50,7 @@ const routes: Routes =
                 component: ImplementoListComponent
             },
             {
-                path: 'id',
+                path: ':id',
                 component: ImplementoDetailComponent
             }
         ]
