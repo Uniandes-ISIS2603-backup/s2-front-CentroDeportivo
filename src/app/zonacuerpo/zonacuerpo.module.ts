@@ -4,13 +4,14 @@ import { ZonacuerpoListComponent } from './zonacuerpo-list/zonacuerpo-list.compo
 
 import { ZonacuerpoService } from './zonacuerpo.service';
 import { FormsModule } from '@angular/forms';
+import { ZonacuerpoDetailComponent } from './zonacuerpo-detail/zonacuerpo-detail.component';
 
 @NgModule({
     imports: [       
         CommonModule,
         FormsModule
     ],
-    declarations: [ZonacuerpoListComponent],
+    declarations: [ZonacuerpoListComponent, ZonacuerpoDetailComponent],
     providers: [ZonacuerpoService],
     exports:[ZonacuerpoListComponent]
 })

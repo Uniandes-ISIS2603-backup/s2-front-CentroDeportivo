@@ -26,6 +26,9 @@ export class ZonacuerpoService {
         return this.http.get<Zonacuerpo[]>(API_URL + zonascuerpo);
     }
     
+     getZonacuerpoDetail(ejercicioId): Observable<Zonacuerpo> {
+        return this.http.get<Zonacuerpo>(API_URL + zonascuerpo + '/' + ejercicioId);
+    }
 }
 
 

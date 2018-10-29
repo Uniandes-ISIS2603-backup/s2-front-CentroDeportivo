@@ -1,4 +1,4 @@
-export interface Zonacuerpo{
+export class Zonacuerpo{
       id: number;
     
       nombre: String;
