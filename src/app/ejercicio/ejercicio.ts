@@ -1,9 +1,9 @@
-export interface Ejercicio{
+export class Ejercicio{
       id: number;
     
       nombre: String;
     
-      categoria:String ;
+      categoria:String;
     
       duracion: number;
     

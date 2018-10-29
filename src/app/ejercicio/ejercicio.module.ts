@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { EjercicioListComponent } from './ejercicio-list/ejercicio-list.component';
+import { EjercicioDetailComponent } from './ejercicio-detail/ejercicio-detail.component';
 
 import { EjercicioService } from './ejercicio.service';
 import { FormsModule } from '@angular/forms';
@@ -10,7 +11,7 @@ import { FormsModule } from '@angular/forms';
         CommonModule,
         FormsModule
     ],
-    declarations: [EjercicioListComponent],
+    declarations: [EjercicioListComponent, EjercicioDetailComponent],
     providers: [EjercicioService],
     exports:[EjercicioListComponent]
 })

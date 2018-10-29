@@ -29,14 +29,13 @@ export class EjercicioService {
     constructor(private http: HttpClient) { }
     
   
-    getEjercicios() : Observable<Ejercicio[]> {
-        
-        return this.http.get<Ejercicio[]>(API_URL + ejercicios);
-        
+    getEjercicios() : Observable<Ejercicio[]> {       
+        return this.http.get<Ejercicio[]>(API_URL + ejercicios);        
     }
-//     getEjercicio(authorId): Observable<Ejercicio> {
-//        return this.http.get<Ejercicio>(API_URL + ejercicios + '/' + authorId, { headers: this.headers });
-//    }
+    
+    getEjercicioDetail(ejercicioId): Observable<Ejercicio> {
+        return this.http.get<Ejercicio>(API_URL + ejercicios + '/' + ejercicioId);
+    }
     
 }
 
