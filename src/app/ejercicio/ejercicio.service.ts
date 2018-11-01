@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { Ejercicio } from './ejercicio';
+import {EjercicioDetail} from './ejercicio-detail';
 
 import { environment } from '../../environments/environment';
 
@@ -26,15 +27,18 @@ export class EjercicioService {
     * Constructor of the service
     * @param http The HttpClient - This is necessary in order to perform requests
     */
-    constructor(private http: HttpClient) { }
-    
+    constructor( private http: HttpClient) { }
   
-    getEjercicios() : Observable<Ejercicio[]> {       
-        return this.http.get<Ejercicio[]>(API_URL + ejercicios);        
+  getEjercicios() : Observable<Ejercicio[]> {
+        return this.http.get<Ejercicio[]>(API_URL + ejercicios);
     }
     
-    getEjercicioDetail(ejercicioId): Observable<Ejercicio> {
-        return this.http.get<Ejercicio>(API_URL + ejercicios + '/' + ejercicioId);
+  getEjercicioDetail(ejercicioId): Observable<EjercicioDetail> {
+        return this.http.get<EjercicioDetail>(API_URL + ejercicios + '/' + ejercicioId);
+    }
+    
+  createEjercicio(ejercicio): Observable<Ejercicio> {
+        return this.http.post<Ejercicio>(API_URL + ejercicios, ejercicio);
     }
     
 }

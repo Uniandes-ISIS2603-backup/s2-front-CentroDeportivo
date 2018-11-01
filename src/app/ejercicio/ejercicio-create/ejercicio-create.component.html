@@ -1,0 +1,64 @@
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+        <br>
+        <h2 class="text-center">Registrar una ejercicio</h2>
+        <br>
+        <form name="ejercicio" (ngSubmit)="f.form.valid && createEjercicio()" #f="ngForm" novalidate>
+            <div class="form-group">
+                <label for="ejercicioName"><b>Nombre</b></label>
+                <input type="text" name="ejercicioName" class="form-control" id="ejercicioName" [(ngModel)]="ejercicio.nombre"
+                    #ejercicioName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && ejercicioName.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Debe llenar el campo Nombre</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="ejercicioCategoria"><b>Categoria</b></label>
+                <input type="text" name="ejercicioCategoria" class="form-control" id="ejercicioCategoria" [(ngModel)]="ejercicio.categoria"
+                    #ejercicioCategoria="ngModel" [ngClass]="{ 'is-invalid': f.submitted && ejercicioCategoria.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Debe llenar el campo Categoria</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="ejercicioTiempo"><b>Numero De Series</b></label>
+                <input type="number" name="ejercicioTiempo" class="form-control" id="ejercicioTiempo" [(ngModel)]="ejercicio.numeroDeSeries"
+                    #ejercicioTiempo="ngModel" [ngClass]="{ 'is-invalid': f.submitted && ejercicioTiempo.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Debe llenar el campo Numero De Series</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="ejercicioDuracion"><b>Duracion Quemadas</b></label>
+                <input type="number" name="ejercicioDuracion" class="form-control" id="ejercicioDuracion" [(ngModel)]="ejercicio.duracion"
+                    #ejercicioDuracion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && ejercicioDuracion.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Debe llenar el campo Duracion Quemadas</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="ejercicioCategoria"><b>Descripcion</b></label>
+                <input type="number" name="ejercicioDescripcion" class="form-control" id="ejercicioCategoria" [(ngModel)]="ejercicio.descripcion"
+                    #ejercicioDescripcion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && ejercicioDescripcion.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Debe llenar el campo Descripcion</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="ejercicioDescripcionPromedio"><b>Explicacion</b></label>
+                <input type="text" name="ejercicioDescripcionPromedio" class="form-control" id="ejercicioDescripcionPromedio" [(ngModel)]="ejercicio.explicacion"
+                    #ejercicioDescripcionPromedio="ngModel" [ngClass]="{ 'is-invalid': f.submitted && ejercicioDescripcionPromedio.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Debe llenar el campo Explicacion</div>
+                </div>
+            </div>
+            <div class="row form-inline justify-content-center align-self-center">
+                <button type="submit" class="btn btn-primary">Create</button>
+                <div class="divider"></div>
+                <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancel</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-3"></div>
+</div>

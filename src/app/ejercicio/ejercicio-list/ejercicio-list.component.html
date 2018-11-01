@@ -1,5 +1,11 @@
-<div class="container-fluid">
+    <div class="container-fluid">
     <div class="col-md-6">
+        <br>
+            <div class="row justify-content-center align-self-center">
+                <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
+                    (click)="showHideCreate()">Registrar un ejercicio</button>
+            </div>
+            <br>
         <table class="table table-striped">
             <thead class="thead-dark">
                 <tr>
@@ -14,15 +20,31 @@
             </thead>
             <tbody>
                 <tr *ngFor = "let ejercicio of ejercicios">
-                    <td>{{ejercicio.id}}</td>
-                    <td>{{ejercicio.nombre}}</td>
-                    <td>{{ejercicio.categoria}}</td>
-                    <td>{{ejercicio.duracion}}</td>
-                    <td>{{ejercicio.numeroDeSeries}}</td>
-                    <td>{{ejercicio.descripcion}}</td>
-                    <td>{{ejercicio.explicacion}}</td>
+                    <td style="cursor: pointer;">
+                        <dd class="figure-caption" routerLink="/ejercicios/{{ejercicio.id}}">{{ejercicio.id}}</dd>
+                    </td>
+                    <td style="cursor: pointer;">
+                        <dd class="figure-caption" routerLink="/ejercicios/{{ejercicio.id}}">{{ejercicio.nombre}}</dd>
+                    </td>
+                    <td style="cursor: pointer;">
+                       <dd class="figure-caption" routerLink="/ejercicios/{{ejercicio.id}}">{{ejercicio.categoria}}</dd> 
+                    </td>
+                    <td style="cursor: pointer;">
+                     <dd class="figure-caption" routerLink="/ejercicios/{{ejercicio.id}}">{{ejercicio.duracion}}</dd> 
+                    </td>
+                    <td style= "cursor: pointer;">
+                      <dd class="figure-caption" routerLink="/ejercicios/{{ejercicio.id}}">{{ejercicio.numeroDeSeries}}</dd>                         
+                    </td>
+                    <td style= "cursor: pointer;">
+                       <dd class="figure-caption" routerLink="/ejercicios/{{ejercicio.id}}">{{ejercicio.descripcion}}</dd>                                         
+                    </td>                    
+                    <td style="cursor: pointer;">
+                         <dd class="figure-caption" routerLink="/ejercicios/{{ejercicio.id}}">{{ejercicio.explicacion}}</dd>                         
+                
+                    </td>
                 </tr>
             </tbody>
         </table>
     </div>
+    
 </div>
