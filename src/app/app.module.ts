@@ -4,6 +4,8 @@ import { HttpClientModule } from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
 import {AppRoutingModule} from './app-routing.module';
+import { ToastrModule } from 'ngx-toastr';
+import { ModalDialogModule } from 'ngx-modal-dialog';
 
 import { MaquinaModule } from './maquina/maquina.module';
 import { ImplementoModule } from './implemento/implemento.module';
@@ -30,7 +32,12 @@ import { RutinaModule } from './rutina/rutina.module';
     EspecialistaModule,
     RutinaModule,
     EjercicioModule,
-    ZonacuerpoModule
+    ZonacuerpoModule,
+    ToastrModule.forRoot({
+            timeOut: 10000,
+            positionClass: 'toast-bottom-right',
+            preventDuplicates: true,
+})
     
   ],
   providers: [],

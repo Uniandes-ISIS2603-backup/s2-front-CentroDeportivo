@@ -1,5 +1,9 @@
-<div class="container-fluid">
+<!--<div class="container-fluid">
     <div class="col-md-2">
+        <div class="row justify-content-center align-self-center">
+                <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
+                    (click)="showHideCreate()">Crear una maquina</button>
+            </div>
         <table class="table table-striped">
             <thead class="thead-dark">
                 <tr>
@@ -26,5 +30,63 @@
                 </tr>
             </tbody>
         </table>
+    </div>
+    <div class="col-8">
+          <div *ngIf="selectedAuthor">
+              <app-maquina-detail> [maquinaDetail]="selectedMaquina></app-maquina-detail>
+          </div>
+        <div *ngIf="showCreate">
+            <app-maquina-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-maquina-create>
+        </div>
+    </div>
+</div>-->
+  
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-4">
+            <br>
+            <div class="row justify-content-center align-self-center">
+                <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
+                    (click)="showHideCreate()">Registrar una Maquina</button>
+            </div>
+            <br>
+            <br>
+            <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Referencia</th>
+                    <th>Calorias</th>
+                    <th>Tiempo</th>
+                    <th>Velocidad</th>
+                    <th>Velocidad Promedio</th>                  
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor = "let maquina of maquinas">
+                    <td style="cursor: pointer;">
+                        <dd class="figure-caption" routerLink="/maquinas/{{maquina.id}}">{{maquina.id}}</dd>
+                    </td>
+                    <td>{{maquina.nombre}}</td>
+                    <td>{{maquina.referencia}}</td>
+                    <td>{{maquina.calorias}}</td>
+                    <td>{{maquina.tiempo}}</td>
+                    <td>{{maquina.velocidad}}</td>
+                    <td>{{maquina.velocidadPromedio}}</td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+        <div class="col-8">
+          <div *ngIf="selectedAuthor">
+              <app-maquina-detail> [maquinaDetail]="selectedMaquina></app-maquina-detail>
+          </div>
+        <div *ngIf="showCreate">
+            <app-maquina-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-maquina-create>
+        </div>
+    </div>  
     </div>
 </div>

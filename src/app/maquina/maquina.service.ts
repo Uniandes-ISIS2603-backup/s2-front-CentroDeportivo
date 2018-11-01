@@ -25,4 +25,8 @@ export class MaquinaService {
   getMaquinaDetail(maquinaId): Observable<MaquinaDetail> {
         return this.http.get<MaquinaDetail>(API_URL + maquinas + '/' + maquinaId);
     }
+    
+  createMaquina(maquina): Observable<Maquina> {
+        return this.http.post<Maquina>(API_URL + maquinas, maquina);
+    }
 }

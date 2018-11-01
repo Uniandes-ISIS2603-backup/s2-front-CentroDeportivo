@@ -8,6 +8,7 @@ import { MaquinaListComponent } from './maquina-list/maquina-list.component';
 import { MaquinaService } from './maquina.service';
 import { AppRoutingModule } from '../app-routing.module';
 import { MaquinaDetailComponent } from './maquina-detail/maquina-detail.component';
+import { MaquinaCreateComponent } from './maquina-create/maquina-create.component';
 
 @NgModule({
   imports: [
@@ -17,7 +18,7 @@ import { MaquinaDetailComponent } from './maquina-detail/maquina-detail.componen
     CommonModule,
     FormsModule
   ],
-  declarations: [MaquinaListComponent, MaquinaDetailComponent],
+  declarations: [MaquinaListComponent, MaquinaDetailComponent, MaquinaCreateComponent],
   providers: [MaquinaService]
 //  exports: [MaquinaListComponent]
 })
