@@ -1,5 +1,6 @@
     <div class="container-fluid">
-    <div class="col-md-6">
+        <div class="row">
+    <div class="col-4">
         <br>
             <div class="row justify-content-center align-self-center">
                 <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
@@ -13,7 +14,7 @@
                     <th>Nombre</th>
                     <th>Categoria</th>
                     <th>Duracion</th>
-                    <th>NumeroDeSeries</th>
+                    <th>NumSeries</th>
                     <th>Descripcion</th>
                     <th>Explicacion</th>                  
                 </tr>
@@ -46,5 +47,13 @@
             </tbody>
         </table>
     </div>
-    
+    <div class="col-8">
+          <div *ngIf="selectedEjercio">
+              <app-ejercicio-detail> [ejercicioDetail]="selectedEjercicio</app-ejercicio-detail>
+          </div>
+        <div *ngIf="showCreate">
+          <app-ejercicio-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-ejercicio-create>
+       </div>
+    </div> 
 </div>
+        </div>

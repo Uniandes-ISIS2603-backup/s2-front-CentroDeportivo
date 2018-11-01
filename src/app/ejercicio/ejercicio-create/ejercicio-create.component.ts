@@ -37,7 +37,7 @@ export class EjercicioCreateComponent implements OnInit {
             .subscribe((ejercicio) => {
                 this.ejercicio = ejercicio;
                 this.create.emit();
-                this.toastrService.success("La máquina fue creada", "Ejercicio creation");
+                this.toastrService.success("El ejercicio fue creado", "Ejercicio creation");
                 
             });
     return this.ejercicio;
