@@ -1,0 +1,114 @@
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+        <br>
+        <h2 class="text-center">Registrar un deportista</h2>
+        <br>
+        <form name="deportista" (ngSubmit)="f.form.valid && createDeportista()" #f="ngForm" novalidate>
+           
+              
+              
+              
+              
+              
+              
+              
+              
+              
+            <div class="form-group">
+                <label for="deportistaNombre"><b>Nombre</b></label>
+                <input type="text" name="deportistaNombre" class="form-control" id="deportistaNombre" [(ngModel)]="deportista.nombre"
+                    #deportistaNombre="ngModel" [ngClass]="{ 'is-invalid': f.submitted && deportistaNombre.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Debe llenar el campo Nombre</div>
+                </div>
+            </div>
+           <div class="form-group">
+                <label for="deportistaCedula"><b>Cédula</b></label>
+                <input type="text" name="deportistaCedula" class="form-control" id="deportistaCedula" [(ngModel)]="deportista.cedula"
+                    #deportistaCedula="ngModel" [ngClass]="{ 'is-invalid': f.submitted && deportistaCedula.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Debe llenar el campo de la cédula</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="deportistaSexo"><b>Género</b></label>
+                <input type="text" name="deportistaSexo" class="form-control" id="deportistaSexo" [(ngModel)]="deportista.sexo"
+                    #deportistaSexo="ngModel" [ngClass]="{ 'is-invalid': f.submitted && deportistaSexo.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Debe llenar el campo de la cédula</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="deportistaAltura"><b>Altura</b></label>
+                <input type="text" name="deportistaAltura" class="form-control" id="deportistaAltura" [(ngModel)]="deportista.altura"
+                    #deportistaAltura="ngModel" [ngClass]="{ 'is-invalid': f.submitted && deportistaAltura.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Debe llenar el campo de la altura</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="deportistaPresionSanguinea"><b>Presión sanguínea</b></label>
+                <input type="text" name="deportistaPresionSanguinea" class="form-control" id="deportistaPresionSanguinea" [(ngModel)]="deportista.presionSanguinea"
+                    #deportistaPresionSanguinea="ngModel" [ngClass]="{ 'is-invalid': f.submitted && deportistaPresionSanguinea.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Debe llenar el campo de la presión sanguínea</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="deportistaPeso"><b>Peso</b></label>
+                <input type="text" name="deportistaPeso" class="form-control" id="deportistaPeso" [(ngModel)]="deportista.peso"
+                    #deportistaPeso="ngModel" [ngClass]="{ 'is-invalid': f.submitted && deportistaPeso.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Debe llenar el campo del peso</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="deportistaRitmoCardiaco"><b>Ritmo cardíaco</b></label>
+                <input type="text" name="deportistaRitmoCardiaco" class="form-control" id="deportistaRitmoCardiaco" [(ngModel)]="deportista.ritmocardiaco"
+                    #deportistaRitmoCardiaco="ngModel" [ngClass]="{ 'is-invalid': f.submitted && deportistaRitmoCardiaco.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Debe llenar el campo del ritmo cardíaco</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="deportistaMedidaPiernas"><b>Medida de las piernas</b></label>
+                <input type="text" name="deportistaMedidaPiernas" class="form-control" id="deportistaMedidaPiernas" [(ngModel)]="deportista.medidaPiernas"
+                    #deportistaMedidaPiernas="ngModel" [ngClass]="{ 'is-invalid': f.submitted && deportistaMedidaPiernas.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Debe llenar el campo de la medida de las piernas</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="deportistaMedidaCintura"><b>Medida de la cintura</b></label>
+                <input type="text" name="deportistaMedidaCintura" class="form-control" id="deportistaMedidaCintura" [(ngModel)]="deportista.medidaCintura"
+                    #deportistaMedidaCintura="ngModel" [ngClass]="{ 'is-invalid': f.submitted && deportistaMedidaCintura.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Debe llenar el campo de la medida de la cintura</div>
+                </div>
+            </div>
+              <div class="form-group">
+                <label for="deportistaMedidaBrazos"><b>Medida de los brazos</b></label>
+                <input type="text" name="deportistaMedidaBrazos" class="form-control" id="deportistaMedidaBrazos" [(ngModel)]="deportista.medidaBrazos"
+                    #deportistaMedidaBrazos="ngModel" [ngClass]="{ 'is-invalid': f.submitted && deportistaMedidaBrazos.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Debe llenar el campo de la medida de los brazos</div>
+                </div>
+            </div>
+             <div class="form-group">
+                <label for="deportistaFechaNacimiento"><b>Fecha de nacimiento</b></label>
+                <input type="text" name="deportistaFechaNacimiento" class="form-control" id="deportistaFechaNacmiento" [(ngModel)]="deportista.fechaNacimiento"
+                    #deportistaFechaNacimiento="ngModel" [ngClass]="{ 'is-invalid': f.submitted && deportistaFechaNacimiento.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Debe llenar el campo de la fecha de nacimiento</div>
+                </div>
+            </div> 
+              
+              
+              
+              
+              
+        </form>
+    </div>
+    <div class="col-3"></div>
+</div>

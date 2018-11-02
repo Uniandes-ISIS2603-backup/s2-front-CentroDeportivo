@@ -1,0 +1,43 @@
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+        <br>
+        <h2 class="text-center">Registrar un objetivo</h2>
+        <br>
+        <form name="objetivo" (ngSubmit)="f.form.valid && createObjetivo()" #f="ngForm" novalidate>
+           
+              
+             
+            <div class="form-group">
+                <label for="objetivoFechaLimite"><b>Fecha límite</b></label>
+                <input type="text" name="objetivoFechaLimite" class="form-control" id="objetivoFechaLimite" [(ngModel)]="objetivo.fechaLimite"
+                    #objetivoFechaLimite="ngModel" [ngClass]="{ 'is-invalid': f.submitted && objetivoFechaLimite.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Debe llenar el campo fecha límite</div>
+                </div>
+            </div>
+              <div class="form-group">
+                <label for="objetivoDescripcion"><b>Descripción</b></label>
+                <input type="text" name="objetivoDescripcion" class="form-control" id="objetivoDescripcion" [(ngModel)]="objetivo.descripcion"
+                    #objetivoDescripcion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && objetivoDescripcion.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Debe llenar el campo descripción</div>
+                </div>
+            </div>
+              <div class="form-group">
+                <label for="objetivoCumplio"><b>Estado</b></label>
+                <input type="text" name="objetivoCumplio" class="form-control" id="objetivoCumplio" [(ngModel)]="objetivo.cumplio"
+                    #objetivoCumplio="ngModel" [ngClass]="{ 'is-invalid': f.submitted && objetivoCumplio.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Debe llenar el campo estado</div>
+                </div>
+            </div>
+              
+              
+              
+              
+              
+        </form>
+    </div>
+    <div class="col-3"></div>
+</div>

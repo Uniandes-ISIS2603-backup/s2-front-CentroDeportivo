@@ -4,13 +4,15 @@ import { DeportistaListComponent } from './deportista-list/deportista-list.compo
 
 import { FormsModule } from '@angular/forms';
 import { DeportistaService } from './deportista.service';
+import { DeportistaDetailComponent } from './deportista-detail/deportista-detail.component';
+import { DeportistaCreateComponent } from './deportista-create/deportista-create.component';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule
   ],
-  declarations: [DeportistaListComponent],
+  declarations: [DeportistaListComponent, DeportistaDetailComponent, DeportistaCreateComponent],
   providers: [DeportistaService],
   exports: [DeportistaListComponent]
 })

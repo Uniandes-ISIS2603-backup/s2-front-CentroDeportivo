@@ -1,4 +1,4 @@
-export interface Deportista {
+export class Deportista {
     nombre: string;
     cedula:number;
     genero:boolean;
