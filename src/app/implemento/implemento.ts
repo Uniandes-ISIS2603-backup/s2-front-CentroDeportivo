@@ -8,4 +8,9 @@ export class Implemento {
     * El nombre del implemento
     */
     nombre: string; 
+    
+    /**
+    * La cantidad de existencias del implemento
+    */
+    cantidadExistencias: number;
 }

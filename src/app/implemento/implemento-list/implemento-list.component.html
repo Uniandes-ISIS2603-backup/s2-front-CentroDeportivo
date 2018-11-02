@@ -12,7 +12,8 @@
             <thead class="thead-dark">
                 <tr>
                     <th>Id</th>
-                    <th>Nombre</th>              
+                    <th>Nombre</th>
+                    <th>Cantidad de existencias</th>              
                 </tr>
             </thead>
             <tbody>
@@ -21,6 +22,7 @@
                         <dd class="figure-caption" routerLink="/implementos/{{implemento.id}}">{{implemento.id}}</dd>
                     </td>
                     <td>{{implemento.nombre}}</td>
+                    <td>{{implemento.cantidadExistencias}}</td>
                     <!--><td id="implemento-edit">
                             <button [ngClass]="{ 'btn-primary': (!showEdit || edit_implemento_id != implemento.id), 'btn-danger': (showEdit && edit_implemento_id == implemento.id) }"
                                 type="button" class="btn" (click)="showEditImplemento(implemento.id)">Editar</button>
