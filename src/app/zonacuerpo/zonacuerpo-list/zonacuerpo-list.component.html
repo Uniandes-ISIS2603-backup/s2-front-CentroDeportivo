@@ -1,18 +1,38 @@
-<div class="container-fluid">
-    <div class="col-md-2">
+    <div class="container-fluid">
+        <div class="row">
+    <div class="col-4">
+        <br>
+            <div class="row justify-content-center align-self-center">
+                <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
+                    (click)="showHideCreate()">Registrar un zonacuerpo</button>
+            </div>
+            <br>
         <table class="table table-striped">
             <thead class="thead-dark">
                 <tr>
                     <th>Id</th>
-                    <th>Nombre</th>
-                 </tr>
+                    <th>Nombre</th>                         
+                </tr>
             </thead>
             <tbody>
                 <tr *ngFor = "let zonacuerpo of zonacuerpos">
-                    <td>{{zonacuerpo.id}}</td>
-                    <td>{{zonacuerpo.nombre}}</td>
-                    </tr>
+                    <td style="cursor: pointer;">
+                        <dd class="figure-caption" routerLink="/zonascuerpo/{{zonacuerpo.id}}">{{zonacuerpo.id}}</dd>
+                    </td>
+                    <td style="cursor: pointer;">
+                        <dd class="figure-caption" routerLink="/zonascuerpo/{{zonacuerpo.id}}">{{zonacuerpo.nombre}}</dd>
+                    </td>      
+                </tr>
             </tbody>
         </table>
     </div>
+    <div class="col-8">
+          <div *ngIf="selectedEjercio">
+              <app-zonacuerpo-detail> [zonacuerpoDetail]="selectedZonacuerpo</app-zonacuerpo-detail>
+          </div>
+        <div *ngIf="showCreate">
+          <app-zonacuerpo-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-zonacuerpo-create>
+       </div>
+    </div> 
 </div>
+        </div>

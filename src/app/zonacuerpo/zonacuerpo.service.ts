@@ -26,8 +26,12 @@ export class ZonacuerpoService {
         return this.http.get<Zonacuerpo[]>(API_URL + zonascuerpo);
     }
     
-     getZonacuerpoDetail(ejercicioId): Observable<Zonacuerpo> {
-        return this.http.get<Zonacuerpo>(API_URL + zonascuerpo + '/' + ejercicioId);
+     getZonacuerpoDetail(zonacuerpoId): Observable<Zonacuerpo> {
+        return this.http.get<Zonacuerpo>(API_URL + zonascuerpo + '/' + zonacuerpoId);
+    }
+    
+    createZonacuerpo(zonacuerpo): Observable<Zonacuerpo> {
+        return this.http.post<Zonacuerpo>(API_URL + zonascuerpo, zonacuerpo);
     }
 }
 

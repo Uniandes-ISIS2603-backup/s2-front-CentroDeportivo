@@ -13,6 +13,7 @@ import{ObjetivoListComponent} from './objetivo/objetivo-list/objetivo-list.compo
 import{RutinaListComponent} from './rutina/rutina-list/rutina-list.component';
 import{ZonacuerpoListComponent} from './zonacuerpo/zonacuerpo-list/zonacuerpo-list.component';
 import {EjercicioDetailComponent} from './ejercicio/ejercicio-detail/ejercicio-detail.component';
+import {ZonacuerpoDetailComponent} from './zonacuerpo/zonacuerpo-detail/zonacuerpo-detail.component';
 
 
 const routes: Routes =
@@ -98,6 +99,11 @@ const routes: Routes =
             {
                 path: 'list',
                 component: ZonacuerpoListComponent
+            },
+            
+            {
+                path: ':id',
+                component: ZonacuerpoDetailComponent
             }
         ]
     }
