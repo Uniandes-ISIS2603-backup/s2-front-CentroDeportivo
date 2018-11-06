@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Objetivo } from './objetivo';
 import { ObjetivoDetail } from './objetivo-detail';
 import { Observable } from 'rxjs';
@@ -11,7 +11,9 @@ const objetivos = '/objetivos';
 @Injectable(
 //    {providedIn: 'root'}
     )
-export class ObjetivoService {
+export class ObjetivoService { headers = new HttpHeaders({
+        'Access-Control-Allow-Origin': '*'
+    });
 
   constructor(private http: HttpClient) { }
   
@@ -21,6 +23,7 @@ export class ObjetivoService {
   }
       getObjetivoDetail(objetivoId): Observable<ObjetivoDetail> {
         return this.http.get<ObjetivoDetail>(API_URL + objetivos + '/' + objetivoId);
+        
     }
       createObjetivo(objetivo): Observable<Objetivo> {
         return this.http.post<Objetivo>(API_URL + objetivos, objetivo);

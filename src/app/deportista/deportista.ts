@@ -1,7 +1,7 @@
 export class Deportista {
     nombre: string;
     cedula:number;
-    genero:boolean;
+    sexo:boolean;
     altura:number;
     presionSanguinea:number;
     peso:number;

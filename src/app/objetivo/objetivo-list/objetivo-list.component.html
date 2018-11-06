@@ -18,16 +18,30 @@
             </thead>
             <tbody>
                  <tr *ngFor = "let objetivo of objetivos">
-                    <td>{{objetivo.descripcion}}</td>
-                    <td>{{objetivo.cumplio}}</td>
-                    <td>{{objetivo.fechaLimite}}</td>
+                    <td style="cursor: pointer;">
+                        <dd class="figure-caption" routerLink="/objetivos/{{objetivo.id}}">{{objetivo.descripcion}}</dd>
+                    </td>
+                    <td style="cursor: pointer;">
+                        <dd class="figure-caption" routerLink="/objetivos/{{objetivo.id}}">{{objetivo.cumplio}}</dd>
+                    </td>
+                    
+                   <td style="cursor: pointer;">
+                        <dd class="figure-caption" routerLink="/objetivos/{{objetivo.id}}">{{objetivo.fechalimite}}</dd>
+                    </td>
+                    
                 </tr>
             </tbody>
         </table>
       </div>
         <div class="col-8">
+        <div *ngIf="selectedObjetivo">
+          <app-objetivo-detail> [objetivoDetail]="selectedObjetivo></app-objetivo-detail>
+        </div>
         <div *ngIf="showCreate">
             <app-objetivo-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-objetivo-create>
         </div>
     </div>
 </div>
+  
+    
+    
