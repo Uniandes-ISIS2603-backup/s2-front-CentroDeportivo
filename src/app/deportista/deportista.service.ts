@@ -8,6 +8,9 @@ import {environment} from '../../environments/environment';
 const API_URL = environment.apiURL;
 const deportistas = '/deportistas';
 
+//const API_URL = "../../assets/";
+//const deportistas = 'deportistas.json';
+
 @Injectable(
 //  {providedIn: 'root'}
 )
