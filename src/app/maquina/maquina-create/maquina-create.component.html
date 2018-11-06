@@ -2,7 +2,7 @@
     <div class="col-3"></div>
     <div class="col-6">
         <br>
-        <h2 class="text-center">Registrar una maquina</h2>
+        <h2 class="text-center">Registrar una máquina</h2>
         <br>
         <form name="maquina" (ngSubmit)="f.form.valid && createMaquina()" #f="ngForm" novalidate>
             <div class="form-group">
@@ -30,11 +30,11 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="maquinaCalorias"><b>Calorias Quemadas</b></label>
+                <label for="maquinaCalorias"><b>Calorías Quemadas</b></label>
                 <input type="number" name="maquinaCalorias" class="form-control" id="maquinaCalorias" [(ngModel)]="maquina.calorias"
                     #maquinaCalorias="ngModel" [ngClass]="{ 'is-invalid': f.submitted && maquinaCalorias.invalid }" required>
                 <div class="invalid-feedback">
-                    <div>Debe llenar el campo Calorias Quemadas</div>
+                    <div>Debe llenar el campo Calorías Quemadas</div>
                 </div>
             </div>
             <div class="form-group">

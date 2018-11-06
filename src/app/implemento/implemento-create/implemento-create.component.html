@@ -2,7 +2,7 @@
     <div class="col-3"></div>
     <div class="col-6">
         <br>
-        <h2 class="text-center">Crear un implemento</h2>
+        <h2 class="text-center">Registrar un implemento</h2>
         <br>
         <form name="implemento" (ngSubmit)="f.form.valid && createImplemento()" #f="ngForm" novalidate>
             <div class="form-group">
@@ -10,15 +10,15 @@
                 <input type="text" name="implementoNombre" class="form-control" id="implementoNombre" [(ngModel)]="implemento.nombre"
                     #implementoNombre="ngModel" [ngClass]="{ 'is-invalid': f.submitted && implementoNombre.invalid }" required>
                 <div class="invalid-feedback">
-                    <div>Se debe llenar el campo nombre</div>
+                    <div>Se debe llenar el campo Nombre</div>
                 </div>
             </div>
             <div class="form-group">
                 <label for="implementoCantidadExistencias"><b>Cantidad de existencias</b></label>
-                <input type="number" name="implementoCantidadExistencias" class="form-control" id="implementoNombre" [(ngModel)]="implemento.cantidadExistencias"
+                <input type="number" name="implementoCantidadExistencias" min="1" class="form-control" id="implementoNombre" [(ngModel)]="implemento.cantidadExistencias"
                     #implementoCantidadExistencias="ngModel" [ngClass]="{ 'is-invalid': f.submitted && implementoCantidadExistencias.invalid }" required>
                 <div class="invalid-feedback">
-                    <div>Se debe llenar el campo cantidad de existencias</div>
+                    <div>Se debe llenar el campo Cantidad de existencias</div>
                 </div>
             </div>
             <div class="row form-inline justify-content-center align-self-center">
