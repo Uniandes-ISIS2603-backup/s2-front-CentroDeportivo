@@ -5,12 +5,14 @@ import {CommonModule} from '@angular/common';
 import{DeportistaListComponent} from './deportista/deportista-list/deportista-list.component';
 import{EjercicioListComponent} from './ejercicio/ejercicio-list/ejercicio-list.component';
 import{EspecialistaListComponent} from './especialista/especialista-list/especialista-list.component';
+import {EspecialistaDetailComponent} from './especialista/especialista-detail//especialista-detail.component';
 import{ImplementoListComponent} from './implemento/implemento-list/implemento-list.component';
 import {ImplementoDetailComponent} from './implemento/implemento-detail/implemento-detail.component';
 import{MaquinaListComponent} from './maquina/maquina-list/maquina-list.component';
-import {MaquinaDetailComponent} from './maquina/maquina-detail//maquina-detail.component';
+import {MaquinaDetailComponent} from './maquina/maquina-detail/maquina-detail.component';
 import{ObjetivoListComponent} from './objetivo/objetivo-list/objetivo-list.component';
 import{RutinaListComponent} from './rutina/rutina-list/rutina-list.component';
+import {RutinaDetailComponent} from './rutina/rutina-detail/rutina-detail.component';
 import{ZonacuerpoListComponent} from './zonacuerpo/zonacuerpo-list/zonacuerpo-list.component';
 import {EjercicioDetailComponent} from './ejercicio/ejercicio-detail/ejercicio-detail.component';
 import {ZonacuerpoDetailComponent} from './zonacuerpo/zonacuerpo-detail/zonacuerpo-detail.component';
@@ -46,6 +48,10 @@ const routes: Routes =
             {
                 path: 'list',
                 component: EspecialistaListComponent
+            },
+            {
+                path: ':id',
+                component: EspecialistaDetailComponent
             }
         ]
     },
@@ -90,6 +96,10 @@ const routes: Routes =
             {
                 path: 'list',
                 component: RutinaListComponent
+            },
+            {
+                path: ':id',
+                component: RutinaDetailComponent
             }
         ]
     },

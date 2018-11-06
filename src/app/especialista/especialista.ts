@@ -4,6 +4,7 @@ export class Especialista {
     */
     id : number;  
     cedula: number;
-    nombre: string;
     especialidad: string;
+    nombre: string;
+    
 }

@@ -1,6 +1,14 @@
 <div class="container-fluid">
-    <div class="col-md-2">
-        <table class="table table-striped">
+    <div class="row">
+        <div class="col-4">
+            <br>
+            <div class="row justify-content-center align-self-center">
+                <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
+                    (click)="showHideCreate()">Registrar un Especialista</button>
+            </div>
+            <br>
+            <br>
+            <table class="table table-striped">
             <thead class="thead-dark">
                 <tr>
                     <th>Id</th>
@@ -12,7 +20,7 @@
             <tbody>
                 <tr *ngFor = "let especialista of especialistas">
                     <td style="cursor: pointer;">
-                        <dd class="figure-caption" routerLink="/especialistas/2">{{especialista.id}}</dd>
+                        <dd class="figure-caption" routerLink="/especialistas/{{especialista.id}}">{{especialista.id}}</dd>
                     </td>
                     <td>{{especialista.nombre}}</td>
                     <td>{{especialista.Especialidad}}</td>
