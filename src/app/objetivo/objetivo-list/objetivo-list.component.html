@@ -1,10 +1,18 @@
-<div class="cointainer-fluid">
-    <div class="col-md-2">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-4">
+        <br>
+           <div class="row justify-content-center align-self-center">
+               <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
+                   (click)="showHideCreate()">Registrar un objetivo</button>
+           </div>
+        <br>
+        <br>
         <table class="table table-striped">
             <thead class ="thead-dark">
                 <tr>
                     <th>Descripción</th>
-                    <th>Cumplió</th>
+                    <th>Cumplio</th>
                     <th>Fecha límite</th>
                 </tr>
             </thead>
@@ -16,5 +24,10 @@
                 </tr>
             </tbody>
         </table>
+      </div>
+        <div class="col-8">
+        <div *ngIf="showCreate">
+            <app-objetivo-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-objetivo-create>
+        </div>
     </div>
 </div>
