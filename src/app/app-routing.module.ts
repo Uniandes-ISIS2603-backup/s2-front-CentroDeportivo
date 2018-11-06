@@ -14,7 +14,8 @@ import{RutinaListComponent} from './rutina/rutina-list/rutina-list.component';
 import{ZonacuerpoListComponent} from './zonacuerpo/zonacuerpo-list/zonacuerpo-list.component';
 import {EjercicioDetailComponent} from './ejercicio/ejercicio-detail/ejercicio-detail.component';
 import {ZonacuerpoDetailComponent} from './zonacuerpo/zonacuerpo-detail/zonacuerpo-detail.component';
-
+import {DeportistaDetailComponent} from './deportista/deportista-detail//deportista-detail.component';
+import {ObjetivoDetailComponent} from './objetivo/objetivo-detail//objetivo-detail.component';
 
 const routes: Routes =
 [
@@ -24,6 +25,10 @@ const routes: Routes =
             {
                 path: 'list',
                 component: DeportistaListComponent
+            },
+            {
+                path: ':id',
+                component: DeportistaDetailComponent
             }
         ]
     },
@@ -81,6 +86,10 @@ const routes: Routes =
             {
                 path: 'list',
                 component: ObjetivoListComponent
+            },
+            {
+                path: ':id',
+                component: ObjetivoDetailComponent
             }
         ]
     },
