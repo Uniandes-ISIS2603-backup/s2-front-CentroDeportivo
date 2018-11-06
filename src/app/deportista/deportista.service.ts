@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Deportista } from './deportista';
 import {DeportistaDetail} from './deportista-detail';
 import { Observable } from 'rxjs';
@@ -14,7 +14,9 @@ const deportistas = '/deportistas';
 @Injectable(
 //  {providedIn: 'root'}
 )
-export class DeportistaService {
+export class DeportistaService {headers = new HttpHeaders({
+        'Access-Control-Allow-Origin': '*'
+    });
 
   constructor(private http: HttpClient) { }
   
