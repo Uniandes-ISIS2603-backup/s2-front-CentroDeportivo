@@ -10,9 +10,29 @@
                 <input type="text" name="especialistaName" class="form-control" id="especialistaName" [(ngModel)]="especialista.name"
                     #especialistaName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && especialistaName.invalid }" required>
                 <div class="invalid-feedback">
-                    <div>The especialista's name is missing</div>
+                    <div>Por favor digite el nombre del especialista</div>
                 </div>
             </div>
+              <div class="form-group">
+                <label for="especialistaEspecialidad"><b>Especialidad</b></label>
+                <input type="text" name="especialistaEspecialidad" class="form-control" id="especialistaEspecialidad" [(ngModel)]="especialista.especialidad"
+                    #especialistaEspecialidad="ngModel" [ngClass]="{ 'is-invalid': f.submitted && especialistaEspecialidad.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Por favor digite la especialidad</div>
+                </div>
+            </div>
+               <div class="form-group">
+                <label for="especialistaCedula"><b>Cedula</b></label>
+                <input type="text" name="especialistaCedula" class="form-control" id="especialistaCedula" [(ngModel)]="especialista.cedula"
+                    #especialistacedula="ngModel" [ngClass]="{ 'is-invalid': f.submitted && especialistacedula.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Por favor digite la cedula</div>
+                </div>
+            </div>
+              
+              
+              
+              
             <div class="row form-inline justify-content-center align-self-center">
                 <button type="submit" class="btn btn-primary">Create</button>
                 <div class="divider"></div>

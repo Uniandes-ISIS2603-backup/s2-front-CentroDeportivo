@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<!--<div class="container-fluid">
     <div class="row">
         <div class="col-4">
             <br>
@@ -11,22 +11,55 @@
             <table class="table table-striped">
             <thead class="thead-dark">
                 <tr>
-                    <th>Id</th>
-                    <th>identificadorRutina</th>
-                    <th>nombre</th>
-                    <th>estadoTerminado</th>     
+                    <th>Nombre de las rutinas</th>    
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor = "let rutina of rutinas">
                     <td style="cursor: pointer;">
-                        <dd class="figure-caption" routerLink="/rutinas/2">{{rutina.id}}</dd>
+                        <dd class="figure-caption" routerLink="/rutinas/{{rutina.id}}">{{rutina.nombre}}</dd>
                     </td>
-                    <td>{{rutina.identificadorRutina}}</td>
-                    <td>{{rutina.nombre}}</td>
-                    <td>{{rutina.estadoTerminado}}</td>
+                   
                 </tr>
             </tbody>
         </table>
+    </div>
+</div>-->
+    
+    
+    <div class="container-fluid">
+    <div class="row">
+        <div class="col-4">
+            <br>
+            <div class="row justify-content-center align-self-center">
+                <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
+                    (click)="showHideCreate()">Registrar una Rutina</button>
+            </div>
+            <br>
+            <br>
+            <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Nombre de las rutinas</th>             
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor = "let rutina of rutinas">
+                    <td style="cursor: pointer;">
+                        <dd class="figure-caption" routerLink="/rutinas/{{rutina.id}}">{{rutina.nombre}}</dd>
+                    </td>
+                   
+                </tr>
+            </tbody>
+        </table>
+        </div>
+        <div class="col-8">
+          <div *ngIf="selectedAuthor">
+              <app-rutina-detail> [rutinaDetail]="selectedRutina></app-rutina-detail>
+          </div>
+        <div *ngIf="showCreate">
+            <app-rutina-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-rutina-create>
+        </div>
+    </div>  
     </div>
 </div>

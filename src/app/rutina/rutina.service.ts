@@ -25,4 +25,12 @@ export class RutinaService {
   getRutinaDetail(rutinaId): Observable<RutinaDetail> {
         return this.http.get<RutinaDetail>(API_URL + rutinas + '/' + rutinaId);
     }
+     /**
+    * Creates an rutina
+    * @param rutina The rutina which will be created
+    * @returns The confirmation of the rutina's creation
+    */
+    createRutina(rutina): Observable<Rutina> {
+        return this.http.post<Rutina>(API_URL + rutinas, rutina);
+    }
 }

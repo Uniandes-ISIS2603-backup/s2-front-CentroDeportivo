@@ -1,3 +1,44 @@
+<!--<div class="container-fluid">
+    <div class="row">
+        <div class="col-4">
+            
+            <div class="row justify-content-center align-self-center">
+                <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
+                    (click)="showHideCreate()">Registrar un Especialista</button>
+            </div>
+            <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    
+                    <th>Nombres De Especialistas</th>
+                                 
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor = "let especialista of especialistas">
+                    <td style="cursor: pointer;">
+                        <dd class="figure-caption" routerLink="/especialistas/{{especialista.id}}">{{especialista.nombre}}</dd>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+            </div>
+           <div class="col-8">
+          <div *ngIf="selectedAuthor">
+              <app-especialista-detail> [especialistaDetail]="selectedEspecialista></app-especialista-detail>
+          </div>
+        <div *ngIf="showCreate">
+            <app-especialista-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-especialista-create>
+        </div>
+    </div>  
+    </div>
+</div>-->
+
+
+
+
+
+
 <div class="container-fluid">
     <div class="row">
         <div class="col-4">
@@ -11,22 +52,25 @@
             <table class="table table-striped">
             <thead class="thead-dark">
                 <tr>
-                    <th>Id</th>
-                    <th>Nombre</th>
-                    <th>Especialidad</th>
-                    <th>Cédula</th>                 
+                    <th>Nombres De Especialistas</th>                
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor = "let especialista of especialistas">
                     <td style="cursor: pointer;">
-                        <dd class="figure-caption" routerLink="/especialistas/{{especialista.id}}">{{especialista.id}}</dd>
+                        <dd class="figure-caption" routerLink="/especialistas/{{especialista.id}}">{{especialista.nombre}}</dd>
                     </td>
-                    <td>{{especialista.nombre}}</td>
-                    <td>{{especialista.Especialidad}}</td>
-                    <td>{{especialista.Cedula}}</td>
                 </tr>
             </tbody>
         </table>
+        </div>
+        <div class="col-8">
+          <div *ngIf="selectedAuthor">
+              <app-especialista-detail> [especialistaDetail]="selectedEspecialista></app-especialista-detail>
+          </div>
+        <div *ngIf="showCreate">
+            <app-especialista-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-especialista-create>
+        </div>
+    </div>  
     </div>
 </div>

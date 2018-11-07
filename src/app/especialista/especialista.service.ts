@@ -30,7 +30,7 @@ export class EspecialistaService {
     * @param especialista The especialista which will be created
     * @returns The confirmation of the especialista's creation
     */
-    createEspecialista(especialista): Observable<EspecialistaDetail> {
-        return this.http.post<EspecialistaDetail>(API_URL + especialistas, especialista);
+    createEspecialista(especialista): Observable<Especialista> {
+        return this.http.post<Especialista>(API_URL + especialistas, especialista);
     }
 }
