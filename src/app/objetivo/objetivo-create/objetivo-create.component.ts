@@ -20,7 +20,8 @@ export class ObjetivoCreateComponent implements OnInit {
   
   createObjetivo(): Objetivo
   {
-      console.log(this.objetivo)
+      this.objetivo.fechaLimite =this.objetivo.fechaLimite+":00";
+      
       this.objetivoService.createObjetivo(this.objetivo)
           .subscribe((objetivo) => {this.objetivo = objetivo;
           this.create.emit();
