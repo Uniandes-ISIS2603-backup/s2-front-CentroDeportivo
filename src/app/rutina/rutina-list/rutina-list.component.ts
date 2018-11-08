@@ -26,14 +26,18 @@ export class RutinaListComponent implements OnInit {
    selectedRutina : Rutina;
    showCreate: boolean;
 
-
+/**
+   * Funcion para definir en seleccion
+   */
 onSelected(rutina_id: number):void {
         this.showCreate = false;
         this.rutina_id = rutina_id;
     this.selectedRutina = new RutinaDetail();
     this.getRutinaDetail();
 }   
-   
+    /**
+   * Funcion para despliegue para creacion
+   */
 showHideCreate(): void {
      if (this.selectedRutina) {
                this.selectedRutina = undefined;
@@ -48,14 +52,18 @@ showHideCreate(): void {
    getRutinas(): void {
         this.rutinaService.getRutinas().subscribe(rutinas => this.rutinas = rutinas);
     }
-    
+      /**
+   * Obtiene el detalle de la rutina
+   */
      getRutinaDetail(): void {
          this.rutinaService.getRutinaDetail(this.rutina_id)
             .subscribe(selectedRutina => {
                 this.selectedRutina = selectedRutina
             });
     }
-   
+    /**
+   * definicion de funcion para inicio
+   */
   ngOnInit() {
       this.showCreate = false;
       this.selectedRutina = undefined;

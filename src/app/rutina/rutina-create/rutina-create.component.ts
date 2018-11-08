@@ -14,9 +14,7 @@ import { Rutina } from '../rutina';
 export class RutinaCreateComponent implements OnInit {
 
     /**
-    * Constructor for the component
-    * @param rutinaService The rutinas' services provider
-    * @param toastrService The toastr to show messages to the user 
+    * Constructor del componente
     */
     constructor(
         private rutinaService: RutinaService,
@@ -24,24 +22,23 @@ export class RutinaCreateComponent implements OnInit {
     ) { }
 
     /**
-    * The new rutina
+    * La nueva rutina
     */
     rutina: Rutina;
 
     /**
-    * The output which tells the parent component
-    * that the user no longer wants to create an rutina
+    * El output que dictara el componente padre que usuario no quiere crear rutina
+    * 
     */
     @Output() cancel = new EventEmitter();
 
     /**
-    * The output which tells the parent component
-    * that the user created a new rutina
+    * El output que dictara el componente padre que usuario quiere crear rutina
     */
     @Output() create = new EventEmitter();
 
     /**
-    * Creates a new rutina
+    * Crea una nueva rutina
     */
     createRutina(): void {
         this.rutinaService.createRutina(this.rutina)
@@ -54,14 +51,14 @@ export class RutinaCreateComponent implements OnInit {
     }
 
     /**
-    * Informs the parent component that the user no longer wants to create an rutina
+    * Informa a padre que no se desea crear la rutina
     */
     cancelCreation(): void {
         this.cancel.emit();
     }
 
     /**
-    * This function will initialize the component
+    * Funcion que inicializa el componente
     */
     ngOnInit() {
         this.rutina = new Rutina();

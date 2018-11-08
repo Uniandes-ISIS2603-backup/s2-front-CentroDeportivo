@@ -10,26 +10,35 @@ import {EspecialistaDetail} from '../especialista-detail';
   styleUrls: ['./especialista-detail.component.css']
 })
 export class EspecialistaDetailComponent implements OnInit {
-
+/**
+    * El constructor del componente para lel especialista
+    * 
+    */
   constructor( private especialistaService: EspecialistaService,
                private route: ActivatedRoute) { }
 
 
  /**
-    * The editorial whose details we want to show
+    * el especialista al que se le mostraran los detalles
     */
     especialistaDetail: EspecialistaDetail;
-  
+  /**
+    * el id asociado al especialista que se obtendra
+    */
     especialista_id: number; 
 
-
+/**
+    * Metodo para obtener el detalle de un especialista
+    */
   getEspecialistaDetail(): void {
          this.especialistaService.getEspecialistaDetail(this.especialista_id)
             .subscribe(especialistaDetail => {
                 this.especialistaDetail = especialistaDetail;
             });
     }
-  
+    /**
+    * Metodo que inicializa el componente
+    */
   ngOnInit() {
   this.especialista_id = +this.route.snapshot.paramMap.get('id');
   this.especialistaDetail = new EspecialistaDetail();

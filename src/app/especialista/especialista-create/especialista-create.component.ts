@@ -14,9 +14,8 @@ import { Especialista } from '../especialista';
 export class EspecialistaCreateComponent implements OnInit {
 
     /**
-    * Constructor for the component
-    * @param especialistaService The especialistas' services provider
-    * @param toastrService The toastr to show messages to the user 
+    * Constructor del componente
+    *  
     */
     constructor(
         private especialistaService: EspecialistaService,
@@ -24,24 +23,23 @@ export class EspecialistaCreateComponent implements OnInit {
     ) { }
 
     /**
-    * The new especialista
+    * El nuevo especialista
     */
     especialista: Especialista;
 
     /**
-    * The output which tells the parent component
-    * that the user no longer wants to create an especialista
+    * El output que dictara el componente padre que usuario no quiere crear especialista
+    * 
     */
     @Output() cancel = new EventEmitter();
 
     /**
-    * The output which tells the parent component
-    * that the user created a new especialista
+    * El output que dictara el componente padre que usuario quiere crear especialista
     */
     @Output() create = new EventEmitter();
 
     /**
-    * Creates a new especialista
+    * Crea un nuevo especialista
     */
     createEspecialista(): void {
         this.especialistaService.createEspecialista(this.especialista)
@@ -54,14 +52,14 @@ export class EspecialistaCreateComponent implements OnInit {
     }
 
     /**
-    * Informs the parent component that the user no longer wants to create an especialista
+    * Informa a padre que no se desea crear el especialista
     */
     cancelCreation(): void {
         this.cancel.emit();
     }
 
     /**
-    * This function will initialize the component
+    * Funcion que inicializa el componente
     */
     ngOnInit() {
         this.especialista = new Especialista();

@@ -15,20 +15,29 @@ const rutinas = '/rutinas';
 //{ providedIn: 'root'}
 )
 export class RutinaService {
-
+/**
+    * Constructor de la rutina
+    * @param http HttpClient - necesario para procesar pedidos
+    */
   constructor( private http: HttpClient) { }
-  
+  /**
+    * retorna el Observable ocon lista obtenida del api
+    * @returns la lista de rutinas
+    */
   getRutinas() : Observable<Rutina[]> {
         return this.http.get<Rutina[]>(API_URL + rutinas);
     }
-    
+     /**
+    * retorna observable del objeto
+    * @returns la rutina
+    */
   getRutinaDetail(rutinaId): Observable<RutinaDetail> {
         return this.http.get<RutinaDetail>(API_URL + rutinas + '/' + rutinaId);
     }
      /**
-    * Creates an rutina
-    * @param rutina The rutina which will be created
-    * @returns The confirmation of the rutina's creation
+    * Crea una rutina
+    * @param rutina rutina que sera creada
+    * @returns confirmacion de creacion de la rutina
     */
     createRutina(rutina): Observable<Rutina> {
         return this.http.post<Rutina>(API_URL + rutinas, rutina);

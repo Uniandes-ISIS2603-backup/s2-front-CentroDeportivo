@@ -8,6 +8,8 @@ export class EspecialistaDetail extends Especialista {
      * Los deprotistas de cada especialista
      */
     deportistas: Deportista[];
-    
+    /**
+     * Los objetivos asociados a cada especialista
+     */
     objetivos: Objetivo[];
 }
