@@ -1,28 +1,25 @@
 <div id="alertPanel" style="text-align: center"></div>
 <div class="container-fluid">
     <div class="row">
-    <div class="col-4">
+    <div class="col-3">
         <br>
             <div class="row justify-content-center align-self-center">
                 <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
                     (click)="showHideCreate()">Registrar un implemento</button>
             </div>
             <br>
-        <table class="table table-striped" style="text-align: center">
+        <table class="table table-striped" >
             <thead class="thead-dark">
                 <tr>
-                    <th>Id</th>
                     <th>Nombre</th>
-                    <th>Cantidad de existencias</th>              
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor = "let implemento of implementos">
                     <td style="cursor: pointer;">
-                        <dd class="figure-caption" routerLink="/implementos/{{implemento.id}}">{{implemento.id}}</dd>
+                        <dd class="figure-caption" routerLink="/implementos/{{implemento.id}}">{{implemento.nombre}}</dd>
                     </td>
-                    <td>{{implemento.nombre}}</td>
-                    <td>{{implemento.cantidadExistencias}}</td>
+                    
                     <!--><td id="implemento-edit">
                             <button [ngClass]="{ 'btn-primary': (!showEdit || edit_implemento_id != implemento.id), 'btn-danger': (showEdit && edit_implemento_id == implemento.id) }"
                                 type="button" class="btn" (click)="showEditImplemento(implemento.id)">Editar</button>

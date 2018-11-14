@@ -10,39 +10,18 @@
         <table class="table table-striped">
             <thead class="thead-dark">
                 <tr>
-                    <th>Id</th>
+                    
                     <th>Nombre</th>
-                    <th>Categoría</th>
-                    <th>Duración</th>
-                    <th>NumSeries</th>
-                    <th>Descripción</th>
-                    <th>Explicación</th>                  
+                                      
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor = "let ejercicio of ejercicios">
-                    <td style="cursor: pointer;">
-                        <dd class="figure-caption" routerLink="/ejercicios/{{ejercicio.id}}">{{ejercicio.id}}</dd>
-                    </td>
+                    
                     <td style="cursor: pointer;">
                         <dd class="figure-caption" routerLink="/ejercicios/{{ejercicio.id}}">{{ejercicio.nombre}}</dd>
                     </td>
-                    <td style="cursor: pointer;">
-                       <dd class="figure-caption" routerLink="/ejercicios/{{ejercicio.id}}">{{ejercicio.categoria}}</dd> 
-                    </td>
-                    <td style="cursor: pointer;">
-                     <dd class="figure-caption" routerLink="/ejercicios/{{ejercicio.id}}">{{ejercicio.duracion}}</dd> 
-                    </td>
-                    <td style= "cursor: pointer;">
-                      <dd class="figure-caption" routerLink="/ejercicios/{{ejercicio.id}}">{{ejercicio.numeroDeSeries}}</dd>                         
-                    </td>
-                    <td style= "cursor: pointer;">
-                       <dd class="figure-caption" routerLink="/ejercicios/{{ejercicio.id}}">{{ejercicio.descripcion}}</dd>                                         
-                    </td>                    
-                    <td style="cursor: pointer;">
-                         <dd class="figure-caption" routerLink="/ejercicios/{{ejercicio.id}}">{{ejercicio.explicacion}}</dd>                         
-                
-                    </td>
+                   
                 </tr>
             </tbody>
         </table>

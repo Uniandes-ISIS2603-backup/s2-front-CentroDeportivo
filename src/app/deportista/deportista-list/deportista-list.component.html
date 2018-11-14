@@ -11,15 +11,12 @@
         <table class="table table-striped">
             <thead class ="thead-dark">
                 <tr>
-                    <th>Cédula</th>
                     <th>Nombre</th>
                 </tr>
             </thead>
             <tbody>
                  <tr *ngFor = "let deportista of deportistas">
-                    <td style="cursor: pointer;">
-                        <dd class="figure-caption" routerLink="/deportistas/{{deportista.id}}">{{deportista.cedula}}</dd>
-                    </td>
+                    
                     <td style="cursor: pointer;">
                         <dd class="figure-caption" routerLink="/deportistas/{{deportista.id}}">{{deportista.nombre}}</dd>
                     </td>

@@ -10,15 +10,12 @@
         <table class="table table-striped">
             <thead class="thead-dark">
                 <tr>
-                    <th>Id</th>
                     <th>Nombre</th>                         
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor = "let zonacuerpo of zonacuerpos">
-                    <td style="cursor: pointer;">
-                        <dd class="figure-caption" routerLink="/zonascuerpo/{{zonacuerpo.id}}">{{zonacuerpo.id}}</dd>
-                    </td>
+                    
                     <td style="cursor: pointer;">
                         <dd class="figure-caption" routerLink="/zonascuerpo/{{zonacuerpo.id}}">{{zonacuerpo.nombre}}</dd>
                     </td>      
