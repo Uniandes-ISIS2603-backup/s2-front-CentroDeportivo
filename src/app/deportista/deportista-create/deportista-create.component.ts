@@ -18,15 +18,15 @@ export class DeportistaCreateComponent implements OnInit {
   deportista : Deportista
   
   /**
-    * El output que dictara el componente padre que usuario no quiere crear ejercicio
+    * El output que dictara el componente padre que usuario no quiere crear deportista
     */
   @Output() cancel = new EventEmitter();
   /**
-    * El output que dictara el componente padre que usuario quiere crear ejercicio
+    * El output que dictara el componente padre que usuario quiere crear deportista
     */
   @Output() create = new EventEmitter();
   /**
-    * Crea un nuevo ejercicio
+    * Crea un nuevo deportista
     */
   createDeportista(): Deportista
   {
@@ -38,7 +38,7 @@ export class DeportistaCreateComponent implements OnInit {
               return this.deportista;
   }
   /**
-    * Informa a padre que no se desea crear el ejercicio
+    * Informa a padre que no se desea crear el deportista
     */
   cancelCreation() : void {
       this.cancel.emit();
