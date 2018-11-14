@@ -10,14 +10,24 @@ import {DeportistaService} from '../deportista.service';
 })
 export class DeportistaCreateComponent implements OnInit {
 
+    /**
+    * Constructor del componente
+    */
   constructor(private deportistaService: DeportistaService, private toastrService: ToastrService) { }
 
   deportista : Deportista
   
+  /**
+    * El output que dictara el componente padre que usuario no quiere crear ejercicio
+    */
   @Output() cancel = new EventEmitter();
-  
+  /**
+    * El output que dictara el componente padre que usuario quiere crear ejercicio
+    */
   @Output() create = new EventEmitter();
-  
+  /**
+    * Crea un nuevo ejercicio
+    */
   createDeportista(): Deportista
   {
       console.log(this.deportista)
@@ -27,10 +37,15 @@ export class DeportistaCreateComponent implements OnInit {
               this.toastrService.success("El deportista fue creado", "Deportista creation")})
               return this.deportista;
   }
-  
+  /**
+    * Informa a padre que no se desea crear el ejercicio
+    */
   cancelCreation() : void {
       this.cancel.emit();
   }
+  /**
+    * Funcion que inicializa el componente
+    */
   ngOnInit() {
       this.deportista = new Deportista();
   }

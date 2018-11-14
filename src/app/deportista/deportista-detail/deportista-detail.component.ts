@@ -10,13 +10,23 @@ import {DeportistaDetail} from '../deportista-detail';
 })
 export class DeportistaDetailComponent implements OnInit {
 
+/**
+    * El constructor del componente para el deportista
+    * 
+    */
   constructor(private deportistaService: DeportistaService,
                private route: ActivatedRoute) { }
-
+ /**
+    * el deportista al que se le mostraran los detalles
+    */
   deportistaDetail: DeportistaDetail;
-  
+  /**
+    * el id asociado al deportista que se obtendra
+    */
   deportista_id: number;
-  
+  /**
+    * Metodo para obtener el detalle de un deportista
+    */
   getDeportistaDetail():void
   {
        this.deportistaService.getDeportistaDetail(this.deportista_id)
@@ -24,7 +34,9 @@ export class DeportistaDetailComponent implements OnInit {
                 this.deportistaDetail = deportistaDetail;
             });
   }
-  
+  /**
+    * Metodo que inicializa el componente
+    */
   ngOnInit() {
        this.deportista_id = +this.route.snapshot.paramMap.get('id');
   this.deportistaDetail = new DeportistaDetail();

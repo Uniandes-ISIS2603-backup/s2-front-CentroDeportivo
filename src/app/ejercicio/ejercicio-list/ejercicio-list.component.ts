@@ -12,25 +12,23 @@ import {EjercicioDetail} from '../ejercicio-detail';
 })
 export class EjercicioListComponent implements OnInit {
 
-    /**
-     * Constructor for the component
-     * @param ejercicioService The author's services provider
-     */
+    
+  /**
+   * Contructor del componente
+   */
     constructor( private ejercicioService: EjercicioService) { }
     
     /**
-     * The list of ejercicios which belong to the BookStore
-     */
+    * La lista de ejercicios del centro deportivo
+    */
     ejercicios: Ejercicio[];
     ejercicio_id: number;
    selectedEjercicio : Ejercicio;
    showCreate: boolean;
 
-//    /**
-//     * Asks the service to update the list of ejercicios
-//     */
-   
-
+/**
+   * Funcion para definir en seleccion
+   */
 onSelected(ejercicio_id: number):void {
         this.showCreate = false;
         this.ejercicio_id = ejercicio_id;
@@ -38,6 +36,9 @@ onSelected(ejercicio_id: number):void {
     this.getEjercicioDetail();
 }   
    
+ /**
+   * Funcion para despliegue para creacion
+   */
 showHideCreate(): void {
      if (this.selectedEjercicio) {
                this.selectedEjercicio = undefined;
@@ -45,17 +46,24 @@ showHideCreate(): void {
         }
         this.showCreate = !this.showCreate;
     }
+    /**
+   * Obtiene el servicio para actualizar la lista de especialistas
+   */
     getEjercicios(): void {
         this.ejercicioService.getEjercicios().subscribe(ejercicios => this.ejercicios = ejercicios);
     }
-    
+    /**
+    * Obtiene el detalle del especialista
+    */
      getEjercicioDetail(): void {
          this.ejercicioService.getEjercicioDetail(this.ejercicio_id)
             .subscribe(selectedEjercicio => {
                 this.selectedEjercicio = selectedEjercicio
             });
     }
-   
+   /**
+   * Definicion de funcion para inicio
+   */
   ngOnInit() {
       this.showCreate = false;
       this.selectedEjercicio = undefined;

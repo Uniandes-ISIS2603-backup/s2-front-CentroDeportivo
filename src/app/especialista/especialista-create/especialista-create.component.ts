@@ -15,7 +15,6 @@ export class EspecialistaCreateComponent implements OnInit {
 
     /**
     * Constructor del componente
-    *  
     */
     constructor(
         private especialistaService: EspecialistaService,

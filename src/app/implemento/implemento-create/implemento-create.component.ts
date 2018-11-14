@@ -17,9 +17,7 @@ import { Implemento } from '../implemento';
 export class ImplementoCreateComponent implements OnInit {
 
     /**
-    * Constructor for the component
-    * @param implementoService The implemento's services provider
-    * @param toastrService The toastr to show messages to the user
+    * Constructor del componente
     */
     constructor(
         private dp : DatePipe,
@@ -33,19 +31,17 @@ export class ImplementoCreateComponent implements OnInit {
     implemento: Implemento;
 
     /**
-    * The output which tells the parent component
-    * that the user no longer wants to create an implemento
+    * El output que dictara el componente padre que usuario no quiere crear implemento
     */
     @Output() cancel = new EventEmitter();
 
     /**
-    * The output which tells the parent component
-    * that the user created a new implemento
+    * El output que dictara el componente padre que usuario quiere crear implemento
     */
     @Output() create = new EventEmitter();
 
     /**
-    * Creates an implemento
+    * Crea un nuevo implemento
     */
     createImplemento(): Implemento {
         this.implementoService.createImplemento(this.implemento)
@@ -58,15 +54,14 @@ export class ImplementoCreateComponent implements OnInit {
     }
 
     /**
-    * Emits the signal to tell the parent component that the
-    * user no longer wants to create an user
+    * Informa a padre que no se desea crear el implemento
     */
     cancelCreation(): void {
         this.cancel.emit();
     }
 
     /**
-    * This function will initialize the component
+    * Funcion que inicializa el componente
     */
     ngOnInit() {
         this.implemento = new Implemento();

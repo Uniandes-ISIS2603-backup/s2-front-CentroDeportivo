@@ -13,26 +13,30 @@ import {ImplementoDetail} from '../implemento-detail';;
 export class ImplementoListComponent implements OnInit {
 
     /**
-     * Constructor for the component
-     * @param implementoService The implemento's services provider
-     */
+   * Contructor del componente
+   */
     constructor(private implementoService: ImplementoService) { }
     
-    /**
-     * The list of implementos which belong to the Centro Deportivo
-     */
+     /**
+    * La lista de ejercicios del centro deportivo
+    */
     implementos: Implemento[];
     implemento_id: number;
     selectedImplemento: Implemento;
     showCreate: boolean;
 
+/**
+   * Funcion para definir en seleccion
+   */
     onSelected(implemento_id: number):void {
         this.showCreate = false;
         this.implemento_id = implemento_id;
         this.selectedImplemento = new ImplementoDetail();
         this.getImplementoDetail();     
     }
-    
+    /**
+   * Funcion para despliegue para creacion
+   */
     showHideCreate(): void {
      if (this.selectedImplemento) {
                this.selectedImplemento = undefined;
@@ -42,12 +46,14 @@ export class ImplementoListComponent implements OnInit {
     }
 
     /**
-     * Asks the service to update the list of implementos
-     */
+   * Obtiene el servicio para actualizar la lista de especialistas
+   */
     getImplementos(): void {
         this.implementoService.getImplementos().subscribe(implementos => this.implementos = implementos);
     }
-
+    /**
+    * Obtiene el detalle del especialista
+    */
     getImplementoDetail(): void {
         this.implementoService.getImplementoDetail(this.implemento_id)
             .subscribe(selectedImplemento => {
@@ -56,9 +62,8 @@ export class ImplementoListComponent implements OnInit {
      }
 
     /**
-     * This will initialize the component by retrieving the list of implementos from the service
-     * This method will be called when the component is created
-     */
+   * Definicion de funcion para inicio
+   */
     ngOnInit() {
         this.showCreate = false;
         this.selectedImplemento = undefined;

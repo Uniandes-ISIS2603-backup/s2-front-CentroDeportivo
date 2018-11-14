@@ -10,25 +10,26 @@ import {EjercicioService} from '../ejercicio.service';
 })
 export class EjercicioCreateComponent implements OnInit {
 
+   /**
+    * Constructor del componente
+    */
   constructor(private ejercicioService: EjercicioService, private toastrService: ToastrService) { }
 
     ejercicio: Ejercicio
     
     /**
-    * The output which tells the parent component
-    * that the user no longer wants to create an author
+    * El output que dictara el componente padre que usuario no quiere crear ejercicio
     */
     @Output() cancel = new EventEmitter();
 
     /**
-    * The output which tells the parent component
-    * that the user created a new author
+    * El output que dictara el componente padre que usuario quiere crear ejercicio
     */
     @Output() create = new EventEmitter();
 
     
     /**
-    * Creates  a ejercicio
+    * Crea un nuevo ejercicio
     */
     createEjercicio(): Ejercicio {
         
@@ -44,12 +45,14 @@ export class EjercicioCreateComponent implements OnInit {
     }
 
     /**
-    * Emits the signal to tell the parent component that the
-    * user no longer wants to create an user
+    * Informa a padre que no se desea crear el ejercicio
     */
     cancelCreation(): void {
         this.cancel.emit();
 }
+/**
+    * Funcion que inicializa el componente
+    */
   ngOnInit() {
       this.ejercicio = new Ejercicio();
   }

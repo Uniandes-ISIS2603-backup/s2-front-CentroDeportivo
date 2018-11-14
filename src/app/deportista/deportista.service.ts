@@ -11,21 +11,40 @@ const deportistas = '/deportistas';
 //const API_URL = "../../assets/";
 //const deportistas = 'deportistas.json';
 
+/**
+* Proveedor de servicios para todo lo relacionado con ejercicio
+*/
 @Injectable(
 //  {providedIn: 'root'}
 )
 export class DeportistaService {headers = new HttpHeaders({
         'Access-Control-Allow-Origin': '*'
     });
-
+    /**
+    * Constructor del deportista
+    * @param http HttpClient - necesario para procesar pedidos
+    */
   constructor(private http: HttpClient) { }
   
+   /**
+    * retorna el Observable ocon lista obtenida del api
+    * @returns la lista de deportistas
+    */
   getDeportistas() : Observable<Deportista[]>{
       return this.http.get<Deportista[]>(API_URL + deportistas);
   }
+  /**
+    * retorna observable del objeto
+    * @returns el deportista
+    */
     getDeportistaDetail(deportistaId): Observable<DeportistaDetail> {
         return this.http.get<DeportistaDetail>(API_URL + deportistas + '/' + deportistaId);
     }
+    /**
+    * Crea un deportista
+    * @param deportista el deportista que sera creado
+    * @returns confirmacion de creacion
+    */
       createDeportista(deportista): Observable<Deportista> {
         return this.http.post<Deportista>(API_URL + deportistas, deportista);
     }
