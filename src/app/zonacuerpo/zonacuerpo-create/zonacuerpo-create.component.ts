@@ -10,25 +10,29 @@ import {ZonacuerpoService} from '../zonacuerpo.service';
 })
 export class ZonacuerpoCreateComponent implements OnInit {
 
-  constructor(private zonacuerpoService: ZonacuerpoService, private toastrService: ToastrService) { }
+    /**
+    * Constructor del componente 
+    */
+    constructor(private zonacuerpoService: ZonacuerpoService, private toastrService: ToastrService) { }
 
+    /**
+     * La zona del cuerpo nueva
+     */
     zonacuerpo: Zonacuerpo
     
     /**
-    * The output which tells the parent component
-    * that the user no longer wants to create an author
+    * El output que dictara el componente padre que el usuario no quiere crear una zonacuerpo
     */
     @Output() cancel = new EventEmitter();
 
     /**
-    * The output which tells the parent component
-    * that the user created a new author
+    * El output que dictara el componente padre que el usuario quiere crear una zonacuerpo
     */
     @Output() create = new EventEmitter();
 
     
     /**
-    * Creates  a zonacuerpo
+    * crea una zonacuerpo
     */
     createZonacuerpo(): Zonacuerpo {
         
@@ -44,13 +48,16 @@ export class ZonacuerpoCreateComponent implements OnInit {
     }
 
     /**
-    * Emits the signal to tell the parent component that the
-    * user no longer wants to create an user
+    * Informa al padre que no se desea crear la zonacuerpo
     */
     cancelCreation(): void {
         this.cancel.emit();
 }
-  ngOnInit() {
+  
+    /**
+    * Funcion que inicializa el componente
+    */
+    ngOnInit() {
       this.zonacuerpo = new Zonacuerpo();
   }
 

@@ -10,25 +10,29 @@ import {MaquinaService} from '../maquina.service';
 })
 export class MaquinaCreateComponent implements OnInit {
 
-  constructor(private maquinaService: MaquinaService, private toastrService: ToastrService) { }
+    /**
+    * Constructor del componente 
+    */
+    constructor(private maquinaService: MaquinaService, private toastrService: ToastrService) { }
 
+    /**
+     * La maquina nueva
+     */
     maquina: Maquina
     
     /**
-    * The output which tells the parent component
-    * that the user no longer wants to create an author
+    * El output que dictara el componente padre que el usuario no quiere crear una maquina
     */
     @Output() cancel = new EventEmitter();
 
     /**
-    * The output which tells the parent component
-    * that the user created a new author
+    * El output que dictara el componente padre que el usuario quiere crear una maquina
     */
     @Output() create = new EventEmitter();
 
     
     /**
-    * Creates  a maquina
+    * Crea una nueva maquina
     */
     createMaquina(): Maquina {
         
@@ -44,13 +48,15 @@ export class MaquinaCreateComponent implements OnInit {
     }
 
     /**
-    * Emits the signal to tell the parent component that the
-    * user no longer wants to create an user
+    * Informa al padre que no se desea crear la maquina
     */
     cancelCreation(): void {
         this.cancel.emit();
 }
-  ngOnInit() {
+    /**
+    * Funcion que inicializa el componente
+    */
+      ngOnInit() {
       this.maquina = new Maquina();
   }
 
