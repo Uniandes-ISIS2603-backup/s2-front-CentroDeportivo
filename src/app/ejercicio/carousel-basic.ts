@@ -10,8 +10,8 @@ export class NgbdCarouselBasic {
    
       config.showNavigationArrows = true;
       config.showNavigationIndicators = true;
-           this.images.push("https://tumejorfisico.com/wp-content/uploads/2015/07/peso-muerto-rumano-1024x886.jpg");
-           this.images.push("http://1.bp.blogspot.com/_5YH9MpGHcuQ/SxErIsyPB_I/AAAAAAAACp0/Q5F9smcBbFI/s1600/curlalterno_579.jpg");
-           this.images.push("http://tabladeejercicios.com/wp-content/uploads/2017/11/press-banca2.jpg");
+           this.images.push("https://guiafitness.com/wp-content/uploads/7-beneficios-del-peso-muerto-que-no-conocias.jpg");
+           this.images.push("https://tumejorfisico.com/wp-content/uploads/2016/02/Curl-b%C3%ADceps-inclinado-con-mancuerna.jpg");
+           this.images.push("https://www.menshealth.es/media/cache/big/upload/images/article/4683/article-press-banca-tomatelo-pecho-586cdab3474cf.jpg");
   }
 }
