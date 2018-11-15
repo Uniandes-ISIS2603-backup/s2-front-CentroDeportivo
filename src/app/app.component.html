@@ -12,12 +12,12 @@
     /* Remove the navbar's default margin-bottom and rounded borders */ 
     .navbar {
       margin-bottom: 0;
-      border-radius: 0;
+      border-radius: 1;
     }
     
     /* Add a gray background color and some padding to the footer */
     footer {
-      background-color: #f2f2f2;
+      background-color: f2f2f2;
       padding: 25px;
     }
   </style>
@@ -59,10 +59,12 @@
 </nav>
 
 <div class="jumbotron">
+    <div class="col-md-14">
   <div class="container text-center">
     <h1>Ludis</h1>      
     <p>Solo los caminos duros llevan a la grandeza.</p>
   </div>
+    </div>
 </div>
   <div class="list">
     <router-outlet> </router-outlet>

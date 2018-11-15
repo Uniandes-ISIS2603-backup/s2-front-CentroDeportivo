@@ -1,4 +1,4 @@
-<!--<div class="container-fluid">
+   <div class="container-fluid">
     <div class="row">
         <div class="col-4">
             <br>
@@ -8,36 +8,7 @@
             </div>
             <br>
             <br>
-            <table class="table table-striped">
-            <thead class="thead-dark">
-                <tr>
-                    <th>Nombre de las rutinas</th>    
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor = "let rutina of rutinas">
-                    <td style="cursor: pointer;">
-                        <dd class="figure-caption" routerLink="/rutinas/{{rutina.id}}">{{rutina.nombre}}</dd>
-                    </td>
-                   
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</div>-->
-    
-    
-    <div class="container-fluid">
-    <div class="row">
-        <div class="col-4">
-            <br>
-            <div class="row justify-content-center align-self-center">
-                <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
-                    (click)="showHideCreate()">Registrar una Rutina</button>
-            </div>
-            <br>
-            <br>
-            <table class="table table-striped">
+            <table class="list-group">
             <thead class="thead-dark">
                 <tr>
                     <th>Nombre de las rutinas</th>             
