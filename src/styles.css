@@ -1,1 +1,6 @@
-/* You can add global styles to this file, and also import other style files */
+.navbar-default {
+  background-color:#f6f6f6;
+  font-color:#f6f6f6;
+  background-image: none;
+  background-repeat: no-repeat;
+ }
