@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-
 import {MaquinaService} from '../maquina.service';
 import {MaquinaDetail} from '../maquina-detail';
 
@@ -11,29 +10,40 @@ import {MaquinaDetail} from '../maquina-detail';
 })
 export class MaquinaDetailComponent implements OnInit {
 
-  constructor( private maquinaService: MaquinaService,
+    /**
+    * El constructor del componente para la maquina
+    */
+    constructor( private maquinaService: MaquinaService,
                private route: ActivatedRoute) { }
 
 
- /**
-    * The editorial whose details we want to show
+    /**
+    * La maquina a la que se le mostraran los detalles
     */
     maquinaDetail: MaquinaDetail;
   
+    /**
+    * el id asociado a la maquina que se obtendra
+    */
     maquina_id: number; 
 
-
-  getMaquinaDetail(): void {
+    /**
+    * Metodo para obtener el detalle de una maquina
+    */
+    getMaquinaDetail(): void {
          this.maquinaService.getMaquinaDetail(this.maquina_id)
             .subscribe(maquinaDetail => {
                 this.maquinaDetail = maquinaDetail;
             });
     }
   
-  ngOnInit() {
-  this.maquina_id = +this.route.snapshot.paramMap.get('id');
-  this.maquinaDetail = new MaquinaDetail();
-        this.getMaquinaDetail();
+    /**
+    * Metodo que inicializa el componente
+    */
+    ngOnInit() {
+    this.maquina_id = +this.route.snapshot.paramMap.get('id');
+    this.maquinaDetail = new MaquinaDetail();
+          this.getMaquinaDetail();
 
   }
 

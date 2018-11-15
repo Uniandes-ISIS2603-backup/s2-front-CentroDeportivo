@@ -22,22 +22,39 @@ export class MaquinaListComponent implements OnInit {
    * La lista de maquinas del centro deportivo
    */
    maquinas: Maquina[];
+   
+  /**
+   * El id de la maquina
+   */
    maquina_id: number;
+   
+  /**
+   * La maquina que el usuario va a ver
+   */
    selectedMaquina : Maquina;
+   
+  /**
+   * Muestra u oculta el maquina-create-component
+   */
    showCreate: boolean;
 
-
-onSelected(maquina_id: number):void {
-        this.showCreate = false;
-        this.maquina_id = maquina_id;
+  /**
+   * Funcion para definir en seleccion
+   */
+   onSelected(maquina_id: number):void {
+    this.showCreate = false;
+    this.maquina_id = maquina_id;
     this.selectedMaquina = new MaquinaDetail();
     this.getMaquinaDetail();
 }   
-   
-showHideCreate(): void {
+ 
+  /**
+   * Funcion para despliegue para creacion
+   */ 
+   showHideCreate(): void {
      if (this.selectedMaquina) {
-               this.selectedMaquina = undefined;
-               this.maquina_id = undefined;
+            this.selectedMaquina = undefined;
+            this.maquina_id = undefined;
         }
         this.showCreate = !this.showCreate;
     }
@@ -48,15 +65,19 @@ showHideCreate(): void {
    getMaquinas(): void {
         this.maquinaService.getMaquinas().subscribe(maquinas => this.maquinas = maquinas);
     }
-    
-     getMaquinaDetail(): void {
+  /**
+   * Obtiene el detalle de la maquina
+   */
+   getMaquinaDetail(): void {
          this.maquinaService.getMaquinaDetail(this.maquina_id)
             .subscribe(selectedMaquina => {
                 this.selectedMaquina = selectedMaquina
             });
     }
-   
-  ngOnInit() {
+  /**
+   * definicion de funcion para inicio
+   */ 
+   ngOnInit() {
       this.showCreate = false;
       this.selectedMaquina = undefined;
       this.maquina_id = undefined;

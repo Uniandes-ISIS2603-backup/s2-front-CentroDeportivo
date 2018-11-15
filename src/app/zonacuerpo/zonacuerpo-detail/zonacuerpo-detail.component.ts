@@ -13,29 +13,40 @@ import {ZonacuerpoDetail} from '../zonacuerpo-detail';
 })
 export class ZonacuerpoDetailComponent implements OnInit {
 
-  constructor( private zonacuerpoService: ZonacuerpoService,
-               private route: ActivatedRoute) { }
+    /**
+     * El constructor del componente para la zonacuerpo
+     */
+    constructor( private zonacuerpoService: ZonacuerpoService,
+                 private route: ActivatedRoute) { }
 
 
- /**
-    * The editorial whose details we want to show
+   /**
+    * La zonacuerpo a la que se le mostraran los detalles
     */
     zonacuerpoDetail: ZonacuerpoDetail;
-  
+
+   /**
+    * el id asociado a la zonacuerpo que se obtendra
+    */
     zonacuerpo_id: number; 
 
-
-  getZonacuerpoDetail(): void {
+   /**
+    * Metodo para obtener el detalle de una zonacuerpo
+    */
+    getZonacuerpoDetail(): void {
          this.zonacuerpoService.getZonacuerpoDetail(this.zonacuerpo_id)
             .subscribe(zonacuerpoDetail => {
                 this.zonacuerpoDetail = zonacuerpoDetail;
             });
     }
   
-  ngOnInit() {
-  this.zonacuerpo_id = +this.route.snapshot.paramMap.get('id');
-  this.zonacuerpoDetail = new ZonacuerpoDetail();
-        this.getZonacuerpoDetail();
+   /**
+    * Metodo que inicializa el componente
+    */
+    ngOnInit() {
+    this.zonacuerpo_id = +this.route.snapshot.paramMap.get('id');
+    this.zonacuerpoDetail = new ZonacuerpoDetail();
+          this.getZonacuerpoDetail();
 
   }
 }

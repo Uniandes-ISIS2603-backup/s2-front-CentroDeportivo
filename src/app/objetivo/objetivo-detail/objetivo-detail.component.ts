@@ -10,22 +10,39 @@ import {ObjetivoDetail} from '../objetivo-detail';
 })
 export class ObjetivoDetailComponent implements OnInit {
 
-  constructor(private objetivoService: ObjetivoService,
+  /**
+    * El constructor del componente para la objetivo
+    */
+    constructor(private objetivoService: ObjetivoService,
                private route: ActivatedRoute) { }
+               
+  /**
+    * La objetivo a la que se le mostraran los detalles
+    */
     objetivoDetail: ObjetivoDetail;
   
+  /**
+    * el id asociado a la objetivo que se obtendra
+    */
     objetivo_id: number; 
     
+  /**
+    * Metodo para obtener el detalle de una objetivo
+    */
     getObjetivoDetail(): void {
          this.objetivoService.getObjetivoDetail(this.objetivo_id)
             .subscribe(objetivoDetail => {
                 this.objetivoDetail = objetivoDetail;
             });
     }
-  ngOnInit() {
+    
+  /**
+    * Metodo que inicializa el componente
+    */
+    ngOnInit() {
       this.objetivo_id = +this.route.snapshot.paramMap.get('id');
-  this.objetivoDetail = new ObjetivoDetail();
-        this.getObjetivoDetail();
-  }
+      this.objetivoDetail = new ObjetivoDetail();
+      this.getObjetivoDetail();
+    }
 
 }
