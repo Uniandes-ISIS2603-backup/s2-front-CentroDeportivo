@@ -22,14 +22,21 @@
                 </div>
             </div>
                <div class="form-group">
-                <label for="especialistaCedula"><b>Cedula</b></label>
+                <label for="especialistaCedula"><b>Cédula</b></label>
                 <input type="text" name="especialistaCedula" class="form-control" id="especialistaCedula" [(ngModel)]="especialista.cedula"
                     #especialistacedula="ngModel" [ngClass]="{ 'is-invalid': f.submitted && especialistacedula.invalid }" required>
                 <div class="invalid-feedback">
                     <div>Por favor digite la cedula</div>
                 </div>
             </div>
-              
+               <div class="form-group">
+                <label for="especialistaImagen"><b>Imagen</b></label>
+                <input type="text" name="especialistaImagen" class="form-control" id="especialistaImagen" [(ngModel)]="especialista.imagen"
+                    #especialistaImagen="ngModel" [ngClass]="{ 'is-invalid': f.submitted && especialistaImagen.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Por favor ingrese la imagen</div>
+                </div>
+            </div>
               
               
               
