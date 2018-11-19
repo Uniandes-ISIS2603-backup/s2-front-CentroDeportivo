@@ -9,15 +9,18 @@ import { DeportistaDetailComponent } from './deportista-detail/deportista-detail
 import { DeportistaCreateComponent } from './deportista-create/deportista-create.component';
 import { AppRoutingModule } from '../app-routing.module';
 
+import { NgbdCarouselBasic } from './carousel-basic2';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     CommonModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
-  declarations: [DeportistaListComponent, DeportistaDetailComponent, DeportistaCreateComponent],
+  declarations: [DeportistaListComponent, DeportistaDetailComponent, DeportistaCreateComponent,NgbdCarouselBasic],
   providers: [DeportistaService],
   exports: [DeportistaListComponent]
 })
