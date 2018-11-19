@@ -8,16 +8,13 @@ import { AppRoutingModule } from '../app-routing.module';
 import { HomeComponent } from './home.component';
 
 
-import { HomeRoutingModule } from './home-routing.module';
-
 @NgModule({
   imports: [
    BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     CommonModule,
-    FormsModule,
-    HomeRoutingModule
+    FormsModule
   ],
   declarations: [
     HomeComponent
