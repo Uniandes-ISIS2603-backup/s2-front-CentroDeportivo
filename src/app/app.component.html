@@ -27,45 +27,40 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <ul class="nav nav-tabs">
+    
+        <li class="nav-item ">
+        <a id="logo" class="nav-link" routerLink="/home/list"> 
+            <img id="logo" src="../assets/LogoLudis.png" width="90" height="30">
+        </a>
+        </li>
         <li class="nav-item">
-            <a id="inicioTag" class="nav-link" routerLink="/home/home" style="color:white">Inicio</a>
-    </li>
-    <li class="nav-item">
-        <a id="deportistasTag" class="nav-link" routerLink="/deportistas/list" style="color:white">Deportistas</a>
-    </li>
-    <li class="nav-item">
-        <a id="ejerciciosTag" class="nav-link" routerLink="/ejercicios/list" style="color:white">Ejercicios</a>
-    </li>
-    <li class="nav-item">
-        <a id="especialistasTag" class="nav-link" routerLink="/especialistas/list" style="color:white">Especialistas</a>
-    </li>
-    <li class="nav-item">
-        <a id="implementosTag" class="nav-link" routerLink="/implementos/list" style="color:white">Implementos</a>
-    </li>
-    <li class="nav-item">
-        <a id="maquinasTag" class="nav-link" routerLink="/maquinas/list" style="color:white">Máquinas</a>
-    </li>
-    <li class="nav-item">
-        <a id="objetivosTag" class="nav-link" routerLink="/objetivos/list" style="color:white">Objetivos</a>
-    </li>
-    <li class="nav-item">
-        <a id="rutinasTag" class="nav-link" routerLink="/rutinas/list" style="color:white">Rutinas</a>
-    </li>
-    <li class="nav-item">
-        <a id="zonascuerpoTag" class="nav-link" routerLink="/zonascuerpo/list" style="color:white">Zonas del Cuerpo</a>
-    </li>
+            <a id="deportistasTag" class="nav-link" routerLink="/deportistas/list" style="color:white">Deportistas</a>
+        </li>
+        <li class="nav-item">
+            <a id="ejerciciosTag" class="nav-link" routerLink="/ejercicios/list" style="color:white">Ejercicios</a>
+        </li>
+        <li class="nav-item">
+            <a id="especialistasTag" class="nav-link" routerLink="/especialistas/list" style="color:white">Especialistas</a>
+        </li>
+        <li class="nav-item">
+            <a id="implementosTag" class="nav-link" routerLink="/implementos/list" style="color:white">Implementos</a>
+        </li>
+        <li class="nav-item">
+            <a id="maquinasTag" class="nav-link" routerLink="/maquinas/list" style="color:white">Máquinas</a>
+        </li>
+        <li class="nav-item">
+            <a id="objetivosTag" class="nav-link" routerLink="/objetivos/list" style="color:white">Objetivos</a>
+        </li>
+        <li class="nav-item">
+            <a id="rutinasTag" class="nav-link" routerLink="/rutinas/list" style="color:white">Rutinas</a>
+        </li>
+        <li class="nav-item">
+            <a id="zonascuerpoTag" class="nav-link" routerLink="/zonascuerpo/list" style="color:white">Zonas del Cuerpo</a>
+        </li>
 </ul>
   </div>
 </nav>
-
-<div class="jumbotron">
-    <div class="col-md-14">
-  <div class="container text-center">
-    <h1>Ludis</h1>      
-    <p>Solo los caminos duros llevan a la grandeza.</p>
-  </div>
-    </div>
-</div>
+    
   <div class="list">
     <router-outlet> </router-outlet>
 </div>

@@ -17,12 +17,10 @@ import { ZonacuerpoModule } from './zonacuerpo/zonacuerpo.module';
 import { RutinaModule } from './rutina/rutina.module';
 import { HomeModule } from './home/home.module';
 
-
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
 @NgModule({
   declarations: [
     AppComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -38,7 +36,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     EjercicioModule,
     ZonacuerpoModule,
     HomeModule,
-    NgbModule, 
     ToastrModule.forRoot({
             timeOut: 10000,
             positionClass: 'toast-bottom-right',
