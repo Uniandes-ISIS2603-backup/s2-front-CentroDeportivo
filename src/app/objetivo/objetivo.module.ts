@@ -9,7 +9,6 @@ import { ObjetivoDetailComponent } from './objetivo-detail/objetivo-detail.compo
 import { ObjetivoCreateComponent } from './objetivo-create/objetivo-create.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { ObjetivoEditComponent } from './objetivo-edit/objetivo-edit.component';
-import { ObjetivoDeleteComponent } from './objetivo-delete/objetivo-delete.component';
 
 @NgModule({
   imports: [
@@ -19,7 +18,7 @@ import { ObjetivoDeleteComponent } from './objetivo-delete/objetivo-delete.compo
     CommonModule,
     FormsModule
   ],
-  declarations: [ObjetivoListComponent, ObjetivoDetailComponent, ObjetivoCreateComponent, ObjetivoEditComponent, ObjetivoDeleteComponent],
+  declarations: [ObjetivoListComponent, ObjetivoDetailComponent, ObjetivoCreateComponent, ObjetivoEditComponent],
   providers: [ObjetivoService],
   exports: [ObjetivoListComponent]
 })

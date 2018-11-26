@@ -12,7 +12,6 @@ import { AppRoutingModule } from '../app-routing.module';
 import { NgbdCarouselBasic } from './carousel-basic2';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DeportistaEditComponent } from './deportista-edit/deportista-edit.component';
-import { DeportistaDeleteComponent } from './deportista-delete/deportista-delete.component';
 @NgModule({
   imports: [
     BrowserModule,
@@ -22,7 +21,7 @@ import { DeportistaDeleteComponent } from './deportista-delete/deportista-delete
     FormsModule,
     NgbModule
   ],
-  declarations: [DeportistaListComponent, DeportistaDetailComponent, DeportistaCreateComponent,NgbdCarouselBasic, DeportistaEditComponent, DeportistaDeleteComponent],
+  declarations: [DeportistaListComponent, DeportistaDetailComponent, DeportistaCreateComponent,NgbdCarouselBasic, DeportistaEditComponent],
   providers: [DeportistaService],
   exports: [DeportistaListComponent]
 })
