@@ -34,5 +34,8 @@
         <div *ngIf="showCreate">
             <app-deportista-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-deportista-create>
         </div>
+        <div *ngIf="showEdit">
+            <app-deportista-edit [deportista_id]="deportista_edit_id" (cancel)="showHideDeportista(deportista_edit_id)" (update)="updateDeportista()"></app-deportista-edit>
+        </div>
     </div>
 </div>

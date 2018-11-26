@@ -48,4 +48,10 @@ export class DeportistaService {headers = new HttpHeaders({
       createDeportista(deportista): Observable<Deportista> {
         return this.http.post<Deportista>(API_URL + deportistas, deportista);
     }
+    updateDeportista(deportista): Observable<DeportistaDetail> {
+        return this.http.put<DeportistaDetail>(API_URL + deportistas + '/' + deportista.id, deportista);
+    }
+    deleteDeportista(deportistaId): Observable<DeportistaDetail> {
+        return this.http.delete<DeportistaDetail>(API_URL + deportistas + '/' + deportistaId);
+    }
 }

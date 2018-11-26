@@ -1,0 +1,44 @@
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+        <br>
+        <h2 class="text-center">Editar un objetivo</h2>
+        <br>
+        <form descripcion="objetivo" (ngSubmit)="f.form.valid && editObjetivo()" #f="ngForm" novalidate>
+            <div class="form-group">
+                <label for="objetivoDescripcion"><b>Descripcion</b></label>
+                <input type="textarea" style="width:650px; height:150px;" name="objetivoDescripcion" class="form-control" id="objetivoDescripcion " [(ngModel)]="objetivo.descripcion"
+                    #objetivoDescripcion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && objetivoDescripcion.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Debe llenar el campo descripción</div>
+                </div>
+            </div>
+              <div class="form-group">
+                <label for="objetivoFechaLimite"><b>Fecha límite</b></label>
+                <input type="datetime-local" name="objetivoFechaLimite" class="form-control" id="objetivoFechaLimite" [(ngModel)]="objetivo.fechaLimite"
+                    #objetivoFechaLimite="ngModel" [ngClass]="{ 'is-invalid': f.submitted && objetivoFechaLimite.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Debe llenar el campo fecha límite</div>
+                </div>
+            </div>
+              <div class="form-group">
+                <label for="objetivoCumplio"><b>Estado</b></label>
+                <select class = "form-control" id="objetivoCumplio" name="objetivoCumplio" [(ngModel)]="objetivo.cumplio"
+                    #objetivoCumplio="ngModel" [ngClass]="{ 'is-invalid': f.submitted && objetivoCumplio.invalid }" required>
+                    <option value="True">True</option>
+                    <option value="False">False</option>
+                </select>
+                <div class="invalid-feedback">
+                    <div>Debe llenar el campo estado</div>
+                </div>
+            </div>
+              
+            <div class="row form-inline justify-content-center align-self-center">
+                <button type="submit" class="btn btn-primary">Edit</button>
+                <div class="divider"></div>
+                <button type="button" class="btn btn-danger" (click)="cancelEdition()">Cancel</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-3"></div>
+</div>
