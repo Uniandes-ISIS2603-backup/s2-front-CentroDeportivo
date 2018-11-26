@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewContainerRef} from '@angular/core';
+import {ModalDialogService, SimpleModalComponent} from 'ngx-modal-dialog';
+import {ToastrService} from 'ngx-toastr';
 import { Deportista } from '../deportista';
 import { DeportistaService } from '../deportista.service';
 import {DeportistaDetail} from '../deportista-detail';
@@ -13,7 +15,10 @@ export class DeportistaListComponent implements OnInit {
     /**
    * Contructor del componente
    */
-  constructor(private deportistaService:DeportistaService) { }
+  constructor(private deportistaService:DeportistaService,
+  private modalDialogService: ModalDialogService,
+        private viewRef: ViewContainerRef,
+        private toastrService: ToastrService) { }
 
 
 /**
@@ -23,6 +28,8 @@ export class DeportistaListComponent implements OnInit {
  selectedDeportista : Deportista;
  deportista_id: number;
  showCreate: boolean;
+  showEdit: boolean;
+  deportista_edit_id: number;
    
  /**
    * Funcion para definir en seleccion
@@ -59,11 +66,52 @@ showHideCreate(): void {
  getDeportistas(): void{
      this.deportistaService.getDeportistas().subscribe(deportistas => this.deportistas = deportistas);
  }
+ showHideEdit(deportista_id: number): void {
+        if (!this.showEdit || (this.showEdit && deportista_id != this.deportista_edit_id)) {
+            this.showCreate = false;
+            this.showEdit = true;
+            this.deportista_edit_id = deportista_id;
+        }
+        else {
+            this.showEdit = false;
+        }
+    }
+    updateDeportista(): void {
+        this.showEdit = false;
+    }
+
+    /**
+    * Deletes an deportista
+    */
+    deleteDeportista(deportistaId): void {
+        this.modalDialogService.openDialog(this.viewRef, {
+            title: 'Delete an deportista',
+            childComponent: SimpleModalComponent,
+            data: {text: 'Are you sure your want to delete this deportista from the BookStore?'},
+            actionButtons: [
+                {
+                    text: 'Yes',
+                    buttonClass: 'btn btn-danger',
+                    onAction: () => {
+                        this.deportistaService.deleteDeportista(deportistaId).subscribe(() => {
+                            this.toastrService.error("The deportista was successfully deleted", "Deportista deleted");
+                            this.ngOnInit();
+                        }, err => {
+                            this.toastrService.error(err, "Error");
+                        });
+                        return true;
+                    }
+                },
+                {text: 'No', onAction: () => true}
+            ]
+        });
+    }
  /**
    * Definicion de funcion para inicio
    */
   ngOnInit() {
       this.showCreate = false;
+       this.showEdit = false;
       this.selectedDeportista = undefined;
       this.deportista_id = undefined;
       this.getDeportistas();

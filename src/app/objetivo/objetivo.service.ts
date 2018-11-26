@@ -21,11 +21,17 @@ export class ObjetivoService { headers = new HttpHeaders({
   {
       return this.http.get<Objetivo[]>(API_URL+objetivos);
   }
-      getObjetivoDetail(objetivoId): Observable<ObjetivoDetail> {
+  getObjetivoDetail(objetivoId): Observable<ObjetivoDetail> {
         return this.http.get<ObjetivoDetail>(API_URL + objetivos + '/' + objetivoId);
         
     }
       createObjetivo(objetivo): Observable<Objetivo> {
         return this.http.post<Objetivo>(API_URL + objetivos, objetivo);
+    }
+    updateObjetivo(objetivo): Observable<ObjetivoDetail> {
+        return this.http.put<ObjetivoDetail>(API_URL + objetivos + '/' + objetivo.id, objetivo);
+    }
+    deleteObjetivo(objetivoId): Observable<ObjetivoDetail> {
+        return this.http.delete<ObjetivoDetail>(API_URL + objetivos + '/' + objetivoId);
     }
 }

@@ -40,6 +40,9 @@
         <div *ngIf="showCreate">
             <app-objetivo-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-objetivo-create>
         </div>
+        <div *ngIf="showEdit">
+            <app-objetivo-edit [objetivo_id]="objetivo_edit_id" (cancel)="showHideObjetivo(objetivo_edit_id)" (update)="updateObjetivo()"></app-objetivo-edit>
+        </div>
     </div>
 </div>
   
