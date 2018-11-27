@@ -37,5 +37,18 @@
       </thead>
 
     </table>
+<div class="row justify-content-center align-self-center">
+            <button  style="font-size:24px" type="button" class="btn btn-primary"(click)="showHideEdit(ejercicioDetail.id)" >Editar <span class="fa fa-pencil" ></span></button>
+            <h3>     </h3>
+            <button style="font-size:24px" class="btn btn-danger" (click)="deleteEjercicio(ejercicioDetail.id)" >Eliminar <i class="fa fa-trash"></i></button>
+     </div>
+</div>
 
+<div class="col-md-3">
+        <p class="h3 p-3"><img src="https://www.lavanguardia.com/r/GODO/LV/p3/WebSite/2016/05/03/Recortada/img_msanoja_20160504-144748_imagenes_lv_getty_gettyimages-546127037_2-k7r-U401526493710pEB-992x558@LaVanguardia-Web.jpg" alt="Imagen ejercicio" style="width:100%;height:200%;"></p>
+</div>
+<div class="col-md-3">
+        <div *ngIf="showEdit">
+            <app-ejercicio-edit [ejercicio_id]="ejercicio_edit_id" (cancel)="showHideEdit(ejercicio_edit_id)" (update)="updateEjercicio()"></app-ejercicio-edit>
+        </div>
 </div>
