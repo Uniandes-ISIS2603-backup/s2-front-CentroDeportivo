@@ -11,13 +11,17 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
+import { HomeRoutingModule } from './home-routing.module';
+
 @NgModule({
   imports: [
    BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     CommonModule,
-    FormsModule
+    FormsModule,
+    HomeRoutingModule,
+    NgbModule
   ],
   declarations: [
     HomeComponent
