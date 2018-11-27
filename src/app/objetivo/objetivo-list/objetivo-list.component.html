@@ -2,12 +2,6 @@
     <div class="row">
         <div class="col-4">
         <br>
-           <div class="row justify-content-center align-self-center">
-               <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
-                   (click)="showHideCreate()">Registrar un objetivo</button>
-           </div>
-        <br>
-        <br>
         <table class="table table-striped">
             <thead class ="thead-dark">
                 <tr>
@@ -37,6 +31,12 @@
                 </tr>
             </tbody>
         </table>
+        <br>
+           <div class="row justify-content-center align-self-center">
+               <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
+                   (click)="showHideCreate()">Registrar un objetivo</button>
+           </div>
+        <br>
       </div>
         <div class="col-8">
         <div *ngIf="selectedObjetivo">

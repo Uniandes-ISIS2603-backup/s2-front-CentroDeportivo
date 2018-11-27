@@ -1,10 +1,5 @@
 
 <div class="col-md-6">
-    <br>
-            <div class="row justify-content-center align-self-center">
-                <button  type="button" class="btn" >Editar Deportista</button>
-            </div>
-            <br>
     <table class="table table-hover table-info">
       <thead>
         <tr>
@@ -57,5 +52,14 @@
       </thead>
 
     </table>
-
+     <div class="row justify-content-center align-self-center">
+            <button  style="font-size:24px" type="button" class="btn btn-primary"(click)="showHideEdit(deportistaDetail.id)" >Editar <span class="fa fa-pencil" ></span></button>
+            <h3>     </h3>
+            <button style="font-size:24px" class="btn btn-danger" (click)="deleteDeportista(deportistaDetail.id)" >Eliminar <i class="fa fa-trash"></i></button>
+     </div>
+</div>
+<div class="col-md-3">
+        <div *ngIf="showEdit">
+            <app-deportista-edit [deportista_id]="deportista_edit_id" (cancel)="showHideDeportista(deportista_edit_id)" (update)="updateDeportista()"></app-deportista-edit>
+        </div>
 </div>

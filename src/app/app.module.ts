@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import {AppRoutingModule} from './app-routing.module';
 import { ToastrModule } from 'ngx-toastr';
 import { ModalDialogModule } from 'ngx-modal-dialog';
-
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MaquinaModule } from './maquina/maquina.module';
 import { ImplementoModule } from './implemento/implemento.module';
 import { DeportistaModule } from './deportista/deportista.module';
@@ -16,6 +16,7 @@ import { EjercicioModule } from './ejercicio/ejercicio.module';
 import { ZonacuerpoModule } from './zonacuerpo/zonacuerpo.module';
 import { RutinaModule } from './rutina/rutina.module';
 import { HomeModule } from './home/home.module';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { HomeModule } from './home/home.module';
     FormsModule,
     MaquinaModule,
     ImplementoModule,
+    BrowserAnimationsModule,
     DeportistaModule,
     ObjetivoModule,
     EspecialistaModule,
@@ -37,6 +39,7 @@ import { HomeModule } from './home/home.module';
     EjercicioModule,
     ZonacuerpoModule,
     HomeModule,
+    NgbModule,
     ToastrModule.forRoot({
             timeOut: 10000,
             positionClass: 'toast-bottom-right',

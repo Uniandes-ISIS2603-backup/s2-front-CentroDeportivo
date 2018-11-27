@@ -94,29 +94,6 @@ export class ObjetivoListComponent implements OnInit {
         updateObjetivo(): void {
         this.showEdit = false;
     }
-    deleteObjetivo(objetivoId): void {
-        this.modalDialogService.openDialog(this.viewRef, {
-            title: 'Delete an objetivo',
-            childComponent: SimpleModalComponent,
-            data: {text: 'Are you sure your want to delete this objetivo from the BookStore?'},
-            actionButtons: [
-                {
-                    text: 'Yes',
-                    buttonClass: 'btn btn-danger',
-                    onAction: () => {
-                        this.objetivoService.deleteObjetivo(objetivoId).subscribe(() => {
-                            this.toastrService.error("The objetivo was successfully deleted", "Objetivo deleted");
-                            this.ngOnInit();
-                        }, err => {
-                            this.toastrService.error(err, "Error");
-                        });
-                        return true;
-                    }
-                },
-                {text: 'No', onAction: () => true}
-            ]
-        });
-    }
   /**
    * definicion de funcion para inicio
    */
