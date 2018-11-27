@@ -1,5 +1,32 @@
-<div class="col-md-12">
-    <div class="container-fluid">   
-        <p class="h3 p-3">Nombre: {{zonacuerpoDetail.nombre}}</p>
-    </div>
+
+<div class="col-md-6">
+    <br>
+            
+            <br>
+    <table class="table table-hover table-info">
+      <thead>
+        <tr>
+             <thead class="thead-primary">
+          <th scope="col">Nombre:</th> 
+    </thead>
+          <td scope="row">{{zonacuerpoDetail.nombre}}</td>
+        </tr>
+        
+      </thead>
+
+    </table>
+     <div class="row justify-content-center align-self-center">
+            <button  style="font-size:24px" type="button" class="btn btn-primary"(click)="showHideEdit(zonacuerpoDetail.id)" >Editar <span class="fa fa-pencil" ></span></button>
+            <h3>     </h3>
+            <button style="font-size:24px" class="btn btn-danger" (click)="deleteZonacuerpo(zonacuerpoDetail.id)" >Eliminar <i class="fa fa-trash"></i></button>
+     </div>
+</div>
+
+<div class="col-md-3">
+        <p class="h3 p-3"><img src="http://www.escuelapedia.com/wp-content/uploads/M%C3%BAsculos-del-cuerpo-humano.gif" alt="Imagen zonacuerpo" style="width:100%;height:200%;"></p>
+</div>
+<div class="col-md-3">
+        <div *ngIf="showEdit">
+            <app-zonacuerpo-edit [zonacuerpo_id]="zonacuerpo_edit_id" (cancel)="showHideEdit(zonacuerpo_edit_id)" (update)="updateZonacuerpo()"></app-zonacuerpo-edit>
+        </div>
 </div>

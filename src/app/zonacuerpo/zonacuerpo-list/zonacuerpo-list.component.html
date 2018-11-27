@@ -1,35 +1,48 @@
-    <div class="container-fluid">
-        <div class="row">
-    <div class="col-4">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4">
         <br>
-            <div class="row justify-content-center align-self-center">
-                <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
-                    (click)="showHideCreate()">Registrar una Zona del Cuerpo</button>
-            </div>
-            <br>
+           <div class="row justify-content-center align-self-center">
+               <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
+                   (click)="showHideCreate()">Registrar a un zonacuerpo</button>
+           </div>
+        <br>
+        <br>
         <table class="table table-striped">
-            <thead class="thead-dark">
+            <thead class ="thead-dark">
                 <tr>
-                    <th>Nombre</th>                         
+                    <th>Nombre</th>
+                    <th>  </th>
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor = "let zonacuerpo of zonacuerpos">
+                 <tr *ngFor = "let zonacuerpo of zonacuerpos">
                     
                     <td style="cursor: pointer;">
                         <dd class="figure-caption" routerLink="/zonascuerpo/{{zonacuerpo.id}}">{{zonacuerpo.nombre}}</dd>
-                    </td>      
+                    </td>
+                    <td>
+                         <button class="btn" (click)="showHideEdit(zonacuerpo.id)"><span class="fa fa-pencil"></span></button>
+                    </td>
                 </tr>
             </tbody>
         </table>
+         
     </div>
-    <div class="col-8">
-          <div *ngIf="selectedEjercio">
-              <app-zonacuerpo-detail> [zonacuerpoDetail]="selectedZonacuerpo</app-zonacuerpo-detail>
-          </div>
-        <div *ngIf="showCreate">
-          <app-zonacuerpo-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-zonacuerpo-create>
-       </div>
-    </div> 
-</div>
+        
+        <div class="col-md-5">
+          <br>
+            <br> 
+            <br>    
+            <ngbd-carousel-basic2></ngbd-carousel-basic2>
         </div>
+        
+        <div class="col-md-3">
+        <div *ngIf="showCreate">
+            <app-zonacuerpo-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-zonacuerpo-create>
+        </div>
+        <div *ngIf="showEdit">
+            <app-zonacuerpo-edit [zonacuerpo_id]="zonacuerpo_edit_id" (cancel)="showHideEdit(zonacuerpo_edit_id)" (update)="updateZonacuerpo()"></app-zonacuerpo-edit>
+        </div>
+    </div>
+</div>
