@@ -1,44 +1,45 @@
-    <div class="container-fluid">
-        <div class="row">
-    <div class="col-4">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4">
         <br>
-            <div class="row justify-content-center align-self-center">
-                <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
-                    (click)="showHideCreate()">Registrar un ejercicio</button>
-            </div>
-            <br>
+           <div class="row justify-content-center align-self-center">
+               <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
+                   (click)="showHideCreate()">Registrar a un ejercicio</button>
+           </div>
+        <br>
+        <br>
         <table class="table table-striped">
-            <thead class="thead-dark">
+            <thead class ="thead-dark">
                 <tr>
-                    
                     <th>Nombre</th>
-                                      
+                    <th>  </th>
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor = "let ejercicio of ejercicios">
+                 <tr *ngFor = "let ejercicio of ejercicios">
                     
                     <td style="cursor: pointer;">
                         <dd class="figure-caption" routerLink="/ejercicios/{{ejercicio.id}}">{{ejercicio.nombre}}</dd>
                     </td>
-                   
+                    <td>
+                         <button class="btn" (click)="showHideEdit(ejercicio.id)"><span class="fa fa-pencil"></span></button>
+                    </td>
                 </tr>
             </tbody>
         </table>
+         
     </div>
-            <div class="col-4">
+        <div class="col-md-5">
                 
             <ngbd-carousel-basic></ngbd-carousel-basic>
         </div>
-    <div class="col-3">
-          <div *ngIf="selectedEjercio">
-              <app-ejercicio-detail> [ejercicioDetail]="selectedEjercicio</app-ejercicio-detail>
-          </div>
+        
+        <div class="col-md-3">
         <div *ngIf="showCreate">
-          <app-ejercicio-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-ejercicio-create>
-       </div>
-    </div>
-             
-</div>
-       
+            <app-ejercicio-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-ejercicio-create>
         </div>
+        <div *ngIf="showEdit">
+            <app-ejercicio-edit [ejercicio_id]="ejercicio_edit_id" (cancel)="showHideEdit(ejercicio_edit_id)" (update)="updateEjercicio()"></app-ejercicio-edit>
+        </div>
+    </div>
+</div>

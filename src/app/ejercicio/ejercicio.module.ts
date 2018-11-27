@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 
 import { NgbdCarouselBasic } from './carousel-basic';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { EjercicioEditComponent } from './ejercicio-edit/ejercicio-edit.component';
 
 @NgModule({
     imports: [     
@@ -21,7 +22,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
         HttpClientModule,NgbModule
        
     ],
-    declarations: [EjercicioListComponent, EjercicioDetailComponent,EjercicioCreateComponent,NgbdCarouselBasic],
+    declarations: [EjercicioListComponent, EjercicioDetailComponent,EjercicioCreateComponent,NgbdCarouselBasic, EjercicioEditComponent],
     providers: [EjercicioService],
     exports:[EjercicioListComponent]
 })
