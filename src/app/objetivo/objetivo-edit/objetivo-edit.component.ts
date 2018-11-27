@@ -17,7 +17,7 @@ export class ObjetivoEditComponent implements OnInit {
   @Input() objetivo_id: number;
   @Output() cancel = new EventEmitter();
   @Output() update = new EventEmitter();
-  objetivo: ObjetivoDetail;
+  @Input() objetivo: ObjetivoDetail;
   
       getObjetivo(): void {
         this.objetivoService.getObjetivoDetail(this.objetivo_id)

@@ -32,6 +32,7 @@ import { HomeModule } from './home/home.module';
     DeportistaModule,
     ObjetivoModule,
     EspecialistaModule,
+    ModalDialogModule.forRoot(),
     RutinaModule,
     EjercicioModule,
     ZonacuerpoModule,
