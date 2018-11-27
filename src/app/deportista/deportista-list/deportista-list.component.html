@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-4">
@@ -45,4 +46,50 @@
                (click)="showHideCreate()">Registrar a un deportista</button>
        </div>
     <br>
+=======
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4">
+        <br>
+           <div class="row justify-content-center align-self-center">
+               <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
+                   (click)="showHideCreate()">Registrar a un deportista</button>
+           </div>
+        <br>
+        <br>
+        <table class="table table-striped">
+            <thead class ="thead-dark">
+                <tr>
+                    <th>Nombre</th>
+                    <th>  </th>
+                </tr>
+            </thead>
+            <tbody>
+                 <tr *ngFor = "let deportista of deportistas">
+                    
+                    <td style="cursor: pointer;">
+                        <dd class="figure-caption" routerLink="/deportistas/{{deportista.id}}">{{deportista.nombre}}</dd>
+                    </td>
+                    <td>
+                         <button class="btn" (click)="showHideEdit(deportista.id)"><span class="fa fa-pencil"></span></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+         
+    </div>
+        <div class="col-md-5">
+                
+            <ngbd-carousel-basic2></ngbd-carousel-basic2>
+        </div>
+        
+        <div class="col-md-3">
+        <div *ngIf="showCreate">
+            <app-deportista-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-deportista-create>
+        </div>
+        <div *ngIf="showEdit">
+            <app-deportista-edit [deportista_id]="deportista_edit_id" (cancel)="showHideEdit(deportista_edit_id)" (update)="updateDeportista()"></app-deportista-edit>
+        </div>
+    </div>
+>>>>>>> 415f985c9224a5d34b5d85cc1b59a0736c75f06a
 </div>

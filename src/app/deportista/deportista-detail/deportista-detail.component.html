@@ -74,9 +74,13 @@
     <p>Objetivos del deportista: </p>
     <app-objetivo-list [objetivos]="deportistaDetail.objetivos"></app-objetivo-list>
 </div>
+
+<div class="col-md-3">
+        <p class="h3 p-3"><img src="https://buenavida.pr/wp-content/uploads/2017/01/Deportista-1170x780.jpg" alt="Imagen deportista" style="width:100%;height:200%;"></p>
+</div>
 <div class="col-md-3">
         <div *ngIf="showEdit">
-            <app-deportista-edit [deportista_id]="deportista_edit_id" (cancel)="showHideDeportista(deportista_edit_id)" (update)="updateDeportista()"></app-deportista-edit>
+            <app-deportista-edit [deportista_id]="deportista_edit_id" (cancel)="showHideEdit(deportista_edit_id)" (update)="updateDeportista()"></app-deportista-edit>
         </div>
 </div>
 
