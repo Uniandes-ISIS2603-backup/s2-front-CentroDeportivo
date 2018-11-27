@@ -13,4 +13,9 @@ export class Implemento {
     * La cantidad de existencias del implemento
     */
     cantidadExistencias: number;
+    
+    /**
+    * La imagen del implemento
+    */
+    imagen: string; 
 }

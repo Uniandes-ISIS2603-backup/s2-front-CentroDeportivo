@@ -2,18 +2,13 @@
     <div class="row">
         <div class="col-4">
         <br>
-           <div class="row justify-content-center align-self-center">
-               <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
-                   (click)="showHideCreate()">Registrar un objetivo</button>
-           </div>
-        <br>
-        <br>
         <table class="table table-striped">
             <thead class ="thead-dark">
                 <tr>
                     <th>Descripción</th>
                     <th>Cumplio</th>
                     <th>Fecha límite</th>
+                    <th>  </th>
                 </tr>
             </thead>
             <tbody>
@@ -27,11 +22,21 @@
                     
                    <td style="cursor: pointer;">
                         <dd class="figure-caption" routerLink="/objetivos/{{objetivo.id}}">{{objetivo.fechaLimite}}</dd>
+                   
                     </td>
-                    
+                    <td>
+                         <button class="btn" (click)="showHideEdit(objetivo.id)"><span class="fa fa-pencil" ></span></button>
+                    </td>
+                     
                 </tr>
             </tbody>
         </table>
+        <br>
+           <div class="row justify-content-center align-self-center">
+               <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
+                   (click)="showHideCreate()">Registrar un objetivo</button>
+           </div>
+        <br>
       </div>
         <div class="col-8">
         <div *ngIf="selectedObjetivo">
@@ -39,6 +44,9 @@
         </div>
         <div *ngIf="showCreate">
             <app-objetivo-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-objetivo-create>
+        </div>
+        <div *ngIf="showEdit">
+            <app-objetivo-edit [objetivo_id]="objetivo_edit_id" (cancel)="showHideObjetivo(objetivo_edit_id)" (update)="updateObjetivo()"></app-objetivo-edit>
         </div>
     </div>
 </div>

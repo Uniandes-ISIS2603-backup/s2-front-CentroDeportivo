@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewContainerRef} from '@angular/core';
+import {ModalDialogService, SimpleModalComponent} from 'ngx-modal-dialog';
 import { Objetivo } from '../objetivo';
 import { ObjetivoService } from '../objetivo.service';
 import {ObjetivoDetail} from '../objetivo-detail';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-objetivo-list',
@@ -20,6 +22,8 @@ export class ObjetivoListComponent implements OnInit {
    */
   objetivo_id: number;
   
+  showEdit: boolean;
+  
   /**
    * La objetivo que el usuario va a ver
    */
@@ -30,11 +34,14 @@ export class ObjetivoListComponent implements OnInit {
    */
   showCreate: boolean;
    
-  
+  objetivo_edit_id: number;
   /**
    * Contructor del componente
    */
-  constructor(private objetivoService:ObjetivoService) { }
+  constructor(private objetivoService:ObjetivoService,
+   private modalDialogService: ModalDialogService,
+        private viewRef: ViewContainerRef,
+        private toastrService: ToastrService) { }
 
   /**
    * Obtiene el servicio para actualizar la lista de objetivos
@@ -74,12 +81,25 @@ export class ObjetivoListComponent implements OnInit {
                 this.selectedObjetivo = selectedObjetivo
             });
     }
-    
+    showHideEdit(objetivo_id: number): void {
+        if (!this.showEdit || (this.showEdit && objetivo_id != this.objetivo_edit_id)) {
+            this.showCreate = false;
+            this.showEdit = true;
+            this.objetivo_edit_id = objetivo_id;
+        }
+        else {
+            this.showEdit = false;
+        }
+    }
+        updateObjetivo(): void {
+        this.showEdit = false;
+    }
   /**
    * definicion de funcion para inicio
    */
   ngOnInit() {
       this.showCreate = false;
+      this.showEdit = false;
       this.selectedObjetivo = undefined;
       this.objetivo_id = undefined;
       this.getObjetivos();

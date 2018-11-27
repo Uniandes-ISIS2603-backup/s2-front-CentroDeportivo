@@ -1,0 +1,23 @@
+<ngb-carousel *ngIf="images">
+  <ng-template ngbSlide>
+    <img [src]="images[0]" width="100%" height="500" alt="Random first slide">
+    <div class="carousel-caption">
+      <h3>Peso Muerto</h3>
+      <p>Ejercicio de espalda</p>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+      <img [src]="images[1]" width="100%" height="500" alt="Random second slide">
+    <div class="carousel-caption">
+      <h3>Curl mancuerna</h3>
+      <p>Ejercicio de Biceps</p>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+      <img [src]="images[2]" width="100%" height="500" alt="Random third slide">
+    <div class="carousel-caption">
+      <h3>Press Pecho</h3>
+      <p>Ejercicio de pecho</p>
+    </div>
+  </ng-template>
+</ngb-carousel>

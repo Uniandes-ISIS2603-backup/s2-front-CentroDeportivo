@@ -14,6 +14,14 @@
                 </div>
             </div>
             <div class="form-group">
+                <label for="implementoImagen"><b>Imagen</b></label>
+                <input type="url" name="implementoImagen" class="form-control" id="implementoImagen" [(ngModel)]="implemento.imagen"
+                    #implementoImagen="ngModel" [ngClass]="{ 'is-invalid': f.submitted && implementoImagen.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Se debe llenar el campo Imagen</div>
+                </div>
+            </div>
+            <div class="form-group">
                 <label for="implementoCantidadExistencias"><b>Cantidad de existencias</b></label>
                 <input type="number" name="implementoCantidadExistencias" min="1" class="form-control" id="implementoNombre" [(ngModel)]="implemento.cantidadExistencias"
                     #implementoCantidadExistencias="ngModel" [ngClass]="{ 'is-invalid': f.submitted && implementoCantidadExistencias.invalid }" required>

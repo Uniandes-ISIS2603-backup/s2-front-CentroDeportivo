@@ -15,5 +15,9 @@ export class Especialista {
     * nombre del especialista
     */
     nombre: string;
+    /**
+    * imagen del especialista
+    */
+    imagen: string;
     
 }

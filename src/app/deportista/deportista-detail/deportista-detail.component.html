@@ -1,15 +1,65 @@
-<div class="col-md-12">
-    <div class="container-fluid">   
-        <p class="h3 p-3">Nombre: {{deportistaDetail.nombre}}</p>
-        <p class="h3 p-3">Género: {{deportistaDetail.sexo}}</p>
-        <p class="h3 p-3">Altura: {{deportistaDetail.altura}}</p>
-        <p class="h3 p-3">Presión sanguínea: {{deportistaDetail.presionSanguinea}}</p>
-        <p class="h3 p-3">Peso: {{deportistaDetail.peso}}</p>
-        <p class="h3 p-3">Ritmo cardiaco: {{deportistaDetail.ritmoCardiaco}}</p>
-        <p class="h3 p-3">Medida piernas: {{deportistaDetail.medidaPiernas}}</p>
-        <p class="h3 p-3">Medida cintura: {{deportistaDetail.medidaCintura}}</p>
-        <p class="h3 p-3">Medida brazos: {{deportistaDetail.medidaBrazos}}</p>
-        <p class="h3 p-3">Cédula: {{deportistaDetail.cedula}}</p>
-        <p class="h3 p-3">Fecha de nacimiento: {{deportistaDetail.fechaNacimiento}}</p>
-    </div>
+
+<div class="col-md-6">
+    <table class="table table-hover table-info">
+      <thead>
+        <tr>
+             <thead class="thead-primary">
+          <th scope="col">Nombre:</th> 
+    </thead>
+          <td scope="row">{{deportistaDetail.nombre}}</td>
+        </tr>
+        <tr><thead class="thead-primary">
+          <th scope="col">Género:</th>  </thead>
+          <td scope="row">{{deportistaDetail.sexo}}</td>
+        </tr>
+        <tr><thead class="thead-primary">
+          <th scope="col">Altura:</th>  </thead>
+          <td scope="row">{{deportistaDetail.altura}}</td>
+        </tr>
+        <tr><thead class="thead-primary">
+          <th scope="col">Presión sanguínea:</th>  </thead>
+          <td scope="row">{{deportistaDetail.presionSanguinea}}</td>
+        </tr>
+        <tr><thead class="thead-primary">
+          <th scope="col">Peso: </th>  </thead>
+          <td scope="row">{{deportistaDetail.peso}}</td>
+        </tr>
+        <tr><thead class="thead-primary">
+          <th scope="col">Ritmo cardiaco:</th>  </thead>
+          <td scope="row">{{deportistaDetail.ritmoCardiaco}}</td>
+        </tr>
+        <tr><thead class="thead-primary">
+          <th scope="col">Medida piernas: </th>  </thead>
+          <td scope="row">{{deportistaDetail.medidaPiernas}}</td>
+        </tr>
+        <tr><thead class="thead-primary">
+          <th scope="col">Medida cintura: </th>  </thead>
+          <td scope="row">{{deportistaDetail.medidaCintura}}</td>
+        </tr>
+        <tr><thead class="thead-primary">
+          <th scope="col">Medida brazos:</th>  </thead>
+          <td scope="row">{{deportistaDetail.medidaBrazos}}</td>
+        </tr>
+        <tr><thead class="thead-primary">
+          <th scope="col">Cédula:</th>  </thead>
+          <td scope="row">{{deportistaDetail.cedula}}</td>
+        </tr>
+        <tr><thead class="thead-primary">
+          <th scope="col">Fecha de nacimiento:</th>  </thead>
+          <td scope="row">{{deportistaDetail.fechaNacimiento}}</td>
+        </tr>
+
+      </thead>
+
+    </table>
+     <div class="row justify-content-center align-self-center">
+            <button  style="font-size:24px" type="button" class="btn btn-primary"(click)="showHideEdit(deportistaDetail.id)" >Editar <span class="fa fa-pencil" ></span></button>
+            <h3>     </h3>
+            <button style="font-size:24px" class="btn btn-danger" (click)="deleteDeportista(deportistaDetail.id)" >Eliminar <i class="fa fa-trash"></i></button>
+     </div>
+</div>
+<div class="col-md-3">
+        <div *ngIf="showEdit">
+            <app-deportista-edit [deportista_id]="deportista_edit_id" (cancel)="showHideDeportista(deportista_edit_id)" (update)="updateDeportista()"></app-deportista-edit>
+        </div>
 </div>

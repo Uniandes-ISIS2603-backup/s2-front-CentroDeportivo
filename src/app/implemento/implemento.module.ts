@@ -8,18 +8,18 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ImplementoDetailComponent } from './implemento-detail/implemento-detail.component';
 import { ImplementoCreateComponent } from './implemento-create/implemento-create.component';
-
+import { NgbdCarouselBasic } from './carousel-basic';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     CommonModule,
-    FormsModule
+    FormsModule,NgbModule
   ],
-  declarations: [ImplementoListComponent, ImplementoDetailComponent, ImplementoCreateComponent],
+  declarations: [ImplementoListComponent, ImplementoDetailComponent, ImplementoCreateComponent,NgbdCarouselBasic],
   providers: [ImplementoService],
   bootstrap: [ImplementoListComponent]
-  //exports: [ImplementoListComponent]
 })
 export class ImplementoModule { }

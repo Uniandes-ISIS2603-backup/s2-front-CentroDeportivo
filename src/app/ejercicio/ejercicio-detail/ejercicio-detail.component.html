@@ -1,10 +1,41 @@
-<div class="col-md-12">
-    <div class="container-fluid">   
-        <p class="h3 p-3">Nombre: {{ejercicioDetail.nombre}}</p>
-        <p class="h3 p-3">Categoría: {{ejercicioDetail.categoria}}</p>
-        <p class="h3 p-3">Duración: {{ejercicioDetail.duracion}}</p>
-        <p class="h3 p-3">Numero De Series: {{ejercicioDetail.numeroDeSeries}}</p>
-        <p class="h3 p-3">Descripción: {{ejercicioDetail.descripcion}}</p>
-        <p class="h3 p-3">Explicación: {{ejercicioDetail.explicacion}}</p>
-    </div>
+
+<div class="col-md-6">
+    <br>
+            <div class="row justify-content-center align-self-center">
+                <button  type="button" class="btn" >Editar Ejercicio</button>
+            </div>
+            <br>
+    <table class="table table-hover table-info">
+      <thead>
+        <tr>
+             <thead class="thead-primary">
+          <th scope="col">Nombre:                    </th> 
+    </thead>
+          <td scope="row">{{ejercicioDetail.nombre}}</td>
+        </tr>
+        <tr><thead class="thead-primary">
+          <th scope="col">Categoría:</th>  </thead>
+          <td scope="row">{{ejercicioDetail.categoria}}</td>
+        </tr>
+        <tr><thead class="thead-primary">
+          <th scope="col">Duración:</th>  </thead>
+          <td scope="row">{{ejercicioDetail.duracion}}</td>
+        </tr>
+        <tr><thead class="thead-primary">
+          <th scope="col">Numero De Series:</th>  </thead>
+          <td scope="row">{{ejercicioDetail.numeroDeSeries}}</td>
+        </tr>
+        <tr><thead class="thead-primary">
+          <th scope="col">Descripción: </th>  </thead>
+          <td scope="row">{{ejercicioDetail.descripcion}}</td>
+        </tr>
+        <tr><thead class="thead-primary">
+          <th scope="col">Explicación:</th>  </thead>
+          <td scope="row">{{ejercicioDetail.explicacion}}</td>
+        </tr>
+
+      </thead>
+
+    </table>
+
 </div>

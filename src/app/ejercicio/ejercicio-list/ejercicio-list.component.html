@@ -26,13 +26,19 @@
             </tbody>
         </table>
     </div>
-    <div class="col-8">
+            <div class="col-4">
+                
+            <ngbd-carousel-basic></ngbd-carousel-basic>
+        </div>
+    <div class="col-3">
           <div *ngIf="selectedEjercio">
               <app-ejercicio-detail> [ejercicioDetail]="selectedEjercicio</app-ejercicio-detail>
           </div>
         <div *ngIf="showCreate">
           <app-ejercicio-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-ejercicio-create>
        </div>
-    </div> 
+    </div>
+             
 </div>
+       
         </div>

@@ -10,15 +10,18 @@ import { HttpClientModule } from '@angular/common/http';
 import { EjercicioService } from './ejercicio.service';
 import { FormsModule } from '@angular/forms';
 
+import { NgbdCarouselBasic } from './carousel-basic';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 @NgModule({
     imports: [     
         CommonModule,
         FormsModule,
         AppRoutingModule,
-        HttpClientModule
+        HttpClientModule,NgbModule
        
     ],
-    declarations: [EjercicioListComponent, EjercicioDetailComponent,EjercicioCreateComponent],
+    declarations: [EjercicioListComponent, EjercicioDetailComponent,EjercicioCreateComponent,NgbdCarouselBasic],
     providers: [EjercicioService],
     exports:[EjercicioListComponent]
 })
