@@ -1,11 +1,11 @@
 
 <div class="col-md-6">
-    <table class="table table-hover table-info">
-      <thead>
+     <table class="table table-hover table-info">
+        <thead>
         <tr>
              <thead class="thead-primary">
           <th scope="col">Nombre:</th> 
-    </thead>
+            </thead>
           <td scope="row">{{deportistaDetail.nombre}}</td>
         </tr>
         <tr><thead class="thead-primary">
@@ -53,13 +53,32 @@
 
     </table>
      <div class="row justify-content-center align-self-center">
-            <button  style="font-size:24px" type="button" class="btn btn-primary"(click)="showHideEdit(deportistaDetail.id)" >Editar <span class="fa fa-pencil" ></span></button>
-            <h3>     </h3>
-            <button style="font-size:24px" class="btn btn-danger" (click)="deleteDeportista(deportistaDetail.id)" >Eliminar <i class="fa fa-trash"></i></button>
+ 
+        <button style="font-size:24px" class="btn-success" [ngClass]="{ 'btn-primary': objetivoAddComponent.isCollapsed,'btn-outline-primary':!objetivoAddComponent.isCollapsed}" (click)="toggleCreateObjetivo()" >Agregrar objetivo <i class="fa fa-plus"></i></button>
+        <br>
+        <button  style="font-size:24px" type="button" class="btn btn-primary"(click)="showHideEdit(deportistaDetail.id)" >Editar <span class="fa fa-pencil" ></span></button>
+        <br>
+        <button style="font-size:24px" class="btn btn-danger" (click)="deleteDeportista(deportistaDetail.id)" >Eliminar <i class="fa fa-trash"></i></button>
+        
+
      </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <p>Objetivos del deportista: </p>
+    <app-objetivo-list [objetivos]="deportistaDetail.objetivos"></app-objetivo-list>
 </div>
 <div class="col-md-3">
         <div *ngIf="showEdit">
             <app-deportista-edit [deportista_id]="deportista_edit_id" (cancel)="showHideDeportista(deportista_edit_id)" (update)="updateDeportista()"></app-deportista-edit>
         </div>
 </div>
+
+
+

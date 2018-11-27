@@ -1,0 +1,9 @@
+<div id="collapseReview" [ngbCollapse]="isCollapsed">
+    <table class="table table-striped">
+        <tbody>
+            <tr *ngFor="let objetivo of deportistaObjetivos">
+                <td><span id="deportista-objetivo"><b>{{objetivo.descripcion}}</b></span><span>: </span><span id="objetivo-description">{{objetivo.description}}</span><br><span id="deportista-objetivo"><i>{{objetivo.source}}</i></span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

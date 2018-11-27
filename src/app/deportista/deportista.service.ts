@@ -3,14 +3,14 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Deportista } from './deportista';
 import {DeportistaDetail} from './deportista-detail';
 import { Observable } from 'rxjs';
-
+import {Objetivo} from '../objetivo/objetivo';
 import {environment} from '../../environments/environment';
 const API_URL = environment.apiURL;
 const deportistas = '/deportistas';
 
 //const API_URL = "../../assets/";
 //const deportistas = 'deportistas.json';
-
+const objetivos = '/objetivos';
 /**
 * Proveedor de servicios para todo lo relacionado con ejercicio
 */
@@ -53,5 +53,8 @@ export class DeportistaService {headers = new HttpHeaders({
     }
     deleteDeportista(deportistaId): Observable<DeportistaDetail> {
         return this.http.delete<DeportistaDetail>(API_URL + deportistas + '/' + deportistaId);
+    }
+    createObjetivo(deportistaId, objetivo): Observable<Objetivo> {
+        return this.http.post<Objetivo>(API_URL + deportistas + '/' + deportistaId + objetivos, objetivo);
     }
 }

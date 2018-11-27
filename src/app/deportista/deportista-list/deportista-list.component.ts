@@ -24,21 +24,24 @@ export class DeportistaListComponent implements OnInit {
 /**
     * La lista de deportistas del centro deportivo
     */
- deportistas : Deportista[];
- selectedDeportista : Deportista;
- deportista_id: number;
- showCreate: boolean;
+  deportistas : Deportista[];
+  selectedDeportista : Deportista;
+  deportista_id: number;
+  showCreate: boolean;
   showEdit: boolean;
   deportista_edit_id: number;
+  showView: boolean;
    
  /**
    * Funcion para definir en seleccion
    */
 onSelected(deportista_id: number):void {
         this.showCreate = false;
+        this.showEdit = false;
+        this.showView = true;
         this.deportista_id = deportista_id;
-    this.selectedDeportista = new DeportistaDetail();
-    this.getDeportistaDetail();
+        this.selectedDeportista = new DeportistaDetail();
+        this.getDeportistaDetail();
 }   
  
 /**
@@ -46,8 +49,10 @@ onSelected(deportista_id: number):void {
    */  
 showHideCreate(): void {
      if (this.selectedDeportista) {
-               this.selectedDeportista = undefined;
-               this.deportista_id = undefined;
+            this.showView = false;
+            this.showEdit = false;
+            this.selectedDeportista = undefined;
+            this.deportista_id = undefined;
         }
         this.showCreate = !this.showCreate;
     }
@@ -69,15 +74,18 @@ showHideCreate(): void {
  showHideEdit(deportista_id: number): void {
         if (!this.showEdit || (this.showEdit && deportista_id != this.deportista_edit_id)) {
             this.showCreate = false;
+            this.showView = false;
             this.showEdit = true;
             this.deportista_edit_id = deportista_id;
         }
         else {
             this.showEdit = false;
+            this.showView = true;
         }
     }
     updateDeportista(): void {
         this.showEdit = false;
+        this.showView = true;
     }
 
     /**
@@ -111,7 +119,8 @@ showHideCreate(): void {
    */
   ngOnInit() {
       this.showCreate = false;
-       this.showEdit = false;
+      this.showEdit = false;
+      this.showView = false;
       this.selectedDeportista = undefined;
       this.deportista_id = undefined;
       this.getDeportistas();

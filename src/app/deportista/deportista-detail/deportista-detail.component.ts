@@ -1,10 +1,12 @@
-import {Component, OnInit, ViewContainerRef} from '@angular/core';
+import {Component, OnInit, Input, ViewChild, ViewContainerRef} from '@angular/core';
 import {ModalDialogService, SimpleModalComponent} from 'ngx-modal-dialog';
 import {ToastrService} from 'ngx-toastr';
 import { ActivatedRoute, Router } from '@angular/router';
 import {DeportistaService} from '../deportista.service';
 import {DeportistaDetail} from '../deportista-detail';
 
+import {DeportistaObjetivosComponent} from '../deportista-objetivos/deportista-objetivos.component';
+import {DeportistaAddObjetivoComponent} from '../deportista-add-objetivo/deportista-add-objetivo.component';
 
 @Component({
   selector: 'app-deportista-detail',
@@ -26,13 +28,30 @@ export class DeportistaDetailComponent implements OnInit {
  /**
     * el deportista al que se le mostraran los detalles
     */
-  deportistaDetail: DeportistaDetail;
+  @Input() deportistaDetail: DeportistaDetail;
   /**
     * el id asociado al deportista que se obtendra
     */
   deportista_id: number;
   showEdit: boolean;
   deportista_edit_id: number;
+  
+  @ViewChild(DeportistaObjetivosComponent) objetivosListComponent: DeportistaObjetivosComponent;
+  @ViewChild(DeportistaAddObjetivoComponent) objetivoAddComponent: DeportistaAddObjetivoComponent;
+  
+   toggleObjetivos(): void {
+        if (this.objetivoAddComponent.isCollapsed == false) {
+            this.objetivoAddComponent.isCollapsed = true;
+        }
+        this.objetivosListComponent.isCollapsed = !this.objetivosListComponent.isCollapsed;
+    }
+
+    toggleCreateObjetivo(): void {
+        if (this.objetivosListComponent.isCollapsed == false) {
+            this.objetivosListComponent.isCollapsed = true;
+        }
+        this.objetivoAddComponent.isCollapsed = !this.objetivoAddComponent.isCollapsed;
+    }
   /**
     * Metodo para obtener el detalle de un deportista
     */
@@ -68,7 +87,7 @@ showHideEdit(deportista_id: number): void {
         this.modalDialogService.openDialog(this.viewRef, {
             title: 'Delete an deportista',
             childComponent: SimpleModalComponent,
-            data: {text: 'Are you sure your want to delete this deportista from the BookStore?'},
+            data: {text: 'Are you sure your want to delete this deportista from the DeportistaStore?'},
             actionButtons: [
                 {
                     text: 'Yes',

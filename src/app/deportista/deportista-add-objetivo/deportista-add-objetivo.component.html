@@ -1,0 +1,47 @@
+<div id="collapseAddObjetivo" [ngbCollapse]="isCollapsed">
+    <div class="container-fluid">
+        <h3>Agregar un objetivo</h3>
+        <form name="post" (ngSubmit)="objetivoForm.form.valid && postObjetivo(objetivoForm)" #objetivoForm="ngForm" novalidate>
+              <div class="row">
+              
+                  
+                  
+                  
+             <div class="form-group">
+                <label for="objetivoFechaLimite"><b>Fecha límite</b></label>
+                <input type="datetime-local" name="objetivoFechaLimite" class="form-control" id="objetivoFechaLimite" [(ngModel)]="objetivo.fechaLimite"
+                    #objetivoFechaLimite="ngModel" [ngClass]="{ 'is-invalid': f.submitted && objetivoFechaLimite.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Debe llenar el campo fecha límite</div>
+                </div>
+            </div>
+              <div class="form-group">
+                <label for="objetivoDescripcion"><b>Descripción</b></label>
+                <input type="textarea" style="width:650px; height:150px;" name="objetivoDescripcion" class="form-control" id="objetivoDescripcion " [(ngModel)]="objetivo.descripcion"
+                    #objetivoDescripcion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && objetivoDescripcion.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Debe llenar el campo descripción</div>
+                </div>
+            </div>
+              <div class="form-group">
+                <label for="objetivoCumplio"><b>Estado</b></label>
+                <select class = "form-control" id="objetivoCumplio" name="objetivoCumplio" [(ngModel)]="objetivo.cumplio"
+                    #objetivoCumplio="ngModel" [ngClass]="{ 'is-invalid': f.submitted && objetivoCumplio.invalid }" required>
+                    <option value="True">True</option>
+                    <option value="False">False</option>
+                </select>
+                <div class="invalid-feedback">
+                    <div>Debe llenar el campo estado</div>
+                </div>
+            </div>
+                  
+                  
+                  
+                  
+            </div>
+            <div class="row form-inline justify-content-center align-self-center">
+                <button type="submit" class="btn btn-primary">Post objetivo</button>
+            </div>
+        </form>
+    </div>
+</div>
