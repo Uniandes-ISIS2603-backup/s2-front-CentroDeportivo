@@ -14,6 +14,7 @@
                     <th>Descripción</th>
                     <th>Cumplio</th>
                     <th>Fecha límite</th>
+                    <th>  </th>
                 </tr>
             </thead>
             <tbody>
@@ -27,8 +28,12 @@
                     
                    <td style="cursor: pointer;">
                         <dd class="figure-caption" routerLink="/objetivos/{{objetivo.id}}">{{objetivo.fechaLimite}}</dd>
+                   
                     </td>
-                    
+                    <td>
+                         <button class="btn" (click)="showHideEdit(objetivo.id)"><span class="fa fa-pencil" ></span></button>
+                    </td>
+                     
                 </tr>
             </tbody>
         </table>

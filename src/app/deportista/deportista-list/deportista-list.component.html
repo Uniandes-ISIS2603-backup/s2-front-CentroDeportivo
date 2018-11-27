@@ -12,6 +12,7 @@
             <thead class ="thead-dark">
                 <tr>
                     <th>Nombre</th>
+                    <th>  </th>
                 </tr>
             </thead>
             <tbody>
@@ -19,6 +20,9 @@
                     
                     <td style="cursor: pointer;">
                         <dd class="figure-caption" routerLink="/deportistas/{{deportista.id}}">{{deportista.nombre}}</dd>
+                    </td>
+                    <td>
+                         <button class="btn" (click)="showHideEdit(deportista.id)"><span class="fa fa-pencil"></span></button>
                     </td>
                 </tr>
             </tbody>
