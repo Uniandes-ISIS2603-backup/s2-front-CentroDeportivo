@@ -11,6 +11,8 @@ import { MaquinaDetailComponent } from './maquina-detail/maquina-detail.componen
 import { MaquinaCreateComponent } from './maquina-create/maquina-create.component';
 import { MaquinaEditComponent } from './maquina-edit/maquina-edit.component';
 import { EjercicioModule } from '../ejercicio/ejercicio.module';
+import { NgbdCarouselBasic } from './carousel-basic';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -20,9 +22,10 @@ import { EjercicioModule } from '../ejercicio/ejercicio.module';
     HttpClientModule,
     CommonModule,
     FormsModule,
-    EjercicioModule
+    EjercicioModule,
+    NgbModule
   ],
-  declarations: [MaquinaListComponent, MaquinaDetailComponent, MaquinaCreateComponent, MaquinaEditComponent],
+  declarations: [MaquinaListComponent, MaquinaDetailComponent, MaquinaCreateComponent, MaquinaEditComponent,NgbdCarouselBasic],
   providers: [MaquinaService]
 //  exports: [MaquinaListComponent]
 })

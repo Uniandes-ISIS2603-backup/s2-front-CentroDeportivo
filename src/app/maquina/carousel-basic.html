@@ -1,0 +1,23 @@
+<ngb-carousel *ngIf="images">
+  <ng-template ngbSlide>
+    <img [src]="images[0]" width="100%" height="500" alt="Random first slide">
+    <div class="carousel-caption">
+      <h3>Nuestras maquinas</h3>
+      <p>Siempre a tu disposicion</p>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+      <img [src]="images[1]" width="100%" height="500" alt="Random second slide">
+    <div class="carousel-caption">
+      <h3>Estiramiento y abdomen</h3>
+      <p>Tu abdomen se verá tan definido como quieras, trabajando en esta área del gimnasio dotada de máquinas para el trabajo de tu zona media</p>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+      <img [src]="images[2]" width="100%" height="500" alt="Random third slide">
+    <div class="carousel-caption">
+      <h3>Musculación</h3>
+      <p>El tono muscular que siempre has querido obtener, lo podrás lograr en nuestras modernas máquinas</p>
+    </div>
+  </ng-template>
+</ngb-carousel>
