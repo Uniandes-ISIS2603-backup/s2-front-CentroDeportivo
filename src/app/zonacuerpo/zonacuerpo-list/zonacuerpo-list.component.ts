@@ -28,7 +28,7 @@ export class ZonacuerpoListComponent implements OnInit {
  selectedZonacuerpo : Zonacuerpo;
  zonacuerpo_id: number;
  showCreate: boolean;
-  showEdit: boolean;
+  showEdition: boolean;
   zonacuerpo_edit_id: number;
    
  /**
@@ -67,18 +67,17 @@ showHideCreate(): void {
      this.zonacuerpoService.getZonacuerpos().subscribe(zonacuerpos => this.zonacuerpos = zonacuerpos);
  }
  showHideEdit(zonacuerpo_id: number): void {
-        if (!this.showEdit || (this.showEdit && 
-            zonacuerpo_id != this.zonacuerpo_edit_id)) {
+        if (!this.showEdition || (this.showEdition && zonacuerpo_id != this.zonacuerpo_edit_id)) 
+            {
             this.showCreate = false;
-            this.showEdit = true;
-            this.zonacuerpo_edit_id = zonacuerpo_id;
-        }
+            this.showEdition = true;
+            this.zonacuerpo_edit_id = zonacuerpo_id;}
         else {
-            this.showEdit = false;
+            this.showEdition = false;
         }
     }
     updateZonacuerpo(): void {
-        this.showEdit = false;
+        this.showEdition = false;
     }
 
     /**
@@ -86,23 +85,14 @@ showHideCreate(): void {
     */
     deleteZonacuerpo(zonacuerpoId): void {
         this.modalDialogService.openDialog(this.viewRef, {
-            title: 'Delete an zonacuerpo',
+            title: 'Borrar Zonacuerpo',
             childComponent: SimpleModalComponent,
             data: {text: 'Seguro que quiere borrar esta zonacuerpo?'},
             actionButtons: [
-                {
-                    text: 'Yes',
+                {text: 'Yes',
                     buttonClass: 'btn btn-danger',
                     onAction: () => {
-                        this.zonacuerpoService.deleteZonacuerpo(zonacuerpoId).subscribe(() => {
-                            this.toastrService.error("The zonacuerpo fue borrada", "Zonacuerpo deleted");
-                            this.ngOnInit();
-                        }, err => {
-                            this.toastrService.error(err, "Error");
-                        });
-                        return true;
-                    }
-                },
+                        this.zonacuerpoService.deleteZonacuerpo(zonacuerpoId).subscribe(() => {this.toastrService.error("The zonacuerpo fue borrada", "Zonacuerpo deleted");this.ngOnInit();}, err => {this.toastrService.error(err, "Error"); }); return true;} },
                 {text: 'No', onAction: () => true}
             ]
         });
@@ -112,7 +102,7 @@ showHideCreate(): void {
    */
   ngOnInit() {
       this.showCreate = false;
-       this.showEdit = false;
+       this.showEdition = false;
       this.selectedZonacuerpo = undefined;
       this.zonacuerpo_id = undefined;
       this.getZonacuerpos();
