@@ -12,7 +12,8 @@
             <thead class ="thead-dark">
                 <tr>
                     <th>Nombre</th>
-                    <th>  </th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
                 </tr>
             </thead>
             <tbody>
@@ -23,6 +24,9 @@
                     </td>
                     <td>
                          <button class="btn" (click)="showHideEdit(zonacuerpo.id)"><span class="fa fa-pencil"></span></button>
+                    </td>
+                    <td>
+                        <button class="btn btn-danger" (click)="deleteZonacuerpo(zonacuerpo.id)"><span class="fa fa-trash"></span></button>
                     </td>
                 </tr>
             </tbody>
