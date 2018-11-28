@@ -110,7 +110,7 @@ showHideCreate(): void {
             ]
         });
     }
-    showCarousel(){
+    showCarousel1(){
         this.showCarousel = !this.showCarousel;
     }
  /**
@@ -125,7 +125,7 @@ showHideCreate(): void {
       if (this.allZonacuerpos == 'yes'){
       
        this.getZonacuerpos();
-       this.showCarousel();
+       this.showCarousel1();
       }
        
       
