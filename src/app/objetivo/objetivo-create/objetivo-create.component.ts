@@ -2,8 +2,6 @@ import { Component, OnInit, Output , EventEmitter} from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { Objetivo } from '../objetivo';
 import {ObjetivoService} from '../objetivo.service';
-import 'rxjs/add/operator/filter';
-import {ActivatedRoute} from '@angular/router';
 @Component({
   selector: 'app-objetivo-create',
   templateUrl: './objetivo-create.component.html',
