@@ -1,8 +1,10 @@
-import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+import {Component, OnInit, Input, OnChanges, Output, EventEmitter} from '@angular/core';
+
 import {ToastrService} from 'ngx-toastr';
 
 import {EspecialistaService} from '../especialista.service';
 import {EspecialistaDetail} from '../especialista-detail';
+import {Especialista} from '../especialista';
 
 @Component({
   selector: 'app-especialista-edit',
@@ -13,12 +15,16 @@ export class EspecialistaEditComponent implements OnInit {
 /**
     * Constructor del componente
     */
-  constructor(private especialistaService: EspecialistaService,
-        private toastrService: ToastrService) { }
-       /**
-    * id recibido del componente padre
-    */ 
-  @Input() especialista_id: number;
+  constructor(
+        private especialistaService: EspecialistaService,
+        private toastrService: ToastrService
+  ) { }
+        
+         /**
+    * Detalle de la rutina
+    */
+  @Input() especialista: EspecialistaDetail;
+
    /**
     * Output que dice a componente padre que no se quiere editar 
     */
@@ -27,16 +33,14 @@ export class EspecialistaEditComponent implements OnInit {
     * Output que dice a componente padre que se quiere editar 
     */
   @Output() update = new EventEmitter();
-  /**
-    * Detalle de la rutina
-    */
-  @Input() especialista: EspecialistaDetail;
+  
+
   /**
     * Funcion que obtiene los especialistas
     */
-      getEspecialista(): void {
-          console.log(this.especialista_id);
-        this.especialistaService.getEspecialistaDetail(this.especialista_id)
+      getEspecialista( ): void {
+          console.log(this.especialista);
+        this.especialistaService.getEspecialistaDetail(this.especialista.id)
             .subscribe(especialista => {
                 this.especialista = especialista;
             });
@@ -44,7 +48,7 @@ export class EspecialistaEditComponent implements OnInit {
     /**
     * Actualiza informacion especialistas
     */
-    editEspecialista(): void {
+    editEspecialista( ): void {
         this.especialistaService.updateEspecialista(this.especialista)
             .subscribe(() => {
                 this.update.emit();
@@ -61,7 +65,6 @@ export class EspecialistaEditComponent implements OnInit {
     * Inicializa el componente
     */
   ngOnInit() {
-      this.especialista = new EspecialistaDetail();
       this.getEspecialista();
   }
   /**

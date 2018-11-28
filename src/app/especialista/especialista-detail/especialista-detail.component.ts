@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import {EspecialistaService} from '../especialista.service';
@@ -21,7 +21,7 @@ export class EspecialistaDetailComponent implements OnInit {
  /**
     * el especialista al que se le mostraran los detalles
     */
-    especialistaDetail: EspecialistaDetail;
+    @Input() especialistaDetail: EspecialistaDetail;
   /**
     * el id asociado al especialista que se obtendra
     */

@@ -38,9 +38,9 @@
         <div *ngIf="showCreate">
             <app-rutina-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-rutina-create>
         </div>
-        <!--    <div *ngIf="showEdit">
+        <div *ngIf="showEdit">
                 <app-rutina-edit [rutina_id]="rutina_edit_id" [rutina]="selectedRutina" (cancel)="showHideEdit(selectedRutina.id)" (update)="updateRutina()" ></app-rutina-edit>
-        </div>-->
+        </div>
     </div>  
     </div>
 </div>

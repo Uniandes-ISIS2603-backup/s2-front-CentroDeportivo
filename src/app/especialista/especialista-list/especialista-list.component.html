@@ -49,14 +49,14 @@
         </div>
         <div class="col-8">
           <div *ngIf="selectedAuthor">
-              <app-especialista-detail> [especialistaDetail]="selectedEspecialista></app-especialista-detail>
+              <app-especialista-detail [especialistaDetail]="selectedEspecialista"></app-especialista-detail>
           </div>
         <div *ngIf="showCreate">
             <app-especialista-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-especialista-create>
         </div>
-        <!--<div *ngIf="showEdit">
-                <app-especialista-edit [especialista_id]="especialista_edit_id" [especialista]="selectedEspecialista" (cancel)="showHideEdit(selectedEspecialista.id)" (update)="updateEspecialista()" ></app-especialista-edit>
-        </div>-->
+        <div *ngIf="showEdit">
+                <app-especialista-edit [especialista]="selectedEspecialista" (cancel)="showHideEdit(selectedEspecialista.id)" (update)="updateEspecialista()" ></app-especialista-edit>
+        </div>
     </div>  
     </div>
 </div>

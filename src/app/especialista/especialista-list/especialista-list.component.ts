@@ -1,10 +1,10 @@
-import { Component, OnInit,ViewContainerRef  } from '@angular/core';
+import { Component, OnInit,ViewContainerRef, Input  } from '@angular/core';
 import { ModalDialogService, SimpleModalComponent } from 'ngx-modal-dialog';
 import { ToastrService } from 'ngx-toastr';
 import { Especialista } from '../especialista';
 import {EspecialistaService} from '../especialista.service';
 import {EspecialistaDetail} from '../especialista-detail';
-
+import { ActivatedRoute } from '@angular/router';
 /**
 * El componente de la lista de especialistas
 */
@@ -20,12 +20,13 @@ export class EspecialistaListComponent implements OnInit {
    */
   constructor( private especialistaService: EspecialistaService,private modalDialogService: ModalDialogService,
         private viewRef: ViewContainerRef,
-        private toastrService: ToastrService ) { }
+        private toastrService: ToastrService,
+        private route: ActivatedRoute ) { }
 
   /**
    * La lista de especialistas del centro deportivo
    */
-   especialistas: Especialista[];
+   @Input() especialistas: Especialista[];
    /**
    * id del especialista seleccionado
    */
