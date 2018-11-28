@@ -3,7 +3,7 @@ import { Observable} from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 import { Maquina } from './maquina';
-import {MaquinaDetail} from './maquina-detail';
+import { MaquinaDetail } from './maquina-detail';
 
 
 import {environment} from '../../environments/environment';

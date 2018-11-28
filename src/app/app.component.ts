@@ -1,4 +1,6 @@
 import { Component, OnInit} from '@angular/core';
+import { AuthService } from './auth/auth.service';
+
 
 @Component({
   selector: 'app-root',
@@ -17,11 +19,18 @@ export class AppComponent implements OnInit {
      */
     ngOnInit(): void {
         this.title = "Ludis";
+        this.authService.start();
     }
 
     /**
      * @ignore
      */
-    constructor() { }
+   constructor(private authService: AuthService) { }
+
+    logout(): void {
+        this.authService.logout()
+    }
+
+   
 
 }

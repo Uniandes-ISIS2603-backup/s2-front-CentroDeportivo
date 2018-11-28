@@ -41,7 +41,7 @@
             <app-maquina-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-maquina-create>
         </div>
         <div *ngIf="showEdit">
-                <app-maquina-edit [maquina_id]="maquina_edit_id" [maquina]="selectedMaquina" (cancel)="showHideEdit(selectedMaquina.id)" (update)="updateMaquina()" ></app-maquina-edit>
+            <app-maquina-edit [maquina_id]="maquina_edit_id" [maquina]="selectedMaquina" (cancel)="showHideEdit(selectedMaquina.id)" (update)="updateMaquina()" ></app-maquina-edit>
         </div>
             
         </div>  

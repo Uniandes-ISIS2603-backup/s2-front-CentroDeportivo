@@ -26,7 +26,8 @@
     "ngx-modal-dialog": "^3.0.0",
     "ngx-toastr": "^9.0.2",
     "rxjs": "~6.2.0",
-    "zone.js": "~0.8.26"
+    "zone.js": "~0.8.26",
+    "ngx-permissions": "^6.0.2"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.8.0",

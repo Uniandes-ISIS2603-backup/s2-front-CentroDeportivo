@@ -1,6 +1,7 @@
 import {NgModule} from '@angular/core/';
 import {RouterModule, Routes} from '@angular/router';
 import {CommonModule} from '@angular/common';
+import {NgxPermissionsGuard} from 'ngx-permissions';
 
 import{DeportistaListComponent} from './deportista/deportista-list/deportista-list.component';
 import{EjercicioListComponent} from './ejercicio/ejercicio-list/ejercicio-list.component';
@@ -19,6 +20,8 @@ import {ZonacuerpoDetailComponent} from './zonacuerpo/zonacuerpo-detail/zonacuer
 import {DeportistaDetailComponent} from './deportista/deportista-detail/deportista-detail.component';
 import {ObjetivoDetailComponent} from './objetivo/objetivo-detail/objetivo-detail.component';
 import {HomeComponent} from './home/home.component';
+import { AuthLoginComponent } from './auth/auth-login/auth-login.component';
+import { AuthSignUpComponent } from './auth/auth-sign-up/auth-sign-up.component';
 
 const routes: Routes =
 [
@@ -134,13 +137,38 @@ const routes: Routes =
     {
          path: '**',    
          redirectTo: 'home',    
+    },
+    {
+        path: 'auth',
+        children: [
+            {
+                path: 'login',
+                component: AuthLoginComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['GUEST']
+                    }
+                }
+            },
+            {
+                path: ':sign-up',
+                component: AuthSignUpComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['GUEST']
+                    }
+                }
+            }
+        ]
     }
 ]
 
 @NgModule({
     imports: [
         CommonModule,
-        RouterModule.forRoot(routes)
+        RouterModule.forRoot(routes, {onSameUrlNavigation : 'reload'})
     ],
     exports: [RouterModule],
     declarations: []
