@@ -1,10 +1,28 @@
 <div class="col-md-12">
+    <br>
     <div class="container-fluid">   
-        <p class="h3 p-3">Nombre: {{maquinaDetail.nombre}}</p>
-        <p class="h3 p-3">Referencia: {{maquinaDetail.referencia}}</p>
-        <p class="h3 p-3">Calorías: {{maquinaDetail.calorias}}</p>
-        <p class="h3 p-3">Tiempo: {{maquinaDetail.tiempo}}</p>
-        <p class="h3 p-3">Velocidad: {{maquinaDetail.velocidad}}</p>
-        <p class="h3 p-3">Velocidad promedio: {{maquinaDetail.velocidadPromedio}}</p>
+        <div class ="row">
+            <div class="col-3">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Referencia</th>                 
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <td>{{maquinaDetail.nombre}}</td>
+                        <td>{{maquinaDetail.referencia}}</td>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col">
+                <img class="img-fluid" src='{{maquinaDetail.imagen}}' alt="{{maquinaDetail.imagen}}" width="80%" height="80%" />   
+            </div>
+            
+        </div>
+        
+        
+            
     </div>
 </div>

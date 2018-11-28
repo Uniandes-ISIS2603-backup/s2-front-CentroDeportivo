@@ -29,4 +29,12 @@ export class MaquinaService {
   createMaquina(maquina): Observable<Maquina> {
         return this.http.post<Maquina>(API_URL + maquinas, maquina);
     }
+    
+  updateMaquina(maquina): Observable<MaquinaDetail> {
+        return this.http.put<MaquinaDetail>(API_URL + maquinas + '/' + maquina.id, maquina);
+    }
+   
+  deleteAuthor(maquinaId): Observable<boolean> {
+        return this.http.delete<boolean>(API_URL + maquinas + '/' + maquinaId);
+    }
 }
