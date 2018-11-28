@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MaquinaEditComponent } from './maquina-edit.component';
+import { EspecialistaEditComponent } from './especialista-edit.component';
 
-describe('MaquinaEditComponent', () => {
-  let component: MaquinaEditComponent;
-  let fixture: ComponentFixture<MaquinaEditComponent>;
+describe('EspecialistaEditComponent', () => {
+  let component: EspecialistaEditComponent;
+  let fixture: ComponentFixture<EspecialistaEditComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MaquinaEditComponent ]
+      declarations: [ EspecialistaEditComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MaquinaEditComponent);
+    fixture = TestBed.createComponent(EspecialistaEditComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

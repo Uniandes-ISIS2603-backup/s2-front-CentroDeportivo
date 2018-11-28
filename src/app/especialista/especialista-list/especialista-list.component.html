@@ -24,16 +24,24 @@
         </div>
 	</div>
 </div>
-            <table class="list-group">
+            <table class="table table-striped">
             <thead class="thead-dark">
                 <tr>
-                    <th>Nombres De Especialistas</th>                
+                    <th>Nombres De Especialistas</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor = "let especialista of especialistas">
                     <td style="cursor: pointer;">
                         <dd class="figure-caption" routerLink="/especialistas/{{especialista.id}}">{{especialista.nombre}}</dd>
+                    </td>
+                    <td>
+                         <button class="btn" (click)="showHideEdit(especialista.id)"><span class="fa fa-pencil" ></span></button>
+                    </td>
+                    <td>
+                        <button class="btn btn-danger" (click)="deleteEspecialista(especialista.id)"><span class="fa fa-trash"></span></button>
                     </td>
                 </tr>
             </tbody>
@@ -46,6 +54,9 @@
         <div *ngIf="showCreate">
             <app-especialista-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-especialista-create>
         </div>
+        <!--<div *ngIf="showEdit">
+                <app-especialista-edit [especialista_id]="especialista_edit_id" [especialista]="selectedEspecialista" (cancel)="showHideEdit(selectedEspecialista.id)" (update)="updateEspecialista()" ></app-especialista-edit>
+        </div>-->
     </div>  
     </div>
 </div>
