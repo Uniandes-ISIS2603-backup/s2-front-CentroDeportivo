@@ -85,12 +85,12 @@ showHideCreate(): void {
     */
     deleteImplemento(implementoId): void {
         this.modalDialogService.openDialog(this.viewRef, {
-            title: 'Delete an implemento',
+            title: 'Borrar un implemento',
             childComponent: SimpleModalComponent,
-            data: {text: 'Seguro que desea eliminar este implemento??'},
+            data: {text: '¿Está seguro de que desea eliminar el implemento seleccionado?'},
             actionButtons: [
                 {
-                    text: 'Yes',
+                    text: 'Sí',
                     buttonClass: 'btn btn-danger',
                     onAction: () => {
                         this.implementoService.deleteImplemento(implementoId).subscribe(() => {

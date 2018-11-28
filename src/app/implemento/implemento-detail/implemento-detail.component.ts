@@ -66,12 +66,12 @@ showHideEdit(implemento_id: number): void {
     }
     deleteImplemento(implementoId): void {
         this.modalDialogService.openDialog(this.viewRef, {
-            title: 'Delete an implemento',
+            title: 'Borrar un implemento',
             childComponent: SimpleModalComponent,
-            data: {text: 'Are you sure your want to delete this implemento from the BookStore?'},
+            data: {text: '¿Está seguro de que desea borrar el implemento?'},
             actionButtons: [
                 {
-                    text: 'Yes',
+                    text: 'Sí',
                     buttonClass: 'btn btn-danger',
                     onAction: () => {
                         this.implementoService.deleteImplemento(implementoId).subscribe(() => {
