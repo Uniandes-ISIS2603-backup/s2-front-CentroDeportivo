@@ -45,5 +45,10 @@ export class EspecialistaDetailComponent implements OnInit {
         this.getEspecialistaDetail();
 
   }
+  volver()
+  {
+      this.especialista_id=null;
+      this.especialistaDetail=null;
+  }
 
 }

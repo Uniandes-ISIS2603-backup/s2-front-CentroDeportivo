@@ -35,8 +35,8 @@
                 <label for="deportistaSexo"><b>Género</b></label>
                 <select class = "form-control" id="deportistaSexo" [(ngModel)]="deportista.sexo"
                     #deportistaSexo="ngModel" [ngClass]="{ 'is-invalid': f.submitted && deportistaSexo.invalid }" required>
-                    <option value="M">True</option>
-                    <option value="F">False</option>
+                    <option value="M">Terminado</option>
+                    <option value="F">NoTerminado</option>
                 </select>
                 <div class="invalid-feedback">
                     <div>Debe llenar el campo de la cédula</div>

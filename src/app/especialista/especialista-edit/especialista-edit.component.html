@@ -1,4 +1,5 @@
-<!--<div class="row">
+
+<div class="row">
     <div class="col-12">
         <br>
         <h2 class="text-center">Editar una especialista</h2>
@@ -13,11 +14,19 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="especialistaReferencia"><b>Referencia</b></label>
-                <input type="text" name="especialistaReferencia" class="form-control" id="especialistaReferencia" [(ngModel)]="especialista.referencia"
-                       #especialistaReferencia="ngModel" [ngClass]="{ 'is-invalid': f.submitted && especialistaReferencia.invalid }" required>
+                <label for="especialistaEspecialidad"><b>Especialidad</b></label>
+                <input type="text" name="especialistaEspecialidad" class="form-control" id="especialistaEspecialidad" [(ngModel)]="especialista.especialidad"
+                       #especialistaEspecialidad="ngModel" [ngClass]="{ 'is-invalid': f.submitted && especialistaEspecialidad.invalid }" required>
                        <div class="invalid-feedback">
-                    <div> Debe llenar el campo Referencia</div>
+                    <div> Debe llenar el campo Especialidad</div>
+                </div>
+            </div>
+              <div class="form-group">
+                <label for="especialistaCedula"><b>Cedula</b></label>
+                <input type="text" name="especialistaCedula" class="form-control" id="especialistaCedula" [(ngModel)]="especialista.cedula"
+                       #especialistaCedula="ngModel" [ngClass]="{ 'is-invalid': f.submitted && especialistaCedula.invalid }" required>
+                       <div class="invalid-feedback">
+                    <div> Debe llenar el campo Cedula</div>
                 </div>
             </div>
             <div class="form-group">
@@ -41,5 +50,4 @@
     </div>
 </div>
 <br>
-<br>-->
-<p>hola</p>
+<br>
