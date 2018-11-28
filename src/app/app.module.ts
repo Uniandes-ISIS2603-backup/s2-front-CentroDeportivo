@@ -1,12 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-<<<<<<< HEAD
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-=======
-import { HttpClientModule } from '@angular/common/http';
-import { FormsModule} from '@angular/forms';
->>>>>>> f82aee6cc159cd46976a5225ec1729272c19e4d8
 import { AppComponent } from './app.component';
 import { AppRoutingModule} from './app-routing.module';
 import { ToastrModule } from 'ngx-toastr';
