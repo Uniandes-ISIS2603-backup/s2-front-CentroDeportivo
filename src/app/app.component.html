@@ -49,7 +49,8 @@
             <a id="maquinasTag" class="nav-link" routerLink="/maquinas/list" style="color:white">Máquinas</a>
         </li>
         <li class="nav-item">
-            <a id="objetivosTag" class="nav-link" routerLink="/objetivos/list" style="color:white">Objetivos</a>
+            <a id="objetivosTag" class="nav-link" routerLink="/objetivos/list" [queryParams]="{allObjetivos: 'yes'}" style="color:white">Objetivos</a>
+            
         </li>
         <li class="nav-item">
             <a id="rutinasTag" class="nav-link" routerLink="/rutinas/list" style="color:white">Rutinas</a>

@@ -19,6 +19,7 @@ export class ObjetivoService { headers = new HttpHeaders({
   
   getObjetivos():Observable<Objetivo[]>
   {
+      
       return this.http.get<Objetivo[]>(API_URL+objetivos);
   }
   getObjetivoDetail(objetivoId): Observable<ObjetivoDetail> {

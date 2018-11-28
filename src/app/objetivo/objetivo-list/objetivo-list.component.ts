@@ -1,9 +1,11 @@
-import {Component, OnInit, ViewContainerRef} from '@angular/core';
+import {Component, OnInit, Input, ViewContainerRef} from '@angular/core';
 import {ModalDialogService, SimpleModalComponent} from 'ngx-modal-dialog';
+import {ActivatedRoute} from '@angular/router';
 import { Objetivo } from '../objetivo';
 import { ObjetivoService } from '../objetivo.service';
 import {ObjetivoDetail} from '../objetivo-detail';
 import {ToastrService} from 'ngx-toastr';
+import 'rxjs/add/operator/filter';
 
 @Component({
   selector: 'app-objetivo-list',
@@ -11,11 +13,17 @@ import {ToastrService} from 'ngx-toastr';
   styleUrls: ['./objetivo-list.component.css']
 })
 export class ObjetivoListComponent implements OnInit {
+    
+    constructor(private objetivoService:ObjetivoService,
+   private modalDialogService: ModalDialogService,
+        private viewRef: ViewContainerRef,
+        private toastrService: ToastrService,
+        private route: ActivatedRoute) { }
   
   /**
    * La lista de objetivos del centro deportivo
    */
-  objetivos: Objetivo[];
+  @Input() objetivos: Objetivo[];
   
   /**
    * El id de la objetivo
@@ -23,6 +31,8 @@ export class ObjetivoListComponent implements OnInit {
   objetivo_id: number;
   
   showEdit: boolean;
+  vObjetivos = true;
+  allObjetivos: string = 'no';
   
   /**
    * La objetivo que el usuario va a ver
@@ -38,10 +48,7 @@ export class ObjetivoListComponent implements OnInit {
   /**
    * Contructor del componente
    */
-  constructor(private objetivoService:ObjetivoService,
-   private modalDialogService: ModalDialogService,
-        private viewRef: ViewContainerRef,
-        private toastrService: ToastrService) { }
+  
 
   /**
    * Obtiene el servicio para actualizar la lista de objetivos
@@ -50,7 +57,10 @@ export class ObjetivoListComponent implements OnInit {
   {
       this.objetivoService.getObjetivos().subscribe(objetivos => this.objetivos = objetivos);
   }
-  
+  setVObjetivos():void
+  {
+      this.vObjetivos = !this.vObjetivos;
+  }
   /**
    * Funcion para definir en seleccion
    */
@@ -64,7 +74,7 @@ export class ObjetivoListComponent implements OnInit {
   /**
    * Funcion para despliegue para creacion
    */   
-  showHideCreate(): void {
+  showHideCreate( ): void {
      if (this.selectedObjetivo) {
                this.selectedObjetivo = undefined;
                this.objetivo_id = undefined;
@@ -98,11 +108,20 @@ export class ObjetivoListComponent implements OnInit {
    * definicion de funcion para inicio
    */
   ngOnInit() {
+      this.route.queryParams.filter(params => params.allObjetivos).subscribe(params => {console.log(params); 
+
+        this.allObjetivos = params.allObjetivos;
+        console.log(this.allObjetivos); 
+      });
+      if (this.allObjetivos == 'yes'){
+          console.log("allObjetivos");
+      
+       this.getObjetivos();
+      }
+      
       this.showCreate = false;
       this.showEdit = false;
       this.selectedObjetivo = undefined;
       this.objetivo_id = undefined;
-      this.getObjetivos();
   }
-
 }

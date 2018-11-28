@@ -2,7 +2,8 @@ import { Component, OnInit, Output , EventEmitter} from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { Objetivo } from '../objetivo';
 import {ObjetivoService} from '../objetivo.service';
-
+import 'rxjs/add/operator/filter';
+import {ActivatedRoute} from '@angular/router';
 @Component({
   selector: 'app-objetivo-create',
   templateUrl: './objetivo-create.component.html',
@@ -13,7 +14,8 @@ export class ObjetivoCreateComponent implements OnInit {
    /**
     * Constructor del componente 
     */
-    constructor(private objetivoService: ObjetivoService, private toastrService: ToastrService) { }
+    constructor(private objetivoService: ObjetivoService, 
+    private toastrService: ToastrService) { }
 
    /**
     * La objetivo nueva
@@ -29,7 +31,6 @@ export class ObjetivoCreateComponent implements OnInit {
     * El output que dictara el componente padre que el usuario quiere crear una objetivo
     */ 
     @Output() create = new EventEmitter();
-    
    /**
     * Crea una nueva objetivo
     */
@@ -55,6 +56,6 @@ export class ObjetivoCreateComponent implements OnInit {
     * Funcion que inicializa el componente
     */
     ngOnInit() {
-      this.objetivo = new Objetivo();
+       this.objetivo = new Objetivo();
     }
 }

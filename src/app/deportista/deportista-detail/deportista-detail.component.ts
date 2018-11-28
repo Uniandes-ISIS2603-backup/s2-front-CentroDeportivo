@@ -4,27 +4,28 @@ import {ToastrService} from 'ngx-toastr';
 import { ActivatedRoute, Router } from '@angular/router';
 import {DeportistaService} from '../deportista.service';
 import {DeportistaDetail} from '../deportista-detail';
-
-import {DeportistaObjetivosComponent} from '../deportista-objetivos/deportista-objetivos.component';
-import {DeportistaAddObjetivoComponent} from '../deportista-add-objetivo/deportista-add-objetivo.component';
-
+import {ObjetivoService} from '../../objetivo/objetivo.service';
+import {Objetivo} from '../../objetivo/objetivo';
+import { Observable } from 'rxjs';
 @Component({
   selector: 'app-deportista-detail',
   templateUrl: './deportista-detail.component.html',
   styleUrls: ['./deportista-detail.component.css']
 })
 export class DeportistaDetailComponent implements OnInit {
-
+objetivoService:ObjetivoService;
+objetivos: Observable<Objetivo[]>;
 /**
     * El constructor del componente para el deportista
     * 
     */
-  constructor(private deportistaService: DeportistaService,
-               private route: ActivatedRoute,
+  constructor(
+        private deportistaService: DeportistaService,
+        private route: ActivatedRoute,
         private modalDialogService: ModalDialogService,
         private viewRef: ViewContainerRef,
         private toastrService: ToastrService,
-         private router: Router) { }
+        private router: Router) { }
  /**
     * el deportista al que se le mostraran los detalles
     */
@@ -35,23 +36,8 @@ export class DeportistaDetailComponent implements OnInit {
   deportista_id: number;
   showEdit: boolean;
   deportista_edit_id: number;
-  
-  @ViewChild(DeportistaObjetivosComponent) objetivosListComponent: DeportistaObjetivosComponent;
-  @ViewChild(DeportistaAddObjetivoComponent) objetivoAddComponent: DeportistaAddObjetivoComponent;
-  
-   toggleObjetivos(): void {
-        if (this.objetivoAddComponent.isCollapsed == false) {
-            this.objetivoAddComponent.isCollapsed = true;
-        }
-        this.objetivosListComponent.isCollapsed = !this.objetivosListComponent.isCollapsed;
-    }
+  allObjetivos: string = 'no';
 
-    toggleCreateObjetivo(): void {
-        if (this.objetivosListComponent.isCollapsed == false) {
-            this.objetivosListComponent.isCollapsed = true;
-        }
-        this.objetivoAddComponent.isCollapsed = !this.objetivoAddComponent.isCollapsed;
-    }
   /**
     * Metodo para obtener el detalle de un deportista
     */
@@ -60,18 +46,31 @@ export class DeportistaDetailComponent implements OnInit {
        this.deportistaService.getDeportistaDetail(this.deportista_id)
             .subscribe(deportistaDetail => {
                 this.deportistaDetail = deportistaDetail;
+                console.log(deportistaDetail);
             });
   }
+
   /**
     * Metodo que inicializa el componente
     */
   ngOnInit() {
+      this.route.queryParams.filter(params => params.allObjetivos).subscribe(params => {console.log(params); 
+
+        this.allObjetivos = params.allObjetivos;
+        console.log(this.allObjetivos); 
+      });
+      if (this.allObjetivos == 'yes'){
+          console.log("allObjetivos");
+      
+      this.objetivos = this.objetivoService.getObjetivos();
+      }
+      
        this.deportista_id = +this.route.snapshot.paramMap.get('id');
        this.deportistaDetail = new DeportistaDetail();
        this.showEdit = false;
        this.getDeportistaDetail();
   }
-showHideEdit(deportista_id: number): void {
+   showHideEdit(deportista_id: number): void {
         if (!this.showEdit || (this.showEdit && deportista_id != this.deportista_edit_id)) {
             this.showEdit = true;
             this.deportista_edit_id = deportista_id;
@@ -83,6 +82,7 @@ showHideEdit(deportista_id: number): void {
         updateDeportista(): void {
         this.showEdit = false;
     }
+
     deleteDeportista(deportistaId): void {
         this.modalDialogService.openDialog(this.viewRef, {
             title: 'Delete an deportista',
