@@ -22,35 +22,11 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="maquinaTiempo"><b>Tiempo de uso</b></label>
-                <input type="number" name="maquinaTiempo" class="form-control" id="maquinaTiempo" [(ngModel)]="maquina.tiempo"
-                    #maquinaTiempo="ngModel" [ngClass]="{ 'is-invalid': f.submitted && maquinaTiempo.invalid }" required>
+                <label for="maquinaImagen"><b>Imagen</b></label>
+                <input type="text" name="maquinaImagen" class="form-control" id="maquinaImagen" [(ngModel)]="maquina.imagen"
+                    #maquinaImagen="ngModel" [ngClass]="{ 'is-invalid': f.submitted && maquinaImagen.invalid }" required>
                 <div class="invalid-feedback">
-                    <div>Debe llenar el campo Tiempo de uso</div>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="maquinaCalorias"><b>Calorías Quemadas</b></label>
-                <input type="number" name="maquinaCalorias" class="form-control" id="maquinaCalorias" [(ngModel)]="maquina.calorias"
-                    #maquinaCalorias="ngModel" [ngClass]="{ 'is-invalid': f.submitted && maquinaCalorias.invalid }" required>
-                <div class="invalid-feedback">
-                    <div>Debe llenar el campo Calorías Quemadas</div>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="maquinaReferencia"><b>Velocidad</b></label>
-                <input type="number" name="maquinaVelocidad" class="form-control" id="maquinaReferencia" [(ngModel)]="maquina.velocidad"
-                    #maquinaVelocidad="ngModel" [ngClass]="{ 'is-invalid': f.submitted && maquinaVelocidad.invalid }" required>
-                <div class="invalid-feedback">
-                    <div>Debe llenar el campo Velocidad</div>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="maquinaVelocidadPromedio"><b>Velocidad Promedio</b></label>
-                <input type="text" name="maquinaVelocidadPromedio" class="form-control" id="maquinaVelocidadPromedio" [(ngModel)]="maquina.velocidadPromedio"
-                    #maquinaVelocidadPromedio="ngModel" [ngClass]="{ 'is-invalid': f.submitted && maquinaVelocidadPromedio.invalid }" required>
-                <div class="invalid-feedback">
-                    <div>Debe llenar el campo Velocidad Promedio</div>
+                    <div>Debe llenar el campo imagen</div>
                 </div>
             </div>
             <div class="row form-inline justify-content-center align-self-center">

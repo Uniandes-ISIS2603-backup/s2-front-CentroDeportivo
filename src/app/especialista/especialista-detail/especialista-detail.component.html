@@ -1,8 +1,16 @@
-<div class="col-md-12">
-    <div class="container-fluid"> 
+
+<div class="container-fluid"> 
+<a href="http://localhost:4200/especialistas/list">
+    <button type="button" class="btn" >Regresar</button>
+</a>
+<div class="row">
+  <div class="column">
+        <p class="h3 p-3"><img src="{{especialistaDetail.imagen}}"></p>
+  </div>
+  <div class="column">
         <p class="h3 p-3">Nombre: {{especialistaDetail.nombre}}</p>
         <p class="h3 p-3">Cédula: {{especialistaDetail.cedula}}</p>
         <p class="h3 p-3">Especialidad: {{especialistaDetail.especialidad}}</p>
-        <p class="h3 p-3"><img src="{{especialistaDetail.imagen}}" alt="Imagen del especialista" style="width:30%;height:30%;"></p>
-    </div>
+   </div>
+</div>
 </div>

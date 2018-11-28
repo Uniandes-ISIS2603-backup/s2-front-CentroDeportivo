@@ -1,0 +1,40 @@
+<div class="row">
+    <div class="col-12">
+        <br>
+        <h2 class="text-center">Editar una rutina</h2>
+        <br>
+        <form name="rutina" (ngSubmit)="f.form.valid && editRutina()" #f="ngForm" novalidate>
+            <div class="form-group">
+                <label for="rutinaName"><b>Nombre</b></label>
+                <input type="textarea" name="rutinaName" class="form-control" id="rutinaName" [(ngModel)]="rutina.nombre"
+                       #rutinaName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && rutinaName.invalid }" required>
+                       <div class="invalid-feedback">
+                    <div> Debe llenar el campo Nombre</div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="rutinaEstadoTerminado"><b>Estado de finalización de la rutina</b></label>
+                <select class="form-control" id="rutinaEstadoTerminado" [(ngModel)]="rutina.estadoTerminado"
+                    #rutinaEstadoTerminado="ngModel" [ngClass]="{ 'is-invalid': f.submitted && rutinaEstadoTerminado.invalid }" required>
+                    <option value="Verdadero">True</option>
+                    <option value="Falso">False</option>
+                    </select>
+                    <div class="invalid-feedback">
+                    <div>El estado de terminación de la rutina es requerido</div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <div class="row form-inline justify-content-center align-self-center">
+            <button type="button" class="btn btn-primary" (click)="editRutina()" >Edit</button>
+            <label></label>
+            <button type="button" class="btn btn-danger" (click)="cancelEdition()">Cancel</button>
+        </div>
+    </div>
+</div>
+<br>
+<br>

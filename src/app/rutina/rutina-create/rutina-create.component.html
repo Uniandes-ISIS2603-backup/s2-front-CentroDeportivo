@@ -7,18 +7,21 @@
         <form name="rutina" (ngSubmit)="f.form.valid && createRutina()" #f="ngForm" novalidate>
             <div class="form-group">
                 <label for="rutinaName"><b>Nombre de la rutina</b></label>
-                <input type="text" name="rutinaName" class="form-control" id="rutinaName" [(ngModel)]="rutina.name"
+                <input type="text" name="rutinaName" class="form-control" id="rutinaName" [(ngModel)]="rutina.nombre"
                     #rutinaName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && rutinaName.invalid }" required>
                 <div class="invalid-feedback">
                     <div>El nombre de la rutina es requerido</div>
                 </div>
             </div>
               <div class="form-group">
-                <label for="rutinaEstado"><b>Estado de la rutina</b></label>
-                <input type="text" name="rutinaEstado" class="form-control" id="rutinaEstado" [(ngModel)]="rutina.estado"
-                    #rutinaEstado="ngModel" [ngClass]="{ 'is-invalid': f.submitted && rutinaEstado.invalid }" required>
-                <div class="invalid-feedback">
-                    <div>El estado de la rutina es requerido</div>
+                <label for="rutinaEstadoTerminado"><b>Estado de finalización de la rutina</b></label>
+                <select class="form-control" id="rutinaEstadoTerminado" [(ngModel)]="rutina.estadoTerminado"
+                    #rutinaEstadoTerminado="ngModel" [ngClass]="{ 'is-invalid': f.submitted && rutinaEstadoTerminado.invalid }" required>
+                    <option value="Verdadero">True</option>
+                    <option value="Falso">False</option>
+                    </select>
+                    <div class="invalid-feedback">
+                    <div>El estado de terminación de la rutina es requerido</div>
                 </div>
             </div>
             <div class="row form-inline justify-content-center align-self-center">

@@ -1,0 +1,23 @@
+<ngb-carousel *ngIf="images">
+  <ng-template ngbSlide>
+    <img [src]="images[0]" width="100%" height="500" alt="Random first slide">
+    <div class="carousel-caption">
+      <h3>Nuestro equipo</h3>
+      <p>Grupo de entrenadores</p>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+      <img [src]="images[1]" width="100%" height="500" alt="Random second slide">
+    <div class="carousel-caption">
+      <h3>Nuestros entrenadores</h3>
+      <p>Siempre guiando con el ejemplo</p>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+      <img [src]="images[2]" width="100%" height="500" alt="Random third slide">
+    <div class="carousel-caption">
+      <h3>Nuestra prioridad</h3>
+      <p>Tú exito</p>
+    </div>
+  </ng-template>
+</ngb-carousel>

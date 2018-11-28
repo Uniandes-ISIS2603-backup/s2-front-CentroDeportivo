@@ -1,0 +1,44 @@
+<div class="row">
+    <div class="col-12">
+        <br>
+        <h2 class="text-center">Editar una maquina</h2>
+        <br>
+        <form name="maquina" (ngSubmit)="f.form.valid && editMaquina()" #f="ngForm" novalidate>
+            <div class="form-group">
+                <label for="maquinaName"><b>Nombre</b></label>
+                <input type="textarea" name="maquinaName" class="form-control" id="maquinaName" [(ngModel)]="maquina.nombre"
+                       #maquinaName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && maquinaName.invalid }" required>
+                       <div class="invalid-feedback">
+                    <div> Debe llenar el campo Nombre</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="maquinaReferencia"><b>Referencia</b></label>
+                <input type="text" name="maquinaReferencia" class="form-control" id="maquinaReferencia" [(ngModel)]="maquina.referencia"
+                       #maquinaReferencia="ngModel" [ngClass]="{ 'is-invalid': f.submitted && maquinaReferencia.invalid }" required>
+                       <div class="invalid-feedback">
+                    <div> Debe llenar el campo Referencia</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="maquinaImagen"><b>Imagen</b></label>
+                <input type="text" name="maquinaImagen" class="form-control" id="maquinaImagen" [(ngModel)]="maquina.imagen"
+                       #maquinaImagen="ngModel" [ngClass]="{ 'is-invalid': f.submitted && maquinaImagen.invalid }" required>
+                       <div class="invalid-feedback">
+                    <div> Debe llenar el campo Imagen</div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <div class="row form-inline justify-content-center align-self-center">
+            <button type="button" class="btn btn-primary" (click)="editMaquina()" >Edit</button>
+            <label></label>
+            <button type="button" class="btn btn-danger" (click)="cancelEdition()">Cancel</button>
+        </div>
+    </div>
+</div>
+<br>
+<br>

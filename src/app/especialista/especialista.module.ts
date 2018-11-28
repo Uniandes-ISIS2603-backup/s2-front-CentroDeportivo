@@ -10,9 +10,11 @@ import { EspecialistaService } from './especialista.service';
 
 import { EspecialistaDetailComponent } from './especialista-detail/especialista-detail.component';
 import { EspecialistaCreateComponent } from './especialista-create/especialista-create.component';
-
+import { EspecialistaEditComponent } from './especialista-edit/especialista-edit.component';
 import { ObjetivoModule } from '../objetivo/objetivo.module';
 import { DeportistaModule } from '../deportista/deportista.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbdCarouselBasic } from './carousel-basic';
 
 @NgModule({
   imports: [
@@ -22,10 +24,11 @@ import { DeportistaModule } from '../deportista/deportista.module';
     CommonModule,
     FormsModule,
     ObjetivoModule,
-    DeportistaModule
+    DeportistaModule,
+    NgbModule
 
   ],
-  declarations: [EspecialistaListComponent, EspecialistaDetailComponent,EspecialistaCreateComponent],
+  declarations: [EspecialistaListComponent, EspecialistaDetailComponent,EspecialistaCreateComponent, EspecialistaEditComponent,NgbdCarouselBasic],
   providers: [EspecialistaService],
   exports: [EspecialistaListComponent]
 })

@@ -42,4 +42,20 @@ export class RutinaService {
     createRutina(rutina): Observable<Rutina> {
         return this.http.post<Rutina>(API_URL + rutinas, rutina);
     }
+      /**
+    * Edita una rutina
+    * @param rutina el rutina que sera modificado
+    * @returns confirmacion de modificacion
+    */
+    updateRutina(rutina): Observable<RutinaDetail> {
+        return this.http.put<RutinaDetail>(API_URL + rutinas + '/' + rutina.id, rutina);
+    }
+   /**
+    * Elimina una rutina
+    * @param rutina que sera eliminado
+    * @returns confirmacion de eliminacion
+    */
+  deleteRutina(rutinaId): Observable<boolean> {
+        return this.http.delete<boolean>(API_URL + rutinas + '/' + rutinaId);
+    }
 }
