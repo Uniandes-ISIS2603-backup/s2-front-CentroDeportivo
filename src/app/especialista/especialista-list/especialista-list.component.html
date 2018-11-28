@@ -35,6 +35,11 @@
         </table>
         </div>
         <div class="col-8">
+            <div *ngIf="showCreate==false">
+            <div  *ngIf="showEdit==false">
+            <ngbd-carousel-basic></ngbd-carousel-basic>
+            </div>
+            </div>
           <div *ngIf="selectedAuthor">
               <app-especialista-detail [especialistaDetail]="selectedEspecialista"></app-especialista-detail>
           </div>
