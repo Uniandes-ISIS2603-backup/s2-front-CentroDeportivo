@@ -1,6 +1,9 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-2">
+            <br>
+            <br>
+            <br>
         <table class="table table-striped">
             <thead class ="thead-dark">
                 <tr>
@@ -20,15 +23,21 @@
                 </tr>
             </tbody>
         </table>
+            <div class="row justify-content-center align-self-center">
+           <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
+               (click)="showHideCreate()">Registrar a un deportista</button>
+       </div>
     </div>
         
         <div class="col-md-5">
-                
+                <br>
+                <br>
+                <br>
             <ngbd-carousel-basic2></ngbd-carousel-basic2>
         </div>
         
      
-        <div class="col-md-3">
+        <div class="col-md-6">
         <div *ngIf="showCreate">
             <app-deportista-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-deportista-create>
         </div>
@@ -39,10 +48,4 @@
            <app-deportista-detail [deportistaDetail]="selectedDeportista"></app-deportista-detail>
         </div>
     </div>
-        <br>
-       <div class="row justify-content-center align-self-center">
-           <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
-               (click)="showHideCreate()">Registrar a un deportista</button>
-       </div>
-    <br>
 </div>

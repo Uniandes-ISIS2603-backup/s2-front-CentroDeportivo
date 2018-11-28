@@ -6,8 +6,8 @@
             <thead class ="thead-dark">
                 <tr>
                     <th>Descripción</th>
-                    <th>Cumplio</th>
-                    <th>Fecha límite</th>
+                    <th *ngIf="esListaObjetivos()" required>Cumplio</th>
+                    <th *ngIf="esListaObjetivos()" required>Fecha límite</th>
                     <th>  </th>
                 </tr>
             </thead>
@@ -17,15 +17,15 @@
                         <dd class="figure-caption" routerLink="/objetivos/{{objetivo.id}}">{{objetivo.descripcion}}</dd>
                     </td>
                     <td style="cursor: pointer;">
-                        <dd class="figure-caption" routerLink="/objetivos/{{objetivo.id}}">{{objetivo.cumplio}}</dd>
+                        <dd class="figure-caption" routerLink="/objetivos/{{objetivo.id}}"*ngIf="esListaObjetivos()" required>{{objetivo.cumplio}}</dd>
                     </td>
                     
                    <td style="cursor: pointer;">
-                        <dd class="figure-caption" routerLink="/objetivos/{{objetivo.id}}">{{objetivo.fechaLimite}}</dd>
+                        <dd class="figure-caption" routerLink="/objetivos/{{objetivo.id}}"*ngIf="esListaObjetivos()" required>{{objetivo.fechaLimite}}</dd>
                    
                     </td>
                     <td>
-                         <button class="btn" (click)="showHideEdit(objetivo.id)"><span class="fa fa-pencil" ></span></button>
+                         <button class="btn" (click)="showHideEdit(objetivo.id)"*ngIf="esListaObjetivos()" required><span class="fa fa-pencil" ></span></button>
                     </td>
                      
                 </tr>
@@ -33,8 +33,8 @@
         </table>
         <br>
            <div class="justify-content-center align-self-center">
-               <button style="font-size:18px" [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn-success"
-                   (click)="showHideCreate()" >Registrar un objetivo  <i class="fa fa-plus"></i></button>
+               <button  style="font-size:18px" [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn-success"
+                   (click)="showHideCreate()" *ngIf="esListaObjetivos()" required>Registrar un objetivo  <i class="fa fa-plus"></i></button>
            </div>
         <br>
       </div>
@@ -45,7 +45,7 @@
         <div *ngIf="showCreate">
             <app-objetivo-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-objetivo-create>
         </div>
-        <div *ngIf="showEdit && vObjetivos">
+        <div *ngIf="showEdit">
             <app-objetivo-edit [objetivo_id]="objetivo_edit_id" (cancel)="showHideObjetivo(objetivo_edit_id)" (update)="updateObjetivo()"></app-objetivo-edit>
         </div>
     </div>

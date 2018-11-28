@@ -1,26 +1,28 @@
-import { Component, OnInit, OnChanges, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, EventEmitter, Output } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { NgForm } from '@angular/forms';
+
+import { Objetivo } from '../objetivo';
 import { DeportistaService } from '../deportista.service';
 import { Deportista } from '../../deportista/deportista';
-import {Objetivo} from '../objetivo';
+
 @Component({
-  selector: 'app-deportista-add-objetivo',
-  templateUrl: './deportista-add-objetivo.component.html',
-  styleUrls: ['./deportista-add-objetivo.component.css']
+  selector: 'app-depotista-add-objetivo',
+  templateUrl: './depotista-add-objetivo.component.html',
+  styleUrls: ['./depotista-add-objetivo.component.css']
 })
-export class DeportistaAddObjetivoComponent implements OnInit, OnChanges {
+export class DepotistaAddObjetivoComponent implements OnInit {
+    
+descripcion: string;
 
   constructor(private deportistaService: DeportistaService,
         private toastrService: ToastrService) { }
-  @Input() deportista: Deportista;    
-  objetivo: Objetivo;
-  
-  public isCollapsed = true;
-  
-   @Output() updateObjetivos= new EventEmitter();
-   
-   postObjetivo(objetivoForm: NgForm): Objetivo {
+@Input() deportista: Deportista;
+objetivo: Objetivo;
+    
+public isCollapsed = true;
+@Output() updateObjetivos = new EventEmitter();
+postObjetivo(objetivoForm: NgForm): Objetivo {
         this.objetivo.deportista = this.deportista;
         this.deportistaService.createObjetivo(this.deportista.id,this.objetivo)
             .subscribe(() => {
@@ -33,9 +35,9 @@ export class DeportistaAddObjetivoComponent implements OnInit, OnChanges {
         return this.objetivo;
     }
   ngOnInit() {
-        this.objetivo = new Objetivo();
+      this.objetivo = new Objetivo();
   }
-    ngOnChanges() {
+ ngOnChanges() {
         this.ngOnInit();
     }
 }

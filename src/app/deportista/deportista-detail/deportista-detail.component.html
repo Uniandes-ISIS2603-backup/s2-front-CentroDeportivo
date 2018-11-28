@@ -60,16 +60,24 @@
     <div class="col-md-6">
          <p class="h3 p-3">Objetivos de este deportista : </p>
          <app-objetivo-list [objetivos]="deportistaDetail.objetivos"></app-objetivo-list>
+
+           <button [ngClass]="{ 'btn-primary': !showAddObjetivo, 'btn-danger': showAddObjetivo }" type="button" class="btn"
+               (click)="showHideAddObjetivo(deportistaDetail.id)">Agregar objetivo <i class="fa fa-plus"></i></button>
     </div>
-<div class="col-4">
+<div class="col-6">
 <div >
+    <br>
         <button  style="font-size:20px" type="button" class="btn btn-primary"(click)="showHideEdit(deportistaDetail.id)" >Editar <span class="fa fa-pencil" ></span></button>
 
         <button style="font-size:20px" class="btn btn-danger" (click)="deleteDeportista(deportistaDetail.id)" >Eliminar <i class="fa fa-trash"></i></button>
  
         <div *ngIf="showEdit">
             <app-deportista-edit [deportista_id]="deportista_edit_id" (cancel)="showHideEdit(deportista_edit_id)" (update)="updateDeportista()"></app-deportista-edit>
-    </div>
+        </div>
+        <div *ngIf="showAddOjetivo">
+            <app-depotista-add-objetivo (cancel)="showHideAddObjetivo(deportistaDetail.id)" (create)="ngOnInit()"> </app-depotista-add-objetivo>
+
+        </div>
 </div>
 </div>
     

@@ -31,7 +31,6 @@ export class ObjetivoListComponent implements OnInit {
   objetivo_id: number;
   
   showEdit: boolean;
-  vObjetivos = true;
   allObjetivos: string = 'no';
   
   /**
@@ -45,6 +44,8 @@ export class ObjetivoListComponent implements OnInit {
   showCreate: boolean;
    
   objetivo_edit_id: number;
+  
+  listaObjetivos :string ='lista';
   /**
    * Contructor del componente
    */
@@ -57,10 +58,7 @@ export class ObjetivoListComponent implements OnInit {
   {
       this.objetivoService.getObjetivos().subscribe(objetivos => this.objetivos = objetivos);
   }
-  setVObjetivos():void
-  {
-      this.vObjetivos = !this.vObjetivos;
-  }
+
   /**
    * Funcion para definir en seleccion
    */
@@ -115,13 +113,27 @@ export class ObjetivoListComponent implements OnInit {
       });
       if (this.allObjetivos == 'yes'){
           console.log("allObjetivos");
-      
        this.getObjetivos();
+      }
+      else
+      {
+          this.listaObjetivos = 'detail'; 
       }
       
       this.showCreate = false;
       this.showEdit = false;
       this.selectedObjetivo = undefined;
       this.objetivo_id = undefined;
+  }
+  esListaObjetivos(): boolean
+  {
+      if( this.listaObjetivos == 'lista')
+      {
+          return true;
+      }
+      else
+      {
+          return false;
+      }
   }
 }

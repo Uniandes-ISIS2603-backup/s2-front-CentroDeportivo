@@ -15,6 +15,9 @@ import { Observable } from 'rxjs';
 export class DeportistaDetailComponent implements OnInit {
 objetivoService:ObjetivoService;
 objetivos: Observable<Objetivo[]>;
+showCreate: boolean;
+showAddObjetivo: boolean;
+
 /**
     * El constructor del componente para el deportista
     * 
@@ -49,7 +52,11 @@ objetivos: Observable<Objetivo[]>;
                 console.log(deportistaDetail);
             });
   }
-
+  agregarObjetivo(deportista_id: number):void
+  {
+        this.deportista_id = deportista_id;
+        this.showAddObjetivo = !this.showAddObjetivo;
+  }
   /**
     * Metodo que inicializa el componente
     */
@@ -68,6 +75,7 @@ objetivos: Observable<Objetivo[]>;
        this.deportista_id = +this.route.snapshot.paramMap.get('id');
        this.deportistaDetail = new DeportistaDetail();
        this.showEdit = false;
+       this.showAddObjetivo = false;
        this.getDeportistaDetail();
   }
    showHideEdit(deportista_id: number): void {
@@ -82,7 +90,9 @@ objetivos: Observable<Objetivo[]>;
         updateDeportista(): void {
         this.showEdit = false;
     }
-
+    showHideAddObjetivo(): void {
+        this.showAddObjetivo = !this.showAddObjetivo;
+    }
     deleteDeportista(deportistaId): void {
         this.modalDialogService.openDialog(this.viewRef, {
             title: 'Delete an deportista',
