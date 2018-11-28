@@ -7,7 +7,7 @@
         <form name="rutina" (ngSubmit)="f.form.valid && createRutina()" #f="ngForm" novalidate>
             <div class="form-group">
                 <label for="rutinaName"><b>Nombre de la rutina</b></label>
-                <input type="text" name="rutinaName" class="form-control" id="rutinaName" [(ngModel)]="rutina.name"
+                <input type="text" name="rutinaName" class="form-control" id="rutinaName" [(ngModel)]="rutina.nombre"
                     #rutinaName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && rutinaName.invalid }" required>
                 <div class="invalid-feedback">
                     <div>El nombre de la rutina es requerido</div>
