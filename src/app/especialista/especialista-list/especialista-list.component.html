@@ -11,7 +11,7 @@
             <div class="container">
 	
 </div>
-            <table id="myTable" class="table table-striped">
+            <table class="table table-striped">
             <thead class="thead-dark">
                 <tr>
                     <th>Nombres De Especialistas</th>
@@ -35,6 +35,13 @@
         </table>
         </div>
         <div class="col-8">
+            <h1 style="color: white" > .  </h1>
+            <p style="color: white" > .  </p>
+            <div *ngIf="showCreate==false">
+            <div  *ngIf="showEdit==false">
+            <ngbd-carousel-basic></ngbd-carousel-basic>
+            </div>
+            </div>
           <div *ngIf="selectedAuthor">
               <app-especialista-detail [especialistaDetail]="selectedEspecialista"></app-especialista-detail>
           </div>

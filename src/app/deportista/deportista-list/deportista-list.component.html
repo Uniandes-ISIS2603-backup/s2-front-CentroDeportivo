@@ -12,7 +12,8 @@
             <thead class ="thead-dark">
                 <tr>
                     <th>Nombre</th>
-                    <th>  </th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
                 </tr>
             </thead>
             <tbody>
@@ -24,13 +25,17 @@
                     <td>
                          <button class="btn" (click)="showHideEdit(deportista.id)"><span class="fa fa-pencil"></span></button>
                     </td>
+                    <td>
+                        <button class="btn btn-danger" (click)="deleteDeportista(deportista.id)"><span class="fa fa-trash"></span></button>
+                    </td>
                 </tr>
             </tbody>
         </table>
          
     </div>
         <div class="col-md-5">
-                
+             <br>
+             <br>
             <ngbd-carousel-basic2></ngbd-carousel-basic2>
         </div>
         

@@ -1,4 +1,4 @@
-<!--<div class="row">
+<div class="row">
     <div class="col-12">
         <br>
         <h2 class="text-center">Editar una rutina</h2>
@@ -12,20 +12,16 @@
                     <div> Debe llenar el campo Nombre</div>
                 </div>
             </div>
+            
             <div class="form-group">
-                <label for="rutinaReferencia"><b>Referencia</b></label>
-                <input type="text" name="rutinaReferencia" class="form-control" id="rutinaReferencia" [(ngModel)]="rutina.referencia"
-                       #rutinaReferencia="ngModel" [ngClass]="{ 'is-invalid': f.submitted && rutinaReferencia.invalid }" required>
-                       <div class="invalid-feedback">
-                    <div> Debe llenar el campo Referencia</div>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="rutinaImagen"><b>Imagen</b></label>
-                <input type="text" name="rutinaImagen" class="form-control" id="rutinaImagen" [(ngModel)]="rutina.imagen"
-                       #rutinaImagen="ngModel" [ngClass]="{ 'is-invalid': f.submitted && rutinaImagen.invalid }" required>
-                       <div class="invalid-feedback">
-                    <div> Debe llenar el campo Imagen</div>
+                <label for="rutinaEstadoTerminado"><b>Estado de finalización de la rutina</b></label>
+                <select class="form-control" id="rutinaEstadoTerminado" [(ngModel)]="rutina.estadoTerminado"
+                    #rutinaEstadoTerminado="ngModel" [ngClass]="{ 'is-invalid': f.submitted && rutinaEstadoTerminado.invalid }" required>
+                    <option value="Verdadero">True</option>
+                    <option value="Falso">False</option>
+                    </select>
+                    <div class="invalid-feedback">
+                    <div>El estado de terminación de la rutina es requerido</div>
                 </div>
             </div>
         </form>
@@ -41,5 +37,4 @@
     </div>
 </div>
 <br>
-<br>-->
-<p>hola por aca!</p>
+<br>

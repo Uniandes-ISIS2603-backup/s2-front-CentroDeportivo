@@ -62,6 +62,7 @@ showHideCreate(): void {
                this.rutina_id = undefined;
         }
         this.showCreate = !this.showCreate;
+        this.showEdit = false;
     }
     
   /**

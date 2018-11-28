@@ -88,7 +88,7 @@ showHideCreate(): void {
         this.modalDialogService.openDialog(this.viewRef, {
             title: 'Delete an ejercicio',
             childComponent: SimpleModalComponent,
-            data: {text: 'Are you sure your want to delete this ejercicio from the BookStore?'},
+            data: {text: 'Are you sure your want to delete this ejercicio from the Centrodeportivo?'},
             actionButtons: [
                 {
                     text: 'Yes',
@@ -107,6 +107,8 @@ showHideCreate(): void {
             ]
         });
     }
+    
+    
  /**
    * Definicion de funcion para inicio
    */

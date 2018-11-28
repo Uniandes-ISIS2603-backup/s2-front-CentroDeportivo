@@ -65,6 +65,7 @@ showHideCreate(): void {
                this.especialista_id = undefined;
         }
         this.showCreate = !this.showCreate;
+        this.showEdit = false;
     }
     
   /**
