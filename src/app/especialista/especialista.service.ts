@@ -42,4 +42,20 @@ export class EspecialistaService {
     createEspecialista(especialista): Observable<Especialista> {
         return this.http.post<Especialista>(API_URL + especialistas, especialista);
     }
+    /**
+    * Edita un especialista
+    * @param especialista el especialista que sera modificado
+    * @returns confirmacion de modificacion
+    */
+    updateEspecialista(especialista): Observable<EspecialistaDetail> {
+        return this.http.put<EspecialistaDetail>(API_URL + especialistas + '/' + especialista.id, especialista);
+    }
+   /**
+    * Elimina un especialista
+    * @param especialista que sera eliminado
+    * @returns confirmacion de eliminacion
+    */
+  deleteEspecialista(especialistaId): Observable<boolean> {
+        return this.http.delete<boolean>(API_URL + especialistas + '/' + especialistaId);
+    }
 }

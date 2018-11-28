@@ -9,25 +9,14 @@
             <br>
             <br>
             <div class="container">
-	<div class="row">
-        <div class="col-sm-2 col-sm-offset-1">
-            <div id="imaginary_container"> 
-                <div class="input-group stylish-input-group">
-                    <input type="text" class="form-control"  placeholder="Search" >
-                    <span class="input-group-addon">
-                        <button type="submit">
-                            <span class="glyphicon glyphicon-search"></span>
-                        </button>  
-                    </span>
-                </div>
-            </div>
-        </div>
-	</div>
+	
 </div>
-            <table class="list-group">
+            <table class="table table-striped">
             <thead class="thead-dark">
                 <tr>
-                    <th>Nombres De Especialistas</th>                
+                    <th>Nombres De Especialistas</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
                 </tr>
             </thead>
             <tbody>
@@ -35,16 +24,32 @@
                     <td style="cursor: pointer;">
                         <dd class="figure-caption" routerLink="/especialistas/{{especialista.id}}">{{especialista.nombre}}</dd>
                     </td>
+                    <td>
+                         <button class="btn" (click)="showHideEdit(especialista.id)"><span class="fa fa-pencil" ></span></button>
+                    </td>
+                    <td>
+                        <button class="btn btn-danger" (click)="deleteEspecialista(especialista.id)"><span class="fa fa-trash"></span></button>
+                    </td>
                 </tr>
             </tbody>
         </table>
         </div>
         <div class="col-8">
+            <h1 style="color: white" > .  </h1>
+            <p style="color: white" > .  </p>
+            <div *ngIf="showCreate==false">
+            <div  *ngIf="showEdit==false">
+            <ngbd-carousel-basic></ngbd-carousel-basic>
+            </div>
+            </div>
           <div *ngIf="selectedAuthor">
-              <app-especialista-detail> [especialistaDetail]="selectedEspecialista></app-especialista-detail>
+              <app-especialista-detail [especialistaDetail]="selectedEspecialista"></app-especialista-detail>
           </div>
         <div *ngIf="showCreate">
             <app-especialista-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-especialista-create>
+        </div>
+        <div *ngIf="showEdit">
+                <app-especialista-edit [especialista]="selectedEspecialista" (cancel)="showHideEdit(selectedEspecialista.id)" (update)="updateEspecialista()" ></app-especialista-edit>
         </div>
     </div>  
     </div>

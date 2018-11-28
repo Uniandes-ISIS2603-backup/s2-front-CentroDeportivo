@@ -18,28 +18,8 @@ export class Maquina {
     referencia : string;
     
     /**
-    * Calorias quemadas en la maquina
+    * La ruta de la imagen de la maquina
     */
-    calorias : number;
-    
-    /**
-    * Tiempo de uso de la máquina
-    */
-    tiempo : number;
-    
-    /**
-    * Velocidad adquirida en la maquina
-    */
-    velocidad : number;
-    
-    /**
-    * Velocidad promedio 
-    */
-    velocidadPromedio : number;
-    
-    
-  
-    
-    
+    imagen : string;
    
 }
