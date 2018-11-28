@@ -7,7 +7,7 @@
         <form name="especialista" (ngSubmit)="f.form.valid && createEspecialista()" #f="ngForm" novalidate>
             <div class="form-group">
                 <label for="especialistaName"><b>Name</b></label>
-                <input type="text" name="especialistaName" class="form-control" id="especialistaName" [(ngModel)]="especialista.name"
+                <input type="text" name="especialistaName" class="form-control" id="especialistaName" [(ngModel)]="especialista.nombre"
                     #especialistaName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && especialistaName.invalid }" required>
                 <div class="invalid-feedback">
                     <div>Por favor digite el nombre del especialista</div>
