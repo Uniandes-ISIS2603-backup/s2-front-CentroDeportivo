@@ -61,13 +61,14 @@ showHideCreate(): void {
             });
     }
     /**
-    * Obtiene el detalle del especialista
+    * Obtiene el detalle de la zonacuerpo
     */
  getZonacuerpos(): void{
      this.zonacuerpoService.getZonacuerpos().subscribe(zonacuerpos => this.zonacuerpos = zonacuerpos);
  }
  showHideEdit(zonacuerpo_id: number): void {
-        if (!this.showEdit || (this.showEdit && zonacuerpo_id != this.zonacuerpo_edit_id)) {
+        if (!this.showEdit || (this.showEdit && 
+            zonacuerpo_id != this.zonacuerpo_edit_id)) {
             this.showCreate = false;
             this.showEdit = true;
             this.zonacuerpo_edit_id = zonacuerpo_id;
@@ -81,20 +82,20 @@ showHideCreate(): void {
     }
 
     /**
-    * Deletes an zonacuerpo
+    * Borra una zonacuerpo
     */
     deleteZonacuerpo(zonacuerpoId): void {
         this.modalDialogService.openDialog(this.viewRef, {
             title: 'Delete an zonacuerpo',
             childComponent: SimpleModalComponent,
-            data: {text: 'Are you sure your want to delete this zonacuerpo from the BookStore?'},
+            data: {text: 'Seguro que quiere borrar esta zonacuerpo?'},
             actionButtons: [
                 {
                     text: 'Yes',
                     buttonClass: 'btn btn-danger',
                     onAction: () => {
                         this.zonacuerpoService.deleteZonacuerpo(zonacuerpoId).subscribe(() => {
-                            this.toastrService.error("The zonacuerpo was successfully deleted", "Zonacuerpo deleted");
+                            this.toastrService.error("The zonacuerpo fue borrada", "Zonacuerpo deleted");
                             this.ngOnInit();
                         }, err => {
                             this.toastrService.error(err, "Error");
