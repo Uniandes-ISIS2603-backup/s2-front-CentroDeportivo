@@ -1,9 +1,9 @@
 export class Ejercicio{
       id: number;
     
-      nombre: String;
+      nombre: string;
     
-      categoria:String;
+      categoria:string;
     
       duracion: number;
     
@@ -11,7 +11,7 @@ export class Ejercicio{
     
       descripcion:number;
     
-      explicacion: String;
+      explicacion:string;
 }
 
 

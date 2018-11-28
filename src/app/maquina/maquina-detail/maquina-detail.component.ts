@@ -43,7 +43,7 @@ export class MaquinaDetailComponent implements OnInit {
     ngOnInit() {
     this.maquina_id = +this.route.snapshot.paramMap.get('id');
     this.maquinaDetail = new MaquinaDetail();
-          this.getMaquinaDetail();
+    this.getMaquinaDetail();
 
   }
 

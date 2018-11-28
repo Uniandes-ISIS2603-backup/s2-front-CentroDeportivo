@@ -1,12 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+<<<<<<< HEAD
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+=======
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule} from '@angular/forms';
+>>>>>>> f82aee6cc159cd46976a5225ec1729272c19e4d8
 import { AppComponent } from './app.component';
-import {AppRoutingModule} from './app-routing.module';
+import { AppRoutingModule} from './app-routing.module';
 import { ToastrModule } from 'ngx-toastr';
 import { ModalDialogModule } from 'ngx-modal-dialog';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaquinaModule } from './maquina/maquina.module';
 import { ImplementoModule } from './implemento/implemento.module';
 import { DeportistaModule } from './deportista/deportista.module';
@@ -16,7 +21,10 @@ import { EjercicioModule } from './ejercicio/ejercicio.module';
 import { ZonacuerpoModule } from './zonacuerpo/zonacuerpo.module';
 import { RutinaModule } from './rutina/rutina.module';
 import { HomeModule } from './home/home.module';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgxPermissionsModule } from 'ngx-permissions';
+import { AuthModule } from './auth/auth.module';
+
 
 @NgModule({
   declarations: [
@@ -40,6 +48,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     ZonacuerpoModule,
     HomeModule,
     NgbModule,
+    AuthModule,
+    NgxPermissionsModule.forRoot(),
     ToastrModule.forRoot({
             timeOut: 10000,
             positionClass: 'toast-bottom-right',

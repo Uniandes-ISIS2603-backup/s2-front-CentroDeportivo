@@ -1,4 +1,5 @@
 import { Maquina } from './maquina';
+import { Ejercicio } from '../ejercicio/ejercicio';
 
 /**
 * This class represents an editorialDetail of the BookStore. 
@@ -6,4 +7,6 @@ import { Maquina } from './maquina';
 */
 export class MaquinaDetail extends Maquina {
     
+    /** Los ejercicios **/
+    ejercicios : Ejercicio[];
 }

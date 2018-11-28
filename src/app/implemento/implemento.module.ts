@@ -1,25 +1,28 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ImplementoService } from './implemento.service';
 import { ImplementoListComponent } from './implemento-list/implemento-list.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule } from '../app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ImplementoService } from './implemento.service';
 import { ImplementoDetailComponent } from './implemento-detail/implemento-detail.component';
 import { ImplementoCreateComponent } from './implemento-create/implemento-create.component';
+import { AppRoutingModule } from '../app-routing.module';
+
 import { NgbdCarouselBasic } from './carousel-basic';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ImplementoEditComponent } from './implemento-edit/implemento-edit.component';
 @NgModule({
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     CommonModule,
-    FormsModule,NgbModule
+    FormsModule,
+    NgbModule
   ],
-  declarations: [ImplementoListComponent, ImplementoDetailComponent, ImplementoCreateComponent,NgbdCarouselBasic],
+  declarations: [ImplementoListComponent, ImplementoDetailComponent, ImplementoCreateComponent,NgbdCarouselBasic, ImplementoEditComponent],
   providers: [ImplementoService],
-  bootstrap: [ImplementoListComponent]
+  exports: [ImplementoListComponent]
 })
 export class ImplementoModule { }

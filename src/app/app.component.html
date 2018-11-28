@@ -58,7 +58,18 @@
         <li class="nav-item">
             <a id="zonascuerpoTag" class="nav-link" routerLink="/zonascuerpo/list" style="color:white">Zonas del Cuerpo</a>
         </li>
-</ul>
+        <div class="flex-row" *ngxPermissionsOnly="['GUEST']">
+        <li class="nav-item"><a id="signup-navbar-item" class="nav-link" routerLink="/auth/sign-up"><span class="fa fa-user-circle"></span> Sign Up</a></li>
+        
+        <li class="nav-item"><a id="login-navbar-item" class="nav-link" routerLink="/auth/login"><span class="fa fa-sign-in"></span> Login</a></li>
+        </div>
+        
+        <div class="flex-row" *ngxPermissionsOnly="['CLIENT', 'ADMIN']">
+            <div class="form-inline">
+                <li><a id="logout-navbar-item" (click)="logout()" href="#"><span class="fa fa-sign-out"></span> Logout</a></li>
+            </div>
+        </div>
+</ul>   
   </div>
 </nav>
     
