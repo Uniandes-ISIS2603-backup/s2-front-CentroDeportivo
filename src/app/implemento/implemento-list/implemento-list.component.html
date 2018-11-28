@@ -1,51 +1,52 @@
-<div id="alertPanel" style="text-align: center"></div>
 <div class="container-fluid">
     <div class="row">
-    <div class="col-3">
+        <div class="col-md-4">
         <br>
-            <div class="row justify-content-center align-self-center">
-                <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
-                    (click)="showHideCreate()">Registrar un implemento</button>
-            </div>
-            <br>
-        <table class="table table-striped" >
-            <thead class="thead-dark">
+           <div class="row justify-content-center align-self-center">
+               <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
+                   (click)="showHideCreate()">Registrar a un implemento</button>
+           </div>
+        <br>
+        <br>
+        <table class="table table-striped">
+            <thead class ="thead-dark">
                 <tr>
                     <th>Nombre</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor = "let implemento of implementos">
+                 <tr *ngFor = "let implemento of implementos">
+                    
                     <td style="cursor: pointer;">
                         <dd class="figure-caption" routerLink="/implementos/{{implemento.id}}">{{implemento.nombre}}</dd>
                     </td>
-                    
-                    <!--><td id="implemento-edit">
-                            <button [ngClass]="{ 'btn-primary': (!showEdit || edit_implemento_id != implemento.id), 'btn-danger': (showEdit && edit_implemento_id == implemento.id) }"
-                                type="button" class="btn" (click)="showEditImplemento(implemento.id)">Editar</button>
-                        </td>
-                        <td id="implemento-delete">
-                            <button class="btn btn-danger" (click)="deleteImplemento(implemento.id)"><span class="fa fa-trash"></span></button>
-                        </td><-->
+                    <td>
+                         <button class="btn" (click)="showHideEdit(implemento.id)"><span class="fa fa-pencil"></span></button>
+                    </td>
+                    <td>
+                        <button class="btn btn-danger" (click)="deleteImplemento(implemento.id)"><span class="fa fa-trash"></span></button>
+                    </td>
                 </tr>
             </tbody>
         </table>
-            </div>
-            <div class="col-4">
-                
+         
+    </div>
+        
+        <div class="col-md-5">
+          <br>
+            <br> 
+            <br>    
             <ngbd-carousel-basic></ngbd-carousel-basic>
         </div>
         
-        
-        
-        <div class="col-3">
-          <div *ngIf="selectedImplemento">
-              <app-implemento-detail> [implementoDetail]="selectedImplemento></app-implemento-detail>
-          </div>
-            <div *ngIf="showCreate">
-                <app-implemento-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-implemento-create>
-            </div>
+        <div class="col-md-3">
+        <div *ngIf="showCreate">
+            <app-implemento-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-implemento-create>
+        </div>
+        <div *ngIf="showEdit">
+            <app-implemento-edit [implemento_id]="implemento_edit_id" (cancel)="showHideEdit(implemento_edit_id)" (update)="updateImplemento()"></app-implemento-edit>
         </div>
     </div>
-    
 </div>
