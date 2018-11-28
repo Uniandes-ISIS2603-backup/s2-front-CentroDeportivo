@@ -35,7 +35,7 @@ export class ZonacuerpoListComponent implements OnInit {
   showEdition: boolean;
   zonacuerpo_edit_id: number;
      allZonacuerpos: string = 'no';
-  
+  showCarousel:boolean;
   /**
    * Obtiene el servicio para actualizar la lista de zonacuerpos
    */
@@ -110,6 +110,9 @@ showHideCreate(): void {
             ]
         });
     }
+    showCarousel(){
+        this.showCarousel = !this.showCarousel;
+    }
  /**
    * Definicion de funcion para inicio
    */
@@ -117,13 +120,14 @@ showHideCreate(): void {
       this.route.queryParams.filter(params => params.allZonacuerpos).subscribe(params => {console.log(params); 
 
         this.allZonacuerpos = params.allZonacuerpos;
-        console.log(this.allZonacuerpos); 
+       
       });
       if (this.allZonacuerpos == 'yes'){
-          console.log("allZonacuerpos");
       
        this.getZonacuerpos();
+       this.showCarousel();
       }
+       
       
       
       this.showCreate = false;
