@@ -1,10 +1,12 @@
-import {Component, OnInit, ViewContainerRef} from '@angular/core';
+import {Component, OnInit, Input, ViewChild, ViewContainerRef} from '@angular/core';
 import {ModalDialogService, SimpleModalComponent} from 'ngx-modal-dialog';
 import {ToastrService} from 'ngx-toastr';
 import { ActivatedRoute, Router } from '@angular/router';
 import {EjercicioService} from '../ejercicio.service';
 import {EjercicioDetail} from '../ejercicio-detail';
-
+import {ZonacuerpoService} from '../../zonacuerpo/zonacuerpo.service';
+import {Zonacuerpo} from '../../zonacuerpo/zonacuerpo';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-ejercicio-detail',
@@ -12,7 +14,8 @@ import {EjercicioDetail} from '../ejercicio-detail';
   styleUrls: ['./ejercicio-detail.component.css']
 })
 export class EjercicioDetailComponent implements OnInit {
-
+zonacuerpoService:ZonacuerpoService;
+zonacuerpos: Observable<Zonacuerpo[]>;
 /**
     * El constructor del componente para el ejercicio
     * 
@@ -26,13 +29,14 @@ export class EjercicioDetailComponent implements OnInit {
  /**
     * el ejercicio al que se le mostraran los detalles
     */
-  ejercicioDetail: EjercicioDetail;
+   @Input()ejercicioDetail: EjercicioDetail;
   /**
     * el id asociado al ejercicio que se obtendra
     */
   ejercicio_id: number;
   showEdit: boolean;
   ejercicio_edit_id: number;
+  allZonacuerpos: string = 'no';
   /**
     * Metodo para obtener el detalle de un ejercicio
     */
@@ -41,12 +45,23 @@ export class EjercicioDetailComponent implements OnInit {
        this.ejercicioService.getEjercicioDetail(this.ejercicio_id)
             .subscribe(ejercicioDetail => {
                 this.ejercicioDetail = ejercicioDetail;
+                console.log(ejercicioDetail);
             });
   }
   /**
     * Metodo que inicializa el componente
     */
   ngOnInit() {
+      this.route.queryParams.filter(params => params.allZonacuerpos).subscribe(params => {console.log(params); 
+
+        this.allZonacuerpos = params.allZonacuerpos;
+        console.log(this.allZonacuerpos); 
+      });
+      if (this.allZonacuerpos == 'yes'){
+          console.log("allZonacuerpos");
+      
+      this.zonacuerpos = this.zonacuerpoService.getZonacuerpos();
+      }
        this.ejercicio_id = +this.route.snapshot.paramMap.get('id');
        this.ejercicioDetail = new EjercicioDetail();
        this.showEdit = false;

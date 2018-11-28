@@ -9,20 +9,26 @@ import { AppRoutingModule } from '../app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { EjercicioService } from './ejercicio.service';
 import { FormsModule } from '@angular/forms';
-
+import { BrowserModule } from '@angular/platform-browser';
+import {ZonacuerpoModule} from '../zonacuerpo/zonacuerpo.module';
 import { NgbdCarouselBasic } from './carousel-basic';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { EjercicioEditComponent } from './ejercicio-edit/ejercicio-edit.component';
+import { EjercicioZonacuerposComponent } from './ejercicio-zonacuerpos/ejercicio-zonacuerpos.component';
+import { EjercicioAddZonacuerposComponent } from './ejercicio-add-zonacuerpos/ejercicio-add-zonacuerpos.component';
 
 @NgModule({
     imports: [     
-        CommonModule,
-        FormsModule,
-        AppRoutingModule,
-        HttpClientModule,NgbModule
+        BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    CommonModule,
+    ZonacuerpoModule,
+    FormsModule,
+    NgbModule
        
     ],
-    declarations: [EjercicioListComponent, EjercicioDetailComponent,EjercicioCreateComponent,NgbdCarouselBasic, EjercicioEditComponent],
+    declarations: [EjercicioListComponent, EjercicioDetailComponent,EjercicioCreateComponent,NgbdCarouselBasic, EjercicioEditComponent, EjercicioZonacuerposComponent, EjercicioAddZonacuerposComponent],
     providers: [EjercicioService],
     exports:[EjercicioListComponent]
 })

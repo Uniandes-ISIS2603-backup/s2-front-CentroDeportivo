@@ -1,0 +1,9 @@
+<div id="collapseReview" [ngbCollapse]="isCollapsed">
+    <table class="table table-striped">
+        <tbody>
+            <tr *ngFor="let zonacuerpo of ejercicioZonacuerpos">
+                <td><span id="ejercicio-zonacuerpo"><b>{{zonacuerpo.descripcion}}</b></span><span>: </span><span id="zonacuerpo-description">{{zonacuerpo.description}}</span><br><span id="ejercicio-zonacuerpo"><i>{{zonacuerpo.source}}</i></span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

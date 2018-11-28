@@ -1,5 +1,6 @@
-import {Component, OnInit, ViewContainerRef} from '@angular/core';
+import {Component, OnInit, ViewContainerRef, Input} from '@angular/core';
 import {ModalDialogService, SimpleModalComponent} from 'ngx-modal-dialog';
+import {ActivatedRoute} from '@angular/router';
 import {ToastrService} from 'ngx-toastr';
 import { Zonacuerpo } from '../zonacuerpo';
 import { ZonacuerpoService } from '../zonacuerpo.service';
@@ -12,25 +13,39 @@ import {ZonacuerpoDetail} from '../zonacuerpo-detail';
 })
 export class ZonacuerpoListComponent implements OnInit {
 
+
+@Input() zonacuerpos: Zonacuerpo[];
     /**
    * Contructor del componente
    */
   constructor(private zonacuerpoService:ZonacuerpoService,
   private modalDialogService: ModalDialogService,
         private viewRef: ViewContainerRef,
-        private toastrService: ToastrService) { }
+        private toastrService: ToastrService,
+        private route: ActivatedRoute) { }
 
 
 /**
     * La lista de zonacuerpos del centro deportivo
     */
- zonacuerpos : Zonacuerpo[];
  selectedZonacuerpo : Zonacuerpo;
+   vZonacuerpos = true;
  zonacuerpo_id: number;
  showCreate: boolean;
   showEdition: boolean;
   zonacuerpo_edit_id: number;
-   
+     allZonacuerpos: string = 'no';
+  
+  /**
+   * Obtiene el servicio para actualizar la lista de zonacuerpos
+   */
+  getZonacuerpos(): void{
+     this.zonacuerpoService.getZonacuerpos().subscribe(zonacuerpos => this.zonacuerpos = zonacuerpos);
+ }
+  setVZonacuerpos():void
+  {
+      this.vZonacuerpos = !this.vZonacuerpos;
+  }
  /**
    * Funcion para definir en seleccion
    */
@@ -63,9 +78,7 @@ showHideCreate(): void {
     /**
     * Obtiene el detalle de la zonacuerpo
     */
- getZonacuerpos(): void{
-     this.zonacuerpoService.getZonacuerpos().subscribe(zonacuerpos => this.zonacuerpos = zonacuerpos);
- }
+
  showHideEdit(zonacuerpo_id: number): void {
         if (!this.showEdition || (this.showEdition && zonacuerpo_id != this.zonacuerpo_edit_id)) 
             {
@@ -101,10 +114,23 @@ showHideCreate(): void {
    * Definicion de funcion para inicio
    */
   ngOnInit() {
+      this.route.queryParams.filter(params => params.allZonacuerpos).subscribe(params => {console.log(params); 
+
+        this.allZonacuerpos = params.allZonacuerpos;
+        console.log(this.allZonacuerpos); 
+      });
+      if (this.allZonacuerpos == 'yes'){
+          console.log("allZonacuerpos");
+      
+       this.getZonacuerpos();
+      }
+      
+      
       this.showCreate = false;
-       this.showEdition = false;
+      this.showEdition = false;
       this.selectedZonacuerpo = undefined;
       this.zonacuerpo_id = undefined;
-      this.getZonacuerpos();
+      
+     
   }
 }

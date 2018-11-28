@@ -2,10 +2,7 @@
     <div class="row">
         <div class="col-md-4">
         <br>
-           <div class="row justify-content-center align-self-center">
-               <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
-                   (click)="showHideCreate()">Registrar a un zonacuerpo</button>
-           </div>
+          
         <br>
         <br>
         <table class="table table-striped">
@@ -31,6 +28,11 @@
                 </tr>
             </tbody>
         </table>
+        <br>
+         <div class="row ">
+               <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
+                   (click)="showHideCreate()">Registrar a un zonacuerpo</button>
+           </div>
          
     </div>
         

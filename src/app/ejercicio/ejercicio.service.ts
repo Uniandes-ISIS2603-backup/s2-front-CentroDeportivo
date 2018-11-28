@@ -3,13 +3,11 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Ejercicio } from './ejercicio';
 import {EjercicioDetail} from './ejercicio-detail';
 import { Observable } from 'rxjs';
-
+import {Zonacuerpo} from '../zonacuerpo/zonacuerpo';
 import {environment} from '../../environments/environment';
 const API_URL = environment.apiURL;
 const ejercicios = '/ejercicios';
-
-//const API_URL = "../../assets/";
-//const ejercicios = 'ejercicios.json';
+const zonacuerpos = '/zonasCuerpo';
 
 /**
 * Proveedor de servicios para todo lo relacionado con ejercicio
@@ -53,5 +51,8 @@ export class EjercicioService {headers = new HttpHeaders({
     }
     deleteEjercicio(ejercicioId): Observable<EjercicioDetail> {
         return this.http.delete<EjercicioDetail>(API_URL + ejercicios + '/' + ejercicioId);
+    }
+     createZonacuerpo(ejercicioId, zonacuerpo): Observable<Zonacuerpo> {
+        return this.http.post<Zonacuerpo>(API_URL + ejercicios + '/' + ejercicioId + zonacuerpos, zonacuerpo);
     }
 }
