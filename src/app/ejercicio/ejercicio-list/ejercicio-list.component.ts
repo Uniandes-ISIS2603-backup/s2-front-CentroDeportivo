@@ -88,14 +88,14 @@ showHideCreate(): void {
         this.modalDialogService.openDialog(this.viewRef, {
             title: 'Delete an ejercicio',
             childComponent: SimpleModalComponent,
-            data: {text: 'Are you sure your want to delete this ejercicio from the Centrodeportivo?'},
+            data: {text: 'Seguro que quiere borrar este ejercicio?'},
             actionButtons: [
                 {
                     text: 'Yes',
                     buttonClass: 'btn btn-danger',
                     onAction: () => {
                         this.ejercicioService.deleteEjercicio(ejercicioId).subscribe(() => {
-                            this.toastrService.error("The ejercicio was successfully deleted", "Ejercicio deleted");
+                            this.toastrService.error("Este ejercicio fue correctamente borrado", "Ejercicio borrado");
                             this.ngOnInit();
                         }, err => {
                             this.toastrService.error(err, "Error");
