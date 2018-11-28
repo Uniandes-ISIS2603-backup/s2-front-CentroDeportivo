@@ -45,7 +45,7 @@
         <div *ngIf="showCreate">
             <app-zonacuerpo-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-zonacuerpo-create>
         </div>
-        <div *ngIf="showEdit">
+        <div *ngIf="showEdition">
             <app-zonacuerpo-edit [zonacuerpo_id]="zonacuerpo_edit_id" (cancel)="showHideEdit(zonacuerpo_edit_id)" (update)="updateZonacuerpo()"></app-zonacuerpo-edit>
         </div>
     </div>

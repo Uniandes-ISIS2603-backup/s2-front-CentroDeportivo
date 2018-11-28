@@ -87,14 +87,14 @@ showHideCreate(): void {
         this.modalDialogService.openDialog(this.viewRef, {
             title: 'Delete an implemento',
             childComponent: SimpleModalComponent,
-            data: {text: 'Are you sure your want to delete this implemento from the BookStore?'},
+            data: {text: 'Seguro que desea eliminar este implemento??'},
             actionButtons: [
                 {
                     text: 'Yes',
                     buttonClass: 'btn btn-danger',
                     onAction: () => {
                         this.implementoService.deleteImplemento(implementoId).subscribe(() => {
-                            this.toastrService.error("The implemento was successfully deleted", "Implemento deleted");
+                            this.toastrService.error("Implemento eliminado", "Implemento deleted");
                             this.ngOnInit();
                         }, err => {
                             this.toastrService.error(err, "Error");

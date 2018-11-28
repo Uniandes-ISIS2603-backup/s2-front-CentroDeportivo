@@ -87,14 +87,14 @@ showHideCreate(): void {
         this.modalDialogService.openDialog(this.viewRef, {
             title: 'Delete an deportista',
             childComponent: SimpleModalComponent,
-            data: {text: 'Are you sure your want to delete this deportista from the BookStore?'},
+            data: {text: 'Seguro que desea eliminar este deportista del centrodeportivo??'},
             actionButtons: [
                 {
                     text: 'Yes',
                     buttonClass: 'btn btn-danger',
                     onAction: () => {
                         this.deportistaService.deleteDeportista(deportistaId).subscribe(() => {
-                            this.toastrService.error("The deportista was successfully deleted", "Deportista deleted");
+                            this.toastrService.error("Deportista correctamente eliminado", "Deportista deleted");
                             this.ngOnInit();
                         }, err => {
                             this.toastrService.error(err, "Error");
