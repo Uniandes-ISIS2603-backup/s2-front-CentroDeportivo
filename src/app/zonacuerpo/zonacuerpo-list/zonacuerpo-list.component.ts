@@ -36,7 +36,7 @@ export class ZonacuerpoListComponent implements OnInit {
   zonacuerpo_edit_id: number;
      allZonacuerpos: string = 'no';
   showCarousel:boolean;
-  /**
+  /**s
    * Obtiene el servicio para actualizar la lista de zonacuerpos
    */
   getZonacuerpos(): void{
