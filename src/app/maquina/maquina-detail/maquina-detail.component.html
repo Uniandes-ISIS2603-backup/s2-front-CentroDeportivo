@@ -16,10 +16,33 @@
                     </tbody>
                 </table>
             </div>
-            <div class="col">
+            <div class="col-5">
                 <img class="img-fluid" src='{{maquinaDetail.imagen}}' alt="{{maquinaDetail.imagen}}" width="80%" height="80%" />   
             </div>
             
+             <div class="col-4">
+                <p>Ejercicios para realizar en esta máquina:</p>
+                     <br>
+                        <table class="table table-striped">
+                            <thead class ="thead-dark">
+                                <tr>
+                                    <th>Nombre</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                 <tr *ngFor = "let ejercicio of maquinaDetail.ejercicios">
+
+                                    <td style="cursor: pointer;">
+                                        <dd class="figure-caption" routerLink="/ejercicios/{{ejercicio.id}}">{{ejercicio.nombre}}</dd>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>          
+             </div>
+            
+            
         </div> 
     </div>
+    
+    
 </div>
