@@ -48,7 +48,7 @@
         <li class="nav-item">
             <a id="maquinasTag" class="nav-link" routerLink="/maquinas/list" style="color:white">Máquinas</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngxPermissionsOnly="['DEPORTISTA', 'ADMIN','ESPECIALISTA']">
             <a id="objetivosTag" class="nav-link" routerLink="/objetivos/list" [queryParams]="{allObjetivos: 'yes'}" style="color:white">Objetivos</a>
             
         </li>
@@ -59,14 +59,14 @@
             <a id="zonascuerpoTag" class="nav-link" routerLink="/zonascuerpo/list" [queryParams]="{allZonacuerpos: 'yes'}" style="color:white">Zonas del Cuerpo</a>
         </li>
         <div class="flex-row" *ngxPermissionsOnly="['GUEST']">
-        <li class="nav-item"><a id="signup-navbar-item" class="nav-link" routerLink="/auth/sign-up"><span class="fa fa-user-circle"></span> Sign Up</a></li>
+            <li class="nav-item"><a id="signup-navbar-item" class="nav-link" routerLink="/auth/sign-up" style="color: white"><span class="fa fa-user-circle"></span> Sign Up</a></li>
         
-        <li class="nav-item"><a id="login-navbar-item" class="nav-link" routerLink="/auth/login"><span class="fa fa-sign-in"></span> Login</a></li>
+        <li class="nav-item"><a id="login-navbar-item" class="nav-link" routerLink="/auth/login" style="color: white"><span class="fa fa-sign-in"></span> Login</a></li>
         </div>
         
         <div class="flex-row" *ngxPermissionsOnly="['DEPORTISTA', 'ADMIN','ESPECIALISTA']">
             <div class="form-inline">
-                <li><a id="logout-navbar-item" (click)="logout()" href="#"><span class="fa fa-sign-out"></span> Logout</a></li>
+                <li><a id="logout-navbar-item" (click)="logout()" href="#" style="color: white"><span class="fa fa-sign-out"></span> Logout</a></li>
             </div>
         </div>
 </ul>   
