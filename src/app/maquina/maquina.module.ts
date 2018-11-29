@@ -13,6 +13,7 @@ import { MaquinaEditComponent } from './maquina-edit/maquina-edit.component';
 import { EjercicioModule } from '../ejercicio/ejercicio.module';
 import { NgbdCarouselBasic } from './carousel-basic';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {NgxPermissionsModule} from 'ngx-permissions';
 
 
 @NgModule({
@@ -23,7 +24,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     CommonModule,
     FormsModule,
     EjercicioModule,
-    NgbModule
+    NgbModule,
+    NgxPermissionsModule
+    
   ],
   declarations: [MaquinaListComponent, MaquinaDetailComponent, MaquinaCreateComponent, MaquinaEditComponent,NgbdCarouselBasic],
   providers: [MaquinaService]

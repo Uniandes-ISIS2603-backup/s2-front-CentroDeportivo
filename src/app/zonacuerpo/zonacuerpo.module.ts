@@ -12,6 +12,9 @@ import { AppRoutingModule } from '../app-routing.module';
 import { NgbdCarouselBasic } from './carousel-basic2';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ZonacuerpoEditComponent } from './zonacuerpo-edit/zonacuerpo-edit.component';
+import {NgxPermissionsModule} from 'ngx-permissions';
+
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -19,7 +22,8 @@ import { ZonacuerpoEditComponent } from './zonacuerpo-edit/zonacuerpo-edit.compo
     HttpClientModule,
     CommonModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    NgxPermissionsModule
   ],
   declarations: [ZonacuerpoListComponent, ZonacuerpoDetailComponent, ZonacuerpoCreateComponent,NgbdCarouselBasic, ZonacuerpoEditComponent],
   providers: [ZonacuerpoService],

@@ -10,6 +10,8 @@ import { ObjetivoDetailComponent } from './objetivo-detail/objetivo-detail.compo
 import { ObjetivoCreateComponent } from './objetivo-create/objetivo-create.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { ObjetivoEditComponent } from './objetivo-edit/objetivo-edit.component';
+import {NgxPermissionsModule} from 'ngx-permissions';
+
 
 @NgModule({
   imports: [
@@ -18,7 +20,8 @@ import { ObjetivoEditComponent } from './objetivo-edit/objetivo-edit.component';
         HttpClientModule,
         CommonModule,
         FormsModule,
-        NgbModule
+        NgbModule,
+        NgxPermissionsModule
   ],
   declarations: [ObjetivoListComponent, ObjetivoDetailComponent, ObjetivoCreateComponent, ObjetivoEditComponent],
   providers: [ObjetivoService],

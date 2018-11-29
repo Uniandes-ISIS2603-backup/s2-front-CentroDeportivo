@@ -13,7 +13,10 @@ import { NgbdCarouselBasic } from './carousel-basic2';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DeportistaEditComponent } from './deportista-edit/deportista-edit.component';
 import { DepotistaAddObjetivoComponent } from './depotista-add-objetivo/depotista-add-objetivo.component';
-@NgModule({
+import {NgxPermissionsModule} from 'ngx-permissions';
+
+    
+        @NgModule({
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -21,7 +24,8 @@ import { DepotistaAddObjetivoComponent } from './depotista-add-objetivo/depotist
     CommonModule,
     ObjetivoModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    NgxPermissionsModule
   ],
   declarations: [DeportistaListComponent, DeportistaDetailComponent, DeportistaCreateComponent,NgbdCarouselBasic, DeportistaEditComponent, DepotistaAddObjetivoComponent],
   providers: [DeportistaService],

@@ -4,10 +4,14 @@
         <p class="h3 p-3">Estado: {{objetivoDetail.cumplio}}</p>
         <p class="h3 p-3">Fecha límite: {{objetivoDetail.fechaLimite}}</p>
     </div>
-            <button  style="font-size:24px" type="button" class="btn btn-primary"(click)="showHideEdit(objetivoDetail.id)">Editar <span class="fa fa-pencil" ></span></button>
+    
+    <div *ngxPermissionsOnly="['ESPECIALISTA']">
+        <button  style="font-size:24px" type="button" class="btn btn-primary"(click)="showHideEdit(objetivoDetail.id)">Editar <span class="fa fa-pencil" ></span></button>
             <h3>     </h3>
-            <button style="font-size:24px" class="btn btn-danger" (click)="deleteObjetivo(objetivoDetail.id)" >Eliminar <i class="fa fa-trash"></i></button>
-    <div class="col-8">
+        <button style="font-size:24px" class="btn btn-danger" (click)="deleteObjetivo(objetivoDetail.id)" >Eliminar <i class="fa fa-trash"></i></button>
+    
+    </div>
+            <<div class="col-8">
         <div *ngIf="showEdit">
             <app-objetivo-edit [objetivo_id]="objetivo_edit_id" (cancel)="showHideObjetivo(objetivo_edit_id)" (update)="updateObjetivo()"></app-objetivo-edit>
         </div>

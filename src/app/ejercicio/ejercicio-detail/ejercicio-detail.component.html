@@ -39,7 +39,7 @@
 
     </table>
             
-<div class="row justify-content-center align-self-center">
+<div class="row justify-content-center align-self-center" *ngxPermissionsOnly="['ESPECIALISTA', 'ADMIN']">
             <button  style="font-size:24px" type="button" class="btn btn-primary"(click)="showHideEdit(ejercicioDetail.id)" >Editar <span class="fa fa-pencil" ></span></button>
             <h3>     </h3>
             <button style="font-size:24px" class="btn btn-danger" (click)="deleteEjercicio(ejercicioDetail.id)" >Eliminar <i class="fa fa-trash"></i></button>

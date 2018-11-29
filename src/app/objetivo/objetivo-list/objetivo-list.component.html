@@ -8,7 +8,7 @@
                     <th>Descripción</th>
                     <th *ngIf="esListaObjetivos()" required>Cumplio</th>
                     <th *ngIf="esListaObjetivos()" required>Fecha límite</th>
-                    <th>  </th>
+                    <th *ngxPermissionsOnly="['ESPECIALISTA']">Editar</th>
                 </tr>
             </thead>
             <tbody>
@@ -24,7 +24,7 @@
                         <dd class="figure-caption" routerLink="/objetivos/{{objetivo.id}}"*ngIf="esListaObjetivos()" required>{{objetivo.fechaLimite}}</dd>
                    
                     </td>
-                    <td>
+                    <td *ngxPermissionsOnly="['ESPECIALISTA']">
                          <button class="btn" (click)="showHideEdit(objetivo.id)"*ngIf="esListaObjetivos()" required><span class="fa fa-pencil" ></span></button>
                     </td>
                      
@@ -32,7 +32,7 @@
             </tbody>
         </table>
         <br>
-           <div class="justify-content-center align-self-center">
+           <div class="justify-content-center align-self-center" *ngxPermissionsOnly="['ESPECIALISTA']">
                <button  style="font-size:18px" [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn-success"
                    (click)="showHideCreate()" *ngIf="esListaObjetivos()" required>Registrar un objetivo  <i class="fa fa-plus"></i></button>
            </div>
@@ -49,6 +49,7 @@
             <app-objetivo-edit [objetivo_id]="objetivo_edit_id" (cancel)="showHideObjetivo(objetivo_edit_id)" (update)="updateObjetivo()"></app-objetivo-edit>
         </div>
     </div>
+</div>
 </div>
   
     

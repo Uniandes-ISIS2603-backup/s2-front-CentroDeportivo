@@ -15,6 +15,8 @@ import { RutinaEditComponent } from './rutina-edit/rutina-edit.component';
 import { ObjetivoModule } from '../objetivo/objetivo.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbdCarouselBasic } from './carousel-basic';
+import {NgxPermissionsModule} from 'ngx-permissions';
+
 
 @NgModule({
   imports: [
@@ -24,7 +26,8 @@ import { NgbdCarouselBasic } from './carousel-basic';
     CommonModule,
     FormsModule,
     ObjetivoModule,
-     NgbModule
+    NgbModule,
+    NgxPermissionsModule
   ],
   declarations: [RutinaListComponent, RutinaDetailComponent, RutinaCreateComponent,RutinaEditComponent,NgbdCarouselBasic],
   providers: [RutinaService],

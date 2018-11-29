@@ -15,6 +15,8 @@ import { ObjetivoModule } from '../objetivo/objetivo.module';
 import { DeportistaModule } from '../deportista/deportista.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbdCarouselBasic } from './carousel-basic';
+import {NgxPermissionsModule} from 'ngx-permissions';
+
 
 @NgModule({
   imports: [
@@ -25,7 +27,8 @@ import { NgbdCarouselBasic } from './carousel-basic';
     FormsModule,
     ObjetivoModule,
     DeportistaModule,
-    NgbModule
+    NgbModule,
+    NgxPermissionsModule
 
   ],
   declarations: [EspecialistaListComponent, EspecialistaDetailComponent,EspecialistaCreateComponent, EspecialistaEditComponent,NgbdCarouselBasic],

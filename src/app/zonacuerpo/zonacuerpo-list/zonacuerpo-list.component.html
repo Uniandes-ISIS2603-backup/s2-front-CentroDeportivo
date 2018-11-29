@@ -9,8 +9,8 @@
             <thead class ="thead-dark">
                 <tr>
                     <th>Nombre</th>
-                    <th>Editar</th>
-                    <th>Eliminar</th>
+                    <th *ngxPermissionsOnly="['ADMIN', 'ESPECIALISTA']">Editar</th>
+                    <th *ngxPermissionsOnly="['ADMIN', 'ESPECIALISTA']">Eliminar</th>
                 </tr>
             </thead>
             <tbody>
@@ -19,17 +19,17 @@
                     <td style="cursor: pointer;">
                         <dd class="figure-caption" routerLink="/zonascuerpo/{{zonacuerpo.id}}">{{zonacuerpo.nombre}}</dd>
                     </td>
-                    <td>
+                    <td *ngxPermissionsOnly="['ADMIN', 'ESPECIALISTA']">
                          <button class="btn" (click)="showHideEdit(zonacuerpo.id)"><span class="fa fa-pencil"></span></button>
                     </td>
-                    <td>
+                    <td *ngxPermissionsOnly="['ADMIN', 'ESPECIALISTA']">
                         <button class="btn btn-danger" (click)="deleteZonacuerpo(zonacuerpo.id)"><span class="fa fa-trash"></span></button>
                     </td>
                 </tr>
             </tbody>
         </table>
         <br>
-         <div class="row ">
+         <div class="row2" *ngxPermissionsOnly="['ADMIN', 'ESPECIALISTA']">
                <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
                    (click)="showHideCreate()">Registrar a un zonacuerpo</button>
            </div>
@@ -51,4 +51,5 @@
             <app-zonacuerpo-edit [zonacuerpo_id]="zonacuerpo_edit_id" (cancel)="showHideEdit(zonacuerpo_edit_id)" (update)="updateZonacuerpo()"></app-zonacuerpo-edit>
         </div>
     </div>
+</div>
 </div>

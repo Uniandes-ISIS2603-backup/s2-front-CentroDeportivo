@@ -12,6 +12,9 @@ import { AppRoutingModule } from '../app-routing.module';
 import { NgbdCarouselBasic } from './carousel-basic';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ImplementoEditComponent } from './implemento-edit/implemento-edit.component';
+import {NgxPermissionsModule} from 'ngx-permissions';
+
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -19,7 +22,8 @@ import { ImplementoEditComponent } from './implemento-edit/implemento-edit.compo
     HttpClientModule,
     CommonModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    NgxPermissionsModule
   ],
   declarations: [ImplementoListComponent, ImplementoDetailComponent, ImplementoCreateComponent,NgbdCarouselBasic, ImplementoEditComponent],
   providers: [ImplementoService],

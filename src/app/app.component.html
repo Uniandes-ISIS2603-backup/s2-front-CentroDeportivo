@@ -33,7 +33,7 @@
             <img id="logo" src="../assets/LogoLudis.png" width="90" height="30">
         </a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngxPermissionsOnly="['DEPORTISTA', 'ADMIN','ESPECIALISTA']">
             <a id="deportistasTag" class="nav-link" routerLink="/deportistas/list" style="color:white">Deportistas</a>
         </li>
         <li class="nav-item">
@@ -64,7 +64,7 @@
         <li class="nav-item"><a id="login-navbar-item" class="nav-link" routerLink="/auth/login"><span class="fa fa-sign-in"></span> Login</a></li>
         </div>
         
-        <div class="flex-row" *ngxPermissionsOnly="['CLIENT', 'ADMIN']">
+        <div class="flex-row" *ngxPermissionsOnly="['DEPORTISTA', 'ADMIN','ESPECIALISTA']">
             <div class="form-inline">
                 <li><a id="logout-navbar-item" (click)="logout()" href="#"><span class="fa fa-sign-out"></span> Logout</a></li>
             </div>

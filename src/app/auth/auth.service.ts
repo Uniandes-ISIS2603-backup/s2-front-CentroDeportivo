@@ -26,9 +26,10 @@ export class AuthService {
             this.setGuestRole();
         } else if (role === 'ADMIN') {
             this.setAdministratorRole();
-        } else {
-            this.setClientRole();
+        } else if (role === 'DEPORTISTA'){
+            this.setDeportistaRole();
         }
+        else this.setEspecialistaRole();
         this.printRole();
     }
 
@@ -37,10 +38,16 @@ export class AuthService {
         this.roleService.addRole('GUEST', ['']);
     }
 
-    setClientRole (): void {
+    setDeportistaRole (): void {
         this.roleService.flushRoles();
-        this.roleService.addRole('CLIENT', ['']);
-        localStorage.setItem('role', 'CLIENT');
+        this.roleService.addRole('DEPORTISTA', ['']);
+        localStorage.setItem('role', 'DEPORTISTA');
+    }
+    
+    setEspecialistaRole (): void {
+        this.roleService.flushRoles();
+        this.roleService.addRole('ESPECIALISTA', ['']);
+        localStorage.setItem('role', 'ESPECIALISTA');
     }
 
     setAdministratorRole (): void {
@@ -60,9 +67,10 @@ export class AuthService {
     login (role): void {
         if (role === 'Administrator') {
             this.setAdministratorRole();
-        } else {
-            this.setClientRole()
+        } else if (role === 'Deportista') {
+            this.setDeportistaRole();
         }
+        else this.setEspecialistaRole();
         this.router.navigateByUrl('/home');
     }
 

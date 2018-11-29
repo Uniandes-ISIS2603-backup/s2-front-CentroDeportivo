@@ -16,6 +16,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { EjercicioEditComponent } from './ejercicio-edit/ejercicio-edit.component';
 import { EjercicioZonacuerposComponent } from './ejercicio-zonacuerpos/ejercicio-zonacuerpos.component';
 import { EjercicioAddZonacuerposComponent } from './ejercicio-add-zonacuerpos/ejercicio-add-zonacuerpos.component';
+import {NgxPermissionsModule} from 'ngx-permissions';
+
 
 @NgModule({
     imports: [     
@@ -25,7 +27,8 @@ import { EjercicioAddZonacuerposComponent } from './ejercicio-add-zonacuerpos/ej
     CommonModule,
     ZonacuerpoModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    NgxPermissionsModule
        
     ],
     declarations: [EjercicioListComponent, EjercicioDetailComponent,EjercicioCreateComponent,NgbdCarouselBasic, EjercicioEditComponent, EjercicioZonacuerposComponent, EjercicioAddZonacuerposComponent],
